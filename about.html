@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне | Askar Bapen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ar-message" class="ar-message">هذه الصفحة قيد الإنشاء</div>
+
+    <div class="main-content container">
+        <nav class="reveal">
+            <a href="index.html" class="logo">ASKAR BAPEN</a>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
+                    <a href="about.html" data-i18n="nav_about" class="active">Обо мне</a>
+                </div>
+                <div class="lang-switcher">
+                    <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
+                    <button id="btn-kz" onclick="setLanguage('kz')">KZ</button>
+                    <button id="btn-en" onclick="setLanguage('en')">EN</button>
+                    <button id="btn-ar" onclick="setLanguage('ar')">AR</button>
+                </div>
+            </div>
+        </nav>
+
+        <section class="reveal" style="padding: 80px 0; display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start;">
+            <div class="about-visual">
+                <div style="border: 1px solid var(--gold); padding: 40px; border-radius: 12px; text-align: center;">
+                    <div style="font-family: 'Cormorant Garamond'; font-size: 64px; color: var(--gold); margin-bottom: 20px;">АБ</div>
+                    <p style="font-weight: 500; text-transform: uppercase; letter-spacing: 1px; font-size: 12px;">Askar Bapen</p>
+                </div>
+            </div>
+
+            <div class="about-text">
+                <h1 style="margin-bottom: 30px;">Профессиональный путь</h1>
+                <p style="margin-bottom: 20px;">Я являюсь **1 из 7 Мастеров Бизнес-ТРИЗ** в мире, сертифицированных международной ассоциацией IBTA. Моя специализация — решение неразрешимых задач в бизнесе и управлении.</p>
+                
+                <div class="card" style="margin-bottom: 30px; background: var(--block-bg);">
+                    <h3 style="margin-bottom: 10px; color: var(--gold);">Автор книги</h3>
+                    <p style="font-size: 14px;">Первая практическая работа на казахском языке о применении инструментов ТРИЗ и Кайдзен в условиях современного рынка Казахстана и СНГ.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h4 style="font-family: 'Cormorant Garamond'; font-size: 18px; margin-bottom: 10px;">Экспертиза</h4>
+                        <ul style="list-style: none; font-size: 14px; color: var(--gray);">
+                            <li>• Бизнес-ТРИЗ (Level 4)</li>
+                            <li>• Lean Manufacturing</li>
+                            <li>• Kaizen & BPMN</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="font-family: 'Cormorant Garamond'; font-size: 18px; margin-bottom: 10px;">Образование</h4>
+                        <ul style="list-style: none; font-size: 14px; color: var(--gray);">
+                            <li>• MBA / Экономика</li>
+                            <li>• Сертификация IBTA</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="reveal" style="padding: 40px 0; border-top: 0.5px solid var(--border); text-align: center;">
+            <p class="copyright" data-i18n="footer_copy">© 2026 Аскар Бапен. KAIZEN-TRIZ PARTNERS</p>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
