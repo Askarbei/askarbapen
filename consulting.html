@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бизнес-решения | Askar Bapen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ar-message" class="ar-message">هذه الصفحة قيد الإنشاء</div>
+
+    <div class="main-content container">
+        <nav class="reveal">
+            <a href="index.html" class="logo">ASKAR BAPEN</a>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
+                    <a href="about.html" data-i18n="nav_about">Обо мне</a>
+                </div>
+                <div class="lang-switcher">
+                    <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
+                    <button id="btn-kz" onclick="setLanguage('kz')">KZ</button>
+                    <button id="btn-en" onclick="setLanguage('en')">EN</button>
+                    <button id="btn-ar" onclick="setLanguage('ar')">AR</button>
+                </div>
+            </div>
+        </nav>
+
+        <header class="reveal" style="padding: 60px 0; text-align: center;">
+            <h1 data-i18n="fork_1_title">Бизнес-решения</h1>
+            <p style="color: var(--gray); margin-top: 10px;" data-i18n="fork_1_desc">Работаем вместе над конкретной задачей.</p>
+        </header>
+
+        <section class="accordion-section reveal" style="max-width: 800px; margin: 0 auto 60px;">
+            
+            <div class="card accordion-item" style="margin-bottom: 15px; padding: 0;">
+                <div class="acc-header" onclick="toggleAcc(this)" style="padding: 25px; cursor: pointer; display: flex; justify-content: space-between;">
+                    <span style="font-weight: 500;">- Хаос в процессах</span>
+                    <span class="icon" style="color: var(--gold);">+</span>
+                </div>
+                <div class="acc-content" style="max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 25px;">
+                    <p style="padding-bottom: 25px; color: var(--gray); font-size: 14px;">Проводим аудит, выявляем "узкие места" и выстраиваем прозрачную систему управления по стандартам BPMN и Lean.</p>
+                </div>
+            </div>
+
+            <div class="card accordion-item" style="margin-bottom: 15px; padding: 0;">
+                <div class="acc-header" onclick="toggleAcc(this)" style="padding: 25px; cursor: pointer; display: flex; justify-content: space-between;">
+                    <span style="font-weight: 500;">- Проблема не решается</span>
+                    <span class="icon" style="color: var(--gold);">+</span>
+                </div>
+                <div class="acc-content" style="max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 25px;">
+                    <p style="padding-bottom: 25px; color: var(--gray); font-size: 14px;">Применяем инструменты Бизнес-ТРИЗ для устранения неразрешимых противоречий в управлении, маркетинге и стратегии.</p>
+                </div>
+            </div>
+
+            <div class="card accordion-item" style="margin-bottom: 15px; padding: 0;">
+                <div class="acc-header" onclick="toggleAcc(this)" style="padding: 25px; cursor: pointer; display: flex; justify-content: space-between;">
+                    <span style="font-weight: 500;">- Много работы, мало результата</span>
+                    <span class="icon" style="color: var(--gold);">+</span>
+                </div>
+                <div class="acc-content" style="max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 25px;">
+                    <p style="padding-bottom: 25px; color: var(--gray); font-size: 14px;">Внедряем культуру Кайдзен и инструменты устранения потерь для повышения маржинальности бизнеса.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <div style="text-align: center; margin-bottom: 80px;">
+            <a href="mailto:k.partners2030@gmail.com" style="background: var(--gold); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 500;">Оставить заявку</a>
+        </div>
+
+        <footer class="reveal" style="padding: 40px 0; border-top: 0.5px solid var(--border); text-align: center;">
+            <p class="copyright" data-i18n="footer_copy">© 2026 Аскар Бапен. KAIZEN-TRIZ PARTNERS</p>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        function toggleAcc(header) {
+            const content = header.nextElementSibling;
+            const isOpen = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
+            
+            // Закрыть все
+            document.querySelectorAll('.acc-content').forEach(c => c.style.maxHeight = '0px');
+            document.querySelectorAll('.icon').forEach(i => i.textContent = '+');
+
+            // Открыть текущий
+            if (!isOpen) {
+                content.style.maxHeight = content.scrollHeight + "px";
+                header.querySelector('.icon').textContent = '−';
+            }
+        }
+    </script>
+</body>
+</html>
