@@ -1,0 +1,92 @@
+/* Базовые настройки и шрифты */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=DM+Sans:wght@400;500&display=swap');
+
+:root {
+    --gold: #C9A84C;
+    --dark: #2C2C2A;
+    --white: #FFFFFF;
+    --gray: #888780;
+    --border: rgba(44, 44, 42, 0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body { 
+    font-family: 'DM Sans', sans-serif; 
+    font-size: 15px; 
+    line-height: 1.7; 
+    color: var(--dark); 
+    background-color: var(--white);
+}
+
+h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Навигация */
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 30px 0; 
+    border-bottom: 0.5px solid var(--border); 
+}
+
+.logo { 
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: 20px; 
+    letter-spacing: 2px; 
+    text-decoration: none; 
+    color: var(--dark);
+    text-transform: uppercase;
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--dark); 
+    margin-left: 30px; 
+    font-size: 13px; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lang-switcher { margin-left: 30px; display: inline-flex; gap: 10px; }
+
+.lang-switcher button { 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 12px; 
+    color: var(--gray);
+}
+
+.lang-switcher button.active { color: var(--gold); font-weight: bold; }
+
+/* Карточки и блоки */
+.card { 
+    border: 0.5px solid var(--border); 
+    border-top: 2px solid var(--gold); 
+    border-radius: 12px; 
+    padding: 30px; 
+    transition: 0.2s;
+}
+
+.card:hover { border-color: var(--dark); }
+
+/* Анимация появления */
+.reveal { opacity: 0; transform: translateY(20px); transition: 1s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Сообщение для арабского языка */
+.ar-message { 
+    display: none; 
+    text-align: center; 
+    padding: 100px 20px; 
+    font-size: 24px; 
+    direction: rtl;
+}
+
+body.lang-ar .main-content { display: none; }
+body.lang-ar .ar-message { display: block; }
