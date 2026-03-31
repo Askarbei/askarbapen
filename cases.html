@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейсы | Askar Bapen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ar-message" class="ar-message">هذه الصفحة قيد الإنشاء</div>
+
+    <div class="main-content container">
+        <nav class="reveal">
+            <a href="index.html" class="logo">ASKAR BAPEN</a>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="cases.html" data-i18n="nav_cases" class="active">Кейсы</a>
+                    <a href="about.html" data-i18n="nav_about">Обо мне</a>
+                </div>
+                <div class="lang-switcher">
+                    <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
+                    <button id="btn-kz" onclick="setLanguage('kz')">KZ</button>
+                    <button id="btn-en" onclick="setLanguage('en')">EN</button>
+                    <button id="btn-ar" onclick="setLanguage('ar')">AR</button>
+                </div>
+            </div>
+        </nav>
+
+        <header class="reveal" style="padding: 60px 0; text-align: center;">
+            <h1 data-i18n="nav_cases">Кейсы</h1>
+            <p style="color: var(--gray); margin-top: 10px;">Результаты внедрения инструментов Бизнес-ТРИЗ, Lean и Kaizen.</p>
+        </header>
+
+        <section class="reveal" style="margin-bottom: 80px; overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--gold); text-align: left;">
+                        <th style="padding: 15px; font-family: 'Cormorant Garamond'; font-size: 18px;">Отрасль</th>
+                        <th style="padding: 15px; font-family: 'Cormorant Garamond'; font-size: 18px;">Задача</th>
+                        <th style="padding: 15px; font-family: 'Cormorant Garamond'; font-size: 18px;">Результат</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 0.5px solid var(--border);">
+                        <td style="padding: 20px; font-weight: 500;">Логистика</td>
+                        <td style="padding: 20px; color: var(--gray);">Оптимизация склада запчастей и адресного хранения.</td>
+                        <td style="padding: 20px; color: var(--gold); font-weight: 500;">-75% потерь времени</td>
+                    </tr>
+                    <tr style="border-bottom: 0.5px solid var(--border);">
+                        <td style="padding: 20px; font-weight: 500;">Медицина</td>
+                        <td style="padding: 20px; color: var(--gray);">Увеличение пропускной способности приемного покоя.</td>
+                        <td style="padding: 20px; color: var(--gold); font-weight: 500;">x2 пациентов в час</td>
+                    </tr>
+                    <tr style="border-bottom: 0.5px solid var(--border);">
+                        <td style="padding: 20px; font-weight: 500;">Ритейл</td>
+                        <td style="padding: 20px; color: var(--gray);">Снижение очередей на кассах в пиковые часы.</td>
+                        <td style="padding: 20px; color: var(--gold); font-weight: 500;">+30% лояльности</td>
+                    </tr>
+                    <tr style="border-bottom: 0.5px solid var(--border);">
+                        <td style="padding: 20px; font-weight: 500;">Производство</td>
+                        <td style="padding: 20px; color: var(--gray);">Внедрение системы 5S и сокращение брака.</td>
+                        <td style="padding: 20px; color: var(--gold); font-weight: 500;">17 млн ₸ экономии</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 20px; font-size: 13px; color: var(--gray); text-align: center;">* Всего более 20 реализованных кейсов в 8 отраслях.</p>
+        </section>
+
+        <footer class="reveal" style="padding: 40px 0; border-top: 0.5px solid var(--border); text-align: center;">
+            <p class="copyright" data-i18n="footer_copy">© 2026 Аскар Бапен. KAIZEN-TRIZ PARTNERS</p>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
