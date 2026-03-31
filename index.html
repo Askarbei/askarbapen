@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askar Bapen | KAIZEN-TRIZ PARTNERS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ar-message" class="ar-message">هذه الصفحة قيد الإنشاء</div>
+
+    <div class="main-content container">
+        <nav class="reveal">
+            <a href="index.html" class="logo">ASKAR BAPEN</a>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
+                    <a href="about.html" data-i18n="nav_about">Обо мне</a>
+                </div>
+                <div class="lang-switcher">
+                    <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
+                    <button id="btn-kz" onclick="setLanguage('kz')">KZ</button>
+                    <button id="btn-en" onclick="setLanguage('en')">EN</button>
+                    <button id="btn-ar" onclick="setLanguage('ar')">AR</button>
+                </div>
+            </div>
+        </nav>
+
+        <header class="hero reveal" style="padding: 80px 0; display: flex; justify-content: space-between; align-items: center;">
+            <div class="hero-text" style="max-width: 600px;">
+                <span class="badge" data-i18n="hero_badge" style="background: var(--gold); padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 500;">1 из 7 Мастеров Бизнес-ТРИЗ в мире</span>
+                <h1 data-i18n="hero_name" style="font-size: 48px; margin: 20px 0;">Аскар Бапен</h1>
+                <p data-i18n="hero_sub" style="color: var(--gray); font-size: 18px;">Нахожу решения там, где привычные методы заводят в тупик.</p>
+            </div>
+            <div class="hero-photo">
+                <svg width="140" height="140" viewBox="0 0 140 140">
+                    <circle cx="70" cy="70" r="68" fill="none" stroke="#C9A84C" stroke-width="1"/>
+                    <text x="50%" y="55%" text-anchor="middle" fill="#C9A84C" font-family="Cormorant Garamond" font-size="40">АБ</text>
+                </svg>
+            </div>
+        </header>
+
+        <section class="fork reveal" style="padding: 60px 0;">
+            <h2 data-i18n="fork_question" style="text-align: center; margin-bottom: 40px;">Что вам нужно?</h2>
+            <div class="fork-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div class="card" onclick="location.href='consulting.html'" style="cursor: pointer;">
+                    <h3 data-i18n="fork_1_title">Бизнес-решения</h3>
+                    <p data-i18n="fork_1_desc" style="font-size: 14px; color: var(--gray); margin-top: 10px;">Работаем вместе над конкретной задачей. Результат - под ключ.</p>
+                </div>
+                <div class="card" onclick="location.href='training.html'" style="cursor: pointer;">
+                    <h3 data-i18n="fork_2_title">Бизнес-обучение</h3>
+                    <p data-i18n="fork_2_desc" style="font-size: 14px; color: var(--gray); margin-top: 10px;">Обучаем руководителей и команды. Инструменты остаются внутри компании.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="reveal" style="padding: 60px 0; border-top: 0.5px solid var(--border); text-align: center;">
+            <p style="margin-bottom: 10px;">k.partners2030@gmail.com</p>
+            <p class="copyright" data-i18n="footer_copy" style="font-size: 12px; color: var(--gray);">© 2026 Аскар Бапен. KAIZEN-TRIZ PARTNERS</p>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
