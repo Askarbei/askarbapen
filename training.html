@@ -1,74 +1,431 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бизнес-обучение | Askar Bapen</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бизнес-обучение | Askar Bapen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1a1917;
+      --bg2: #222018;
+      --gold: #D4A843;
+      --text: #F5F2EA;
+      --text2: #ccc7bb;
+      --text3: #9a9488;
+      --border: rgba(212,168,67,0.25);
+      --border2: rgba(245,242,234,0.12);
+      --font-head: 'Cormorant Garamond', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 0.5px solid var(--border2); padding: 18px 0; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { font-family: var(--font-head); font-size: 20px; font-weight: 500; letter-spacing: 0.04em; color: var(--text); }
+    .nav-logo span { color: var(--gold); }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 15px; color: var(--text); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-social { display: flex; gap: 14px; }
+    .nav-social a { font-size: 13px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.15s; }
+    .nav-social a:hover { color: var(--gold); }
+    .lang-switcher { display: flex; gap: 4px; }
+    .lang-switcher button { background: none; border: 0.5px solid var(--border2); color: var(--text3); font-family: var(--font-body); font-size: 11px; padding: 4px 8px; cursor: pointer; border-radius: 3px; transition: all 0.15s; letter-spacing: 0.05em; }
+    .lang-switcher button:hover, .lang-switcher button.active { border-color: var(--gold); color: var(--gold); }
+    .nav-logo-img { height: 36px; opacity: 0.85; transition: opacity 0.15s; }
+    .nav-logo-img:hover { opacity: 1; }
+    .page-header { padding: 64px 0 48px; border-bottom: 0.5px solid var(--border2); }
+    .page-header h1 { font-family: var(--font-head); font-size: 48px; font-weight: 500; margin-bottom: 12px; }
+    .page-header p { font-size: 17px; color: var(--text2); }
+    .accordion-wrap { max-width: 780px; margin: 0 auto; padding: 48px 0 64px; }
+    .group { margin-bottom: 52px; }
+    .group-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); padding-bottom: 16px; border-bottom: 0.5px solid var(--border); margin-bottom: 0; }
+    .acc-item { border-bottom: 0.5px solid var(--border2); }
+    .acc-header { display: flex; justify-content: space-between; align-items: flex-start; padding: 24px 0; cursor: pointer; gap: 20px; }
+    .acc-header:hover .acc-pain { color: var(--gold); }
+    .acc-titles { flex: 1; }
+    .acc-pain { font-size: 17px; font-weight: 500; color: var(--text); display: block; margin-bottom: 4px; transition: color 0.15s; }
+    .acc-tool { font-size: 13px; color: var(--text3); }
+    .acc-arrow { font-size: 20px; color: var(--gold); transition: transform 0.25s; flex-shrink: 0; margin-top: 2px; }
+    .acc-item.open .acc-arrow { transform: rotate(180deg); }
+    .acc-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .acc-body-inner { padding-bottom: 24px; }
+    .acc-desc { font-size: 15px; color: var(--text2); line-height: 1.75; margin-bottom: 16px; }
+    .acc-list { list-style: none; margin-bottom: 22px; display: flex; flex-direction: column; gap: 6px; }
+    .acc-list li { font-size: 14px; color: var(--text3); padding-left: 16px; position: relative; }
+    .acc-list li::before { content: '-'; position: absolute; left: 0; color: var(--gold); }
+    .btn-enquiry { display: inline-block; font-size: 14px; font-family: var(--font-body); padding: 10px 24px; border: 0.5px solid var(--border); border-radius: 6px; color: var(--text); background: transparent; cursor: pointer; transition: all 0.15s; }
+    .btn-enquiry:hover { border-color: var(--gold); color: var(--gold); }
+    footer { border-top: 0.5px solid var(--border2); padding: 48px 0; text-align: center; }
+    .footer-contacts { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-contacts a { font-size: 15px; color: var(--text2); transition: color 0.15s; }
+    .footer-contacts a:hover { color: var(--gold); }
+    .footer-copy { font-size: 12px; color: var(--text3); }
+    .ar-message { display: none; text-align: center; padding: 120px 32px; font-size: 28px; color: var(--gold); font-family: serif; direction: rtl; }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 768px) { .page-header h1 { font-size: 34px; } .nav-links { display: none; } .nav-social { display: none; } .acc-pain { font-size: 15px; } }
+  </style>
 </head>
 <body>
-    <div id="ar-message" class="ar-message">هذه الصفحة قيد الإنشاء</div>
 
-    <div class="main-content container">
-        <nav class="reveal">
-            <a href="index.html" class="logo">ASKAR BAPEN</a>
-            <div class="nav-right">
-                <div class="nav-links">
-                    <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
-                    <a href="about.html" data-i18n="nav_about">Обо мне</a>
-                </div>
-                <div class="lang-switcher">
-                    <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
-                    <button id="btn-kz" onclick="setLanguage('kz')">KZ</button>
-                    <button id="btn-en" onclick="setLanguage('en')">EN</button>
-                    <button id="btn-ar" onclick="setLanguage('ar')">AR</button>
-                </div>
+<div id="ar-message" class="ar-message">هذه الصفحة قيد الإنشاء</div>
+
+<div id="main-content">
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Askar <span>Bapen</span></a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="cases.html">Кейсы</a>
+          <a href="about.html">Обо мне</a>
+        </div>
+        <div class="nav-social">
+          <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://t.me/askarbapen" target="_blank" rel="noopener">Telegram</a>
+        </div>
+        <div class="lang-switcher">
+          <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
+          <button id="btn-kz" onclick="setLanguage('kz')">KZ</button>
+          <button id="btn-en" onclick="setLanguage('en')">EN</button>
+          <button id="btn-ar" onclick="setLanguage('ar')">AR</button>
+        </div>
+        <img src="logo_light.png" alt="KAIZEN-TRIZ PARTNERS" class="nav-logo-img">
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <header class="page-header reveal">
+      <h1>Бизнес-обучение</h1>
+      <p>Обучаем руководителей и команды. Инструменты остаются в компании.</p>
+    </header>
+
+    <div class="accordion-wrap">
+
+      <!-- ГРУППА 1 - для топ-менеджмента -->
+      <div class="group reveal">
+        <div class="group-label">для топ-менеджмента</div>
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-titles">
+              <span class="acc-pain">Стратегия не доходит до исполнителей</span>
+              <span class="acc-tool">Развертывание стратегии (Хосин Канри)</span>
             </div>
-        </nav>
-
-        <header class="reveal" style="padding: 60px 0; text-align: center;">
-            <h1 data-i18n="fork_2_title">Бизнес-обучение</h1>
-            <p style="color: var(--gray); margin-top: 10px;">Интенсивные программы: 8 академических часов теории и практики.</p>
-        </header>
-
-        <section class="training-grid reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 60px;">
-            
-            <div class="card">
-                <h3 style="margin-bottom: 15px;">Управленческие компетенции</h3>
-                <p style="font-size: 14px; color: var(--gray);">Развитие стратегического мышления, навыков принятия решений и лидерства в условиях неопределенности.</p>
+            <span class="acc-arrow">↓</span>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <p class="acc-desc">После тренинга каждый сотрудник знает свою цель на год, разбитую на месяцы и недели и что нужно делать.</p>
+              <ul class="acc-list">
+                <li>постановка стратегических целей</li>
+                <li>X-матрица как инструмент управления</li>
+                <li>контроль исполнения на всех уровнях</li>
+              </ul>
+              <a href="mailto:k.partners2030@gmail.com?subject=Развертывание стратегии (Хосин Канри)" class="btn-enquiry">Оставить заявку</a>
             </div>
-
-            <div class="card">
-                <h3 style="margin-bottom: 15px;">Бизнес-ТРИЗ</h3>
-                <p style="font-size: 14px; color: var(--gray);">Освоение алгоритмов решения сложных изобретательских задач в области менеджмента и маркетинга.</p>
-            </div>
-
-            <div class="card">
-                <h3 style="margin-bottom: 15px;">Lean и Кайдзен</h3>
-                <p style="font-size: 14px; color: var(--gray);">Как видеть потери там, где их не замечают другие, и создавать культуру непрерывных улучшений.</p>
-            </div>
-
-            <div class="card">
-                <h3 style="margin-bottom: 15px;">Hoshin Kanri</h3>
-                <p style="font-size: 14px; color: var(--gray);">Практика развертывания стратегии: от видения владельца до KPI каждого сотрудника.</p>
-            </div>
-
-            <div class="card">
-                <h3 style="margin-bottom: 15px;">Эффективные команды</h3>
-                <p style="font-size: 14px; color: var(--gray);">Инструменты RACI, SIPOC и психология командного взаимодействия для достижения целей.</p>
-            </div>
-
-        </section>
-
-        <div style="text-align: center; margin-bottom: 80px;">
-            <a href="mailto:k.partners2030@gmail.com" style="border: 1px solid var(--gold); color: var(--gold); padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 500; transition: 0.3s;">Заказать тренинг</a>
+          </div>
         </div>
 
-        <footer class="reveal" style="padding: 40px 0; border-top: 0.5px solid var(--border); text-align: center;">
-            <p class="copyright" data-i18n="footer_copy">© 2026 Аскар Бапен. KAIZEN-TRIZ PARTNERS</p>
-        </footer>
-    </div>
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-titles">
+              <span class="acc-pain">Улучшения не приживаются без участия топов</span>
+              <span class="acc-tool">Кайдзен/Lean для топ-менеджмента</span>
+            </div>
+            <span class="acc-arrow">↓</span>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <p class="acc-desc">Ваши руководители начинают сами инициировать улучшения и увеличивать прибыль, а не просто контролировать.</p>
+              <ul class="acc-list">
+                <li>роль лидера в системе улучшений</li>
+                <li>Gemba walk и визуальный менеджмент</li>
+                <li>создание культуры инициативности</li>
+              </ul>
+              <a href="mailto:k.partners2030@gmail.com?subject=Кайдзен/Lean для топ-менеджмента" class="btn-enquiry">Оставить заявку</a>
+            </div>
+          </div>
+        </div>
 
-    <script src="main.js"></script>
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-titles">
+              <span class="acc-pain">Управленческие решения принимаются интуитивно</span>
+              <span class="acc-tool">Управленческие компетенции</span>
+            </div>
+            <span class="acc-arrow">↓</span>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <p class="acc-desc">Задачи выполняются быстрее, коммуникация налаживается, морально-психологический климат оздоровляется.</p>
+              <ul class="acc-list">
+                <li>инструменты принятия решений</li>
+                <li>делегирование и контроль</li>
+                <li>управление по целям</li>
+              </ul>
+              <a href="mailto:k.partners2030@gmail.com?subject=Управленческие компетенции" class="btn-enquiry">Оставить заявку</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-titles">
+              <span class="acc-pain">Сложные бизнес-ситуации заходят в тупик</span>
+              <span class="acc-tool">Методика сильных решений (Бизнес-ТРИЗ)</span>
+            </div>
+            <span class="acc-arrow">↓</span>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <p class="acc-desc">Топ-менеджеры находят выход из тупиковых бизнес-ситуаций без компромиссов и потерь.</p>
+              <ul class="acc-list">
+                <li>выявление и устранение противоречий</li>
+                <li>поиск скрытых ресурсов бизнеса</li>
+                <li>применение на реальных задачах компании</li>
+              </ul>
+              <a href="mailto:k.partners2030@gmail.com?subject=Методика сильных решений для топ-менеджмента" class="btn-enquiry">Оставить заявку</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-titles">
+              <span class="acc-pain">Команда есть, но не работает как единое целое</span>
+              <span class="acc-tool">Построение эффективной команды</span>
+            </div>
+            <span class="acc-arrow">↓</span>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <p class="acc-desc">Каждый в команде четко знает свою роль и зону ответственности - появляется слаженность в работе и коммуникации.</p>
+              <ul class="acc-list">
+                <li>роли и зоны ответственности</li>
+                <li>вовлеченность и инициативность</li>
+                <li>инструменты командной работы</li>
+              </ul>
+              <a href="mailto:k.partners2030@gmail.com?subject=Построение эффективной команды" class="btn-enquiry">Оставить заявку</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ГРУППА 2 - для линейного персонала -->
+      <div class="group reveal">
+        <div class="group-label">для линейного персонала</div>
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-titles">
+              <span class="acc-pain">Сотрудники не видят потери и не улучшают процессы</span>
+              <span class="acc-tool">Операционный Кайдзен/Lean</span>
+            </div>
+            <span class="acc-arrow">↓</span>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <p class="acc-desc">Сотрудники сами видят потери и устраняют их - без указаний сверху.</p>
+              <ul class="acc-list">
+                <li>7 видов потерь на практике</li>
+                <li>инструменты 5S и визуального менеджмента</li>
+                <li>система подачи предложений</li>
+              </ul>
+              <a href="mailto:k.partners2030@gmail.com?subject=Операционный Кайдзен/Lean" class="btn-enquiry">Оставить заявку</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ГРУППА 3 - по отраслям -->
+      <div class="group reveal">
+        <div class="group-label">по отраслям</div>
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-titles">
+              <span class="acc-pain">Нужен Lean/Кайдзен с учетом специфики отрасли</span>
+              <span class="acc-tool">Lean/Кайдзен технологии по отраслям с учетом специфики</span>
+            </div>
+            <span class="acc-arrow">↓</span>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <p class="acc-desc">Команда применяет инструменты улучшений с учетом специфики вашей отрасли.</p>
+              <ul class="acc-list">
+                <li>производство и промышленность</li>
+                <li>медицина и здравоохранение</li>
+                <li>HoReCa, логистика, офис</li>
+              </ul>
+              <a href="mailto:k.partners2030@gmail.com?subject=Lean/Кайдзен по отраслям" class="btn-enquiry">Оставить заявку</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ГРУППА 4 - групповое обучение -->
+      <div class="group reveal">
+        <div class="group-label">групповое обучение</div>
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-titles">
+              <span class="acc-pain">Нужны инструменты повышения эффективности для всей команды</span>
+              <span class="acc-tool">Инструменты Lean/Kaizen по повышению эффективности</span>
+            </div>
+            <span class="acc-arrow">↓</span>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <p class="acc-desc">Группа получает единый язык и инструменты улучшений - команда начинает видеть потери и устранять их самостоятельно.</p>
+              <a href="mailto:k.partners2030@gmail.com?subject=Групповое обучение Lean/Kaizen" class="btn-enquiry">Оставить заявку</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-titles">
+              <span class="acc-pain">Нужна международная сертификация по Бизнес-ТРИЗ</span>
+              <span class="acc-tool">Бизнес-ТРИЗ уровни 1, 2, 3 (по программе IBTA)</span>
+            </div>
+            <span class="acc-arrow">↓</span>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <p class="acc-desc">Участники получают международный сертификат IBTA и умеют решать сложные бизнес-задачи и разрабатывать системные инновации.</p>
+              <a href="mailto:k.partners2030@gmail.com?subject=Групповое обучение Бизнес-ТРИЗ IBTA" class="btn-enquiry">Оставить заявку</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ГРУППА 5 - индивидуальное обучение -->
+      <div class="group reveal">
+        <div class="group-label">индивидуальное обучение</div>
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-titles">
+              <span class="acc-pain">Нужен свой Lean/Kaizen специалист в штате</span>
+              <span class="acc-tool">Подготовка Lean/Kaizen специалиста в штат</span>
+            </div>
+            <span class="acc-arrow">↓</span>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <p class="acc-desc">Компания получает своего внутреннего эксперта - сотрудник самостоятельно ведет проекты улучшений без привлечения внешних консультантов.</p>
+              <a href="mailto:k.partners2030@gmail.com?subject=Индивидуальная подготовка Lean/Kaizen специалиста" class="btn-enquiry">Оставить заявку</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-titles">
+              <span class="acc-pain">Нужен эксперт по Бизнес-ТРИЗ внутри компании</span>
+              <span class="acc-tool">Бизнес-ТРИЗ уровни 1, 2, 3 (по программе IBTA)</span>
+            </div>
+            <span class="acc-arrow">↓</span>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <p class="acc-desc">Специалист получает международный сертификат IBTA и становится экспертом по решению сложных бизнес-задач и разработке системных инноваций.</p>
+              <a href="mailto:k.partners2030@gmail.com?subject=Индивидуальное обучение Бизнес-ТРИЗ IBTA" class="btn-enquiry">Оставить заявку</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ГРУППА 6 - тестирование команды -->
+      <div class="group reveal">
+        <div class="group-label">тестирование команды</div>
+
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAcc(this)">
+            <div class="acc-titles">
+              <span class="acc-pain">Непонятно почему команда не работает на полную</span>
+              <span class="acc-tool">Комплексное тестирование - пороки, вовлеченность, мотивация, роли</span>
+            </div>
+            <span class="acc-arrow">↓</span>
+          </div>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <p class="acc-desc">Заказчик видит скрытые причины конфликтов, низкой вовлеченности и текучести - и понимает кто есть кто в команде. Получает отчет и рекомендации по развитию, мотивации и расстановке людей на правильные роли.</p>
+              <a href="mailto:k.partners2030@gmail.com?subject=Тестирование команды" class="btn-enquiry">Оставить заявку</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-contacts">
+        <a href="tel:+77017717840">+7 (701) 771 78 40</a>
+        <a href="mailto:k.partners2030@gmail.com">k.partners2030@gmail.com</a>
+        <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://t.me/askarbapen" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <p class="footer-copy">© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS</p>
+    </div>
+  </footer>
+
+</div>
+
+<script src="main.js"></script>
+<script>
+  function toggleAcc(header) {
+    const item = header.closest('.acc-item');
+    const body = item.querySelector('.acc-body');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.acc-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.acc-body').style.maxHeight = '0';
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  }
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(r => observer.observe(r));
+
+  function setLanguage(lang) {
+    document.querySelectorAll('.lang-switcher button').forEach(b => b.classList.remove('active'));
+    const btn = document.getElementById('btn-' + lang);
+    if (btn) btn.classList.add('active');
+    localStorage.setItem('lang', lang);
+    if (lang === 'ar') {
+      document.getElementById('main-content').style.display = 'none';
+      document.getElementById('ar-message').style.display = 'block';
+      document.documentElement.dir = 'rtl';
+    } else {
+      document.getElementById('main-content').style.display = 'block';
+      document.getElementById('ar-message').style.display = 'none';
+      document.documentElement.dir = 'ltr';
+      if (typeof applyTranslations === 'function') applyTranslations(lang);
+    }
+  }
+
+  const savedLang = localStorage.getItem('lang') || 'ru';
+  setLanguage(savedLang);
+</script>
 </body>
 </html>
