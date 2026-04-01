@@ -1,95 +1,465 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бизнес-решения | Askar Bapen</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бизнес-решения | Askar Bapen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1a1917;
+      --bg2: #222018;
+      --bg3: #2a2820;
+      --gold: #D4A843;
+      --gold-light: #e8c070;
+      --text: #F5F2EA;
+      --text2: #ccc7bb;
+      --text3: #9a9488;
+      --border: rgba(212,168,67,0.25);
+      --border2: rgba(245,242,234,0.12);
+      --font-head: 'Cormorant Garamond', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 0.5px solid var(--border2);
+      padding: 18px 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-logo {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a {
+      font-size: 15px;
+      color: var(--text);
+      transition: color 0.15s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--gold); }
+    .nav-social { display: flex; gap: 14px; }
+    .nav-social a {
+      font-size: 13px;
+      color: var(--text2);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: color 0.15s;
+    }
+    .nav-social a:hover { color: var(--gold); }
+    .lang-switcher { display: flex; gap: 4px; }
+    .lang-switcher button {
+      background: none;
+      border: 0.5px solid var(--border2);
+      color: var(--text3);
+      font-family: var(--font-body);
+      font-size: 11px;
+      padding: 4px 8px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s;
+      letter-spacing: 0.05em;
+    }
+    .lang-switcher button:hover,
+    .lang-switcher button.active {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .nav-logo-img {
+      height: 36px;
+      opacity: 0.85;
+      transition: opacity 0.15s;
+    }
+    .nav-logo-img:hover { opacity: 1; }
+
+    /* HEADER */
+    .page-header {
+      padding: 64px 0 48px;
+      border-bottom: 0.5px solid var(--border2);
+      margin-bottom: 0;
+    }
+    .page-header h1 {
+      font-family: var(--font-head);
+      font-size: 48px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .page-header p {
+      font-size: 17px;
+      color: var(--text2);
+    }
+
+    /* ACCORDION */
+    .accordion { max-width: 780px; margin: 0 auto; padding: 48px 0 64px; }
+    .acc-item {
+      border-bottom: 0.5px solid var(--border2);
+    }
+    .acc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 28px 0;
+      cursor: pointer;
+      gap: 20px;
+    }
+    .acc-header:hover .acc-pain { color: var(--gold); }
+    .acc-titles { flex: 1; }
+    .acc-pain {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text);
+      display: block;
+      margin-bottom: 4px;
+      transition: color 0.15s;
+    }
+    .acc-tool {
+      font-size: 13px;
+      color: var(--text3);
+    }
+    .acc-arrow {
+      font-size: 20px;
+      color: var(--gold);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .acc-item.open .acc-arrow { transform: rotate(180deg); }
+    .acc-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .acc-body-inner {
+      padding-bottom: 28px;
+    }
+    .acc-desc {
+      font-size: 15px;
+      color: var(--text2);
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+    .acc-list {
+      list-style: none;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .acc-list li {
+      font-size: 14px;
+      color: var(--text3);
+      padding-left: 16px;
+      position: relative;
+    }
+    .acc-list li::before {
+      content: '-';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+    .btn-enquiry {
+      display: inline-block;
+      font-size: 14px;
+      font-family: var(--font-body);
+      padding: 10px 24px;
+      border: 0.5px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-decoration: none;
+    }
+    .btn-enquiry:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 0.5px solid var(--border2);
+      padding: 48px 0;
+      text-align: center;
+    }
+    .footer-contacts {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .footer-contacts a {
+      font-size: 15px;
+      color: var(--text2);
+      transition: color 0.15s;
+    }
+    .footer-contacts a:hover { color: var(--gold); }
+    .footer-copy { font-size: 12px; color: var(--text3); }
+
+    /* AR MESSAGE */
+    .ar-message {
+      display: none;
+      text-align: center;
+      padding: 120px 32px;
+      font-size: 28px;
+      color: var(--gold);
+      font-family: serif;
+      direction: rtl;
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 34px; }
+      .nav-links { display: none; }
+      .nav-social { display: none; }
+      .acc-pain { font-size: 16px; }
+    }
+  </style>
 </head>
 <body>
-    <div id="ar-message" class="ar-message">هذه الصفحة قيد الإنشاء</div>
 
-    <div class="main-content container">
-        <nav class="reveal">
-            <a href="index.html" class="logo">ASKAR BAPEN</a>
-            <div class="nav-right">
-                <div class="nav-links">
-                    <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
-                    <a href="about.html" data-i18n="nav_about">Обо мне</a>
-                </div>
-                <div class="lang-switcher">
-                    <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
-                    <button id="btn-kz" onclick="setLanguage('kz')">KZ</button>
-                    <button id="btn-en" onclick="setLanguage('en')">EN</button>
-                    <button id="btn-ar" onclick="setLanguage('ar')">AR</button>
-                </div>
-            </div>
-        </nav>
+<div id="ar-message" class="ar-message">هذه الصفحة قيد الإنشاء</div>
 
-        <header class="reveal" style="padding: 60px 0; text-align: center;">
-            <h1 data-i18n="fork_1_title">Бизнес-решения</h1>
-            <p style="color: var(--gray); margin-top: 10px;" data-i18n="fork_1_desc">Работаем вместе над конкретной задачей.</p>
-        </header>
-
-        <section class="accordion-section reveal" style="max-width: 800px; margin: 0 auto 60px;">
-            
-            <div class="card accordion-item" style="margin-bottom: 15px; padding: 0;">
-                <div class="acc-header" onclick="toggleAcc(this)" style="padding: 25px; cursor: pointer; display: flex; justify-content: space-between;">
-                    <span style="font-weight: 500;">- Хаос в процессах</span>
-                    <span class="icon" style="color: var(--gold);">+</span>
-                </div>
-                <div class="acc-content" style="max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 25px;">
-                    <p style="padding-bottom: 25px; color: var(--gray); font-size: 14px;">Проводим аудит, выявляем "узкие места" и выстраиваем прозрачную систему управления по стандартам BPMN и Lean.</p>
-                </div>
-            </div>
-
-            <div class="card accordion-item" style="margin-bottom: 15px; padding: 0;">
-                <div class="acc-header" onclick="toggleAcc(this)" style="padding: 25px; cursor: pointer; display: flex; justify-content: space-between;">
-                    <span style="font-weight: 500;">- Проблема не решается</span>
-                    <span class="icon" style="color: var(--gold);">+</span>
-                </div>
-                <div class="acc-content" style="max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 25px;">
-                    <p style="padding-bottom: 25px; color: var(--gray); font-size: 14px;">Применяем инструменты Бизнес-ТРИЗ для устранения неразрешимых противоречий в управлении, маркетинге и стратегии.</p>
-                </div>
-            </div>
-
-            <div class="card accordion-item" style="margin-bottom: 15px; padding: 0;">
-                <div class="acc-header" onclick="toggleAcc(this)" style="padding: 25px; cursor: pointer; display: flex; justify-content: space-between;">
-                    <span style="font-weight: 500;">- Много работы, мало результата</span>
-                    <span class="icon" style="color: var(--gold);">+</span>
-                </div>
-                <div class="acc-content" style="max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 25px;">
-                    <p style="padding-bottom: 25px; color: var(--gray); font-size: 14px;">Внедряем культуру Кайдзен и инструменты устранения потерь для повышения маржинальности бизнеса.</p>
-                </div>
-            </div>
-
-        </section>
-
-        <div style="text-align: center; margin-bottom: 80px;">
-            <a href="mailto:k.partners2030@gmail.com" style="background: var(--gold); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 500;">Оставить заявку</a>
+<div id="main-content">
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Askar <span>Bapen</span></a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
+          <a href="about.html" data-i18n="nav_about">Обо мне</a>
         </div>
-
-        <footer class="reveal" style="padding: 40px 0; border-top: 0.5px solid var(--border); text-align: center;">
-            <p class="copyright" data-i18n="footer_copy">© 2026 Аскар Бапен. KAIZEN-TRIZ PARTNERS</p>
-        </footer>
+        <div class="nav-social">
+          <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://t.me/askarbapen" target="_blank" rel="noopener">Telegram</a>
+        </div>
+        <div class="lang-switcher">
+          <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
+          <button id="btn-kz" onclick="setLanguage('kz')">KZ</button>
+          <button id="btn-en" onclick="setLanguage('en')">EN</button>
+          <button id="btn-ar" onclick="setLanguage('ar')">AR</button>
+        </div>
+        <img src="logo_light.png" alt="KAIZEN-TRIZ PARTNERS" class="nav-logo-img">
+      </div>
     </div>
+  </nav>
 
-    <script src="main.js"></script>
-    <script>
-        function toggleAcc(header) {
-            const content = header.nextElementSibling;
-            const isOpen = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
-            
-            // Закрыть все
-            document.querySelectorAll('.acc-content').forEach(c => c.style.maxHeight = '0px');
-            document.querySelectorAll('.icon').forEach(i => i.textContent = '+');
+  <div class="container">
 
-            // Открыть текущий
-            if (!isOpen) {
-                content.style.maxHeight = content.scrollHeight + "px";
-                header.querySelector('.icon').textContent = '−';
-            }
-        }
-    </script>
-</body>
-</html>
+    <header class="page-header reveal">
+      <h1 data-i18n="consulting_title">Бизнес-решения</h1>
+      <p data-i18n="consulting_sub">Работаем вместе над конкретной задачей. Результат - под ключ.</p>
+    </header>
+
+    <div class="accordion">
+
+      <div class="acc-item reveal">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-titles">
+            <span class="acc-pain" data-i18n="c1_pain">Хаос в процессах</span>
+            <span class="acc-tool" data-i18n="c1_tool">Оцифровка компании</span>
+          </div>
+          <span class="acc-arrow">↓</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p class="acc-desc" data-i18n="c1_desc">Через 3 дня у вас будет карта процессов с четкими зонами ответственности.</p>
+            <ul class="acc-list">
+              <li data-i18n="c1_i1">составление бизнес-системы</li>
+              <li data-i18n="c1_i2">описание процессов через инструменты RACI, SIPOC, BPMN</li>
+              <li data-i18n="c1_i3">разработка стандартов и регламентов</li>
+            </ul>
+            <a href="/cdn-cgi/l/email-protection#2b40055b4a595f454e5958191b181b6b4c464a42470548444614585e49414e485f16fbb5faadfb93faaffaabfb95fb99fb91fb9b0bfb91fb95fb97fb94fb9bfb96fb93fb93" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item reveal">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-titles">
+            <span class="acc-pain" data-i18n="c2_pain">Много работы - мало результата</span>
+            <span class="acc-tool" data-i18n="c2_tool">Устранение потерь</span>
+          </div>
+          <span class="acc-arrow">↓</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p class="acc-desc" data-i18n="c2_desc">Находим 3 ключевых источника потерь - процессы ускоряются, затраты снижаются за 30 дней.</p>
+            <ul class="acc-list">
+              <li data-i18n="c2_i1">выявление потерь и неэффективности</li>
+              <li data-i18n="c2_i2">оптимизация процессов</li>
+              <li data-i18n="c2_i3">стандартизация и контроль</li>
+            </ul>
+            <a href="/cdn-cgi/l/email-protection#33581d435241475d5641400103000373545e525a5f1d505c5e0c404651595650470ee390e2b2e2b1e2b3e383e38ee386e38ee38be38613e38ce38de2b1e386e2b3e2bf" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item reveal">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-titles">
+            <span class="acc-pain" data-i18n="c3_pain">Непонятно куда двигаться</span>
+            <span class="acc-tool" data-i18n="c3_tool">Стратегическая сессия</span>
+          </div>
+          <span class="acc-arrow">↓</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p class="acc-desc" data-i18n="c3_desc">За 2 дня стратегической сессии получаете план на год - с конкретными целями и ответственными на каждом уровне.</p>
+            <ul class="acc-list">
+              <li data-i18n="c3_i1">формулировка стратегических целей</li>
+              <li data-i18n="c3_i2">развертывание до уровня команды</li>
+              <li data-i18n="c3_i3">X-матрица как итоговый документ</li>
+            </ul>
+            <a href="/cdn-cgi/l/email-protection#6b00451b0a191f050e1918595b585b2b0c060a02074508040654181e09010e081f56bbcabae9baebbbdbbae9bbdebbd8bbd3baecbbdebaeabbd1bbdbbae44bbaeabbdebaeabaeabbd3bae4" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item reveal">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-titles">
+            <span class="acc-pain" data-i18n="c4_pain">Проблема не решается привычными методами</span>
+            <span class="acc-tool" data-i18n="c4_tool">Бизнес-ТРИЗ решения</span>
+          </div>
+          <span class="acc-arrow">↓</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p class="acc-desc" data-i18n="c4_desc">За 2 рабочих дня найдем решение, которое не нашли раньше.</p>
+            <ul class="acc-list">
+              <li data-i18n="c4_i1">анализ и устранение противоречий</li>
+              <li data-i18n="c4_i2">поиск скрытых ресурсов бизнеса</li>
+              <li data-i18n="c4_i3">генерация идей и план внедрения</li>
+            </ul>
+            <a href="/cdn-cgi/l/email-protection#5c37722c3d2e2832392e2f6e6c6f6c1c3b313d3530723f3331632f293e36393f28618ccd8ce48ceb8ce18ce98ddd718cfe8cfc8cc48ccb7c8ddc8ce98dd48ce98ce18ce48dd3" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item reveal">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-titles">
+            <span class="acc-pain" data-i18n="c5_pain">Нужны новые источники дохода</span>
+            <span class="acc-tool" data-i18n="c5_tool">P2R Sprint</span>
+          </div>
+          <span class="acc-arrow">↓</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p class="acc-desc" data-i18n="c5_desc">За 2 дня находим минимум 3 новых направления роста на основе ресурсов, которые уже есть в вашем бизнесе.</p>
+            <ul class="acc-list">
+              <li data-i18n="c5_i1">генерация решений через P2R Matrix</li>
+              <li data-i18n="c5_i2">проверка через VESC-фильтр</li>
+              <li data-i18n="c5_i3">готовый план внедрения через X-Matrix</li>
+            </ul>
+            <a href="/cdn-cgi/l/email-protection#02692c726370766c6770713032313242656f636b6e2c616d6f3d717760686761763f523050225172706b6c76" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item reveal">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-titles">
+            <span class="acc-pain" data-i18n="c6_pain">Нет вовлеченности, каждый сам за себя</span>
+            <span class="acc-tool" data-i18n="c6_tool">Командообразование</span>
+          </div>
+          <span class="acc-arrow">↓</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p class="acc-desc" data-i18n="c6_desc">Внедряем систему активизации персонала - сотрудники сами находят и устраняют проблемы, кадровая текучесть снижается.</p>
+            <ul class="acc-list">
+              <li data-i18n="c6_i1">активизация персонала</li>
+              <li data-i18n="c6_i2">внедрение системы инициатив</li>
+              <li data-i18n="c6_i3">культура постоянных улучшений</li>
+            </ul>
+            <a href="/cdn-cgi/l/email-protection#02692c726370766c6770713032313242656f636b6e2c616d6f3d717760686761763fd298d2bcd2bed2b2d2bfd2b6d2bcd2bcd2b3d382d2b2d2b5d2bcd2b0d2b2d2bfd2bad2b7" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-contacts">
+        <a href="tel:+77017717840">+7 (701) 771 78 40</a>
+        <a href="/cdn-cgi/l/email-protection#19723769786b6d777c6b6a2b292a29597e74787075377a7674"><span class="__cf_email__" data-cfemail="6b00451b0a191f050e1918595b585b2b0c060a020745080406">[email&#160;protected]</span></a>
+        <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://t.me/askarbapen" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <p class="footer-copy" data-i18n="footer_copy">© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS</p>
+    </div>
+  </footer>
+
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+<script>
+  // Accordion
+  function toggleAcc(header) {
+    const item = header.closest('.acc-item');
+    const body = item.querySelector('.acc-body');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.acc-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.acc-body').style.maxHeight = '0';
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  }
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(r => observer.observe(r));
+
+  // AR language
+  function setLanguage(lang) {
+    document.querySelectorAll('.lang-switcher button').for
