@@ -1,65 +1,552 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Askar Bapen | KAIZEN-TRIZ PARTNERS</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Askar Bapen | KAIZEN-TRIZ PARTNERS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1a1917;
+      --bg2: #222018;
+      --bg3: #2a2820;
+      --gold: #D4A843;
+      --gold-light: #e8c070;
+      --text: #F5F2EA;
+      --text2: #ccc7bb;
+      --text3: #9a9488;
+      --border: rgba(212,168,67,0.25);
+      --border2: rgba(245,242,234,0.12);
+      --font-head: 'Cormorant Garamond', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 0.5px solid var(--border2);
+      padding: 18px 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-logo {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+    .nav-links a {
+      font-size: 15px;
+      color: var(--text);
+      transition: color 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-social {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+    .nav-social a {
+      color: var(--text2);
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      transition: color 0.15s;
+      text-transform: uppercase;
+    }
+    .nav-social a:hover { color: var(--gold); }
+    .lang-switcher {
+      display: flex;
+      gap: 4px;
+    }
+    .lang-switcher button {
+      background: none;
+      border: 0.5px solid var(--border2);
+      color: var(--text3);
+      font-family: var(--font-body);
+      font-size: 11px;
+      padding: 4px 8px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s;
+      letter-spacing: 0.05em;
+    }
+    .lang-switcher button:hover,
+    .lang-switcher button.active {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .nav-logo-img {
+      height: 36px;
+      opacity: 0.85;
+      transition: opacity 0.15s;
+    }
+    .nav-logo-img:hover { opacity: 1; }
+
+    /* HERO */
+    .hero {
+      padding: 80px 0 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      border-bottom: 0.5px solid var(--border2);
+    }
+    .hero-text { max-width: 580px; }
+    .badge {
+      display: inline-block;
+      background: rgba(201,168,76,0.15);
+      border: 0.5px solid var(--gold);
+      color: var(--gold);
+      font-size: 12px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.03em;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: var(--font-head);
+      font-size: 58px;
+      font-weight: 500;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: var(--text);
+      line-height: 1.75;
+    }
+    .hero-photo {
+      flex-shrink: 0;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 0.5px solid var(--border);
+      overflow: hidden;
+      position: relative;
+      background: var(--bg3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-photo-placeholder {
+      font-family: var(--font-head);
+      font-size: 42px;
+      color: var(--gold);
+      font-weight: 400;
+    }
+
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text3);
+      margin-bottom: 28px;
+    }
+
+    /* FORK */
+    .fork { padding: 70px 0; border-bottom: 0.5px solid var(--border2); }
+    .fork-question {
+      font-family: var(--font-head);
+      font-size: 13px;
+      color: var(--text2);
+      text-align: center;
+      margin-bottom: 36px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .fork-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .fork-card {
+      background: var(--bg2);
+      border: 0.5px solid var(--border2);
+      border-top: 2px solid var(--gold);
+      border-radius: 12px;
+      padding: 28px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .fork-card:hover {
+      border-color: var(--gold);
+      border-top-color: var(--gold-light);
+      background: var(--bg3);
+    }
+    .fork-card h3 {
+      font-family: var(--font-head);
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .fork-card-desc {
+      font-size: 15px;
+      color: var(--text);
+      margin-bottom: 20px;
+      line-height: 1.65;
+    }
+    .fork-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .fork-list li {
+      font-size: 15px;
+      color: var(--text2);
+      padding-left: 16px;
+      position: relative;
+    }
+    .fork-list li::before {
+      content: '-';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    /* STATS */
+    .stats { padding: 70px 0; border-bottom: 0.5px solid var(--border2); }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .stat-card {
+      background: var(--bg2);
+      border: 0.5px solid var(--border2);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: var(--font-head);
+      font-size: 32px;
+      font-weight: 500;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .stat-desc {
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.4;
+    }
+
+    /* CREDENTIALS */
+    .credentials { padding: 70px 0; border-bottom: 0.5px solid var(--border2); }
+    .cred-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .cred-card {
+      background: var(--bg2);
+      border: 0.5px solid var(--border2);
+      border-top: 2px solid var(--gold);
+      border-radius: 12px;
+      padding: 22px;
+    }
+    .cred-title {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .cred-link {
+      font-size: 13px;
+      color: var(--gold);
+      opacity: 0.9;
+      transition: opacity 0.15s;
+    }
+    .cred-link:hover { opacity: 1; }
+
+    /* GUARANTEES */
+    .guarantees { padding: 70px 0; border-bottom: 0.5px solid var(--border2); }
+    .guarantee-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .guarantee-card {
+      background: var(--bg2);
+      border: 0.5px solid var(--border2);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .guarantee-num {
+      font-family: var(--font-head);
+      font-size: 40px;
+      font-weight: 500;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .guarantee-desc {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 48px 0;
+      text-align: center;
+    }
+    .footer-contacts {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .footer-contacts a {
+      font-size: 15px;
+      color: var(--text2);
+      transition: color 0.15s;
+    }
+    .footer-contacts a:hover { color: var(--gold); }
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text3);
+    }
+
+    /* AR MESSAGE */
+    .ar-message {
+      display: none;
+      text-align: center;
+      padding: 120px 32px;
+      font-size: 28px;
+      color: var(--gold);
+      font-family: serif;
+      direction: rtl;
+    }
+
+    /* REVEAL ANIMATION */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero { flex-direction: column-reverse; padding: 40px 0; }
+      .hero h1 { font-size: 36px; }
+      .fork-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .cred-grid { grid-template-columns: 1fr; }
+      .guarantee-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-social { display: none; }
+    }
+  </style>
 </head>
 <body>
-    <div id="ar-message" class="ar-message">هذه الصفحة قيد الإنشاء</div>
 
-    <div class="main-content container">
-        <nav class="reveal">
-            <a href="index.html" class="logo">ASKAR BAPEN</a>
-            <div class="nav-right">
-                <div class="nav-links">
-                    <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
-                    <a href="about.html" data-i18n="nav_about">Обо мне</a>
-                </div>
-                <div class="lang-switcher">
-                    <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
-                    <button id="btn-kz" onclick="setLanguage('kz')">KZ</button>
-                    <button id="btn-en" onclick="setLanguage('en')">EN</button>
-                    <button id="btn-ar" onclick="setLanguage('ar')">AR</button>
-                </div>
-            </div>
-        </nav>
+<div id="ar-message" class="ar-message">هذه الصفحة قيد الإنشاء</div>
 
-        <header class="hero reveal" style="padding: 80px 0; display: flex; justify-content: space-between; align-items: center;">
-            <div class="hero-text" style="max-width: 600px;">
-                <span class="badge" data-i18n="hero_badge" style="background: var(--gold); padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 500;">1 из 7 Мастеров Бизнес-ТРИЗ в мире</span>
-                <h1 data-i18n="hero_name" style="font-size: 48px; margin: 20px 0;">Аскар Бапен</h1>
-                <p data-i18n="hero_sub" style="color: var(--gray); font-size: 18px;">Нахожу решения там, где привычные методы заводят в тупик.</p>
-            </div>
-            <div class="hero-photo">
-                <svg width="140" height="140" viewBox="0 0 140 140">
-                    <circle cx="70" cy="70" r="68" fill="none" stroke="#C9A84C" stroke-width="1"/>
-                    <text x="50%" y="55%" text-anchor="middle" fill="#C9A84C" font-family="Cormorant Garamond" font-size="40">АБ</text>
-                </svg>
-            </div>
-        </header>
-
-        <section class="fork reveal" style="padding: 60px 0;">
-            <h2 data-i18n="fork_question" style="text-align: center; margin-bottom: 40px;">Что вам нужно?</h2>
-            <div class="fork-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                <div class="card" onclick="location.href='consulting.html'" style="cursor: pointer;">
-                    <h3 data-i18n="fork_1_title">Бизнес-решения</h3>
-                    <p data-i18n="fork_1_desc" style="font-size: 14px; color: var(--gray); margin-top: 10px;">Работаем вместе над конкретной задачей. Результат - под ключ.</p>
-                </div>
-                <div class="card" onclick="location.href='training.html'" style="cursor: pointer;">
-                    <h3 data-i18n="fork_2_title">Бизнес-обучение</h3>
-                    <p data-i18n="fork_2_desc" style="font-size: 14px; color: var(--gray); margin-top: 10px;">Обучаем руководителей и команды. Инструменты остаются внутри компании.</p>
-                </div>
-            </div>
-        </section>
-
-        <footer class="reveal" style="padding: 60px 0; border-top: 0.5px solid var(--border); text-align: center;">
-            <p style="margin-bottom: 10px;">k.partners2030@gmail.com</p>
-            <p class="copyright" data-i18n="footer_copy" style="font-size: 12px; color: var(--gray);">© 2026 Аскар Бапен. KAIZEN-TRIZ PARTNERS</p>
-        </footer>
+<div id="main-content">
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Askar <span>Bapen</span></a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
+          <a href="about.html" data-i18n="nav_about">Обо мне</a>
+        </div>
+        <div class="nav-social">
+          <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://t.me/askarbapen" target="_blank" rel="noopener">Telegram</a>
+        </div>
+        <div class="lang-switcher">
+          <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
+          <button id="btn-kz" onclick="setLanguage('kz')">KZ</button>
+          <button id="btn-en" onclick="setLanguage('en')">EN</button>
+          <button id="btn-ar" onclick="setLanguage('ar')">AR</button>
+        </div>
+        <img src="logo_light.png" alt="KAIZEN-TRIZ PARTNERS" class="nav-logo-img">
+      </div>
     </div>
+  </nav>
 
-    <script src="main.js"></script>
+  <div class="container">
+
+    <!-- HERO -->
+    <header class="hero reveal">
+      <div class="hero-text">
+        <span class="badge" data-i18n="hero_badge">Мастер Бизнес-ТРИЗ</span>
+        <h1 data-i18n="hero_name">Аскар Бапен</h1>
+        <p class="hero-sub" data-i18n="hero_sub">Нахожу решения там, где привычные методы заводят в тупик. Производство, медицина, IT, HoReCa, логистика, образование, связь и другие отрасли.</p>
+      </div>
+      <div class="hero-photo">
+        <!-- Когда будет фото: замени на <img src="assets/photo.jpg" alt="Аскар Бапен"> -->
+        <span class="hero-photo-placeholder">АБ</span>
+      </div>
+    </header>
+
+    <!-- FORK -->
+    <section class="fork reveal">
+      <p class="fork-question" data-i18n="fork_question">Что вам нужно?</p>
+      <div class="fork-grid">
+        <div class="fork-card" onclick="location.href='consulting.html'">
+          <h3 data-i18n="fork_1_title">Бизнес-решения</h3>
+          <p class="fork-card-desc" data-i18n="fork_1_desc">Работаем вместе над конкретной задачей. Результат - под ключ.</p>
+        </div>
+        <div class="fork-card" onclick="location.href='training.html'">
+          <h3 data-i18n="fork_2_title">Бизнес-обучение</h3>
+          <p class="fork-card-desc" data-i18n="fork_2_desc">Обучаем руководителей и команды. Инструменты остаются в компании.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats reveal">
+      <p class="section-label" data-i18n="stats_label">результаты клиентов</p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-num">17 млн ₸</span>
+          <span class="stat-desc" data-i18n="stat_1_desc">эффект одного проекта</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">x5</span>
+          <span class="stat-desc" data-i18n="stat_2_desc">ускорение процессов</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">-75%</span>
+          <span class="stat-desc" data-i18n="stat_3_desc">складских потерь</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">10+</span>
+          <span class="stat-desc" data-i18n="stat_4_desc">отраслей</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDENTIALS -->
+    <section class="credentials reveal">
+      <p class="section-label" data-i18n="cred_label">почему доверяют</p>
+      <div class="cred-grid">
+        <div class="cred-card">
+          <div class="cred-title" data-i18n="cred_1_title">Мастер Бизнес-ТРИЗ</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-title" data-i18n="cred_2_title">Официальный представитель IBTA</div>
+          <a href="https://biztriz.net" target="_blank" rel="noopener" class="cred-link">biztriz.net</a>
+        </div>
+        <div class="cred-card">
+          <div class="cred-title" data-i18n="cred_3_title">Сертифицированный тренер Toyota Production System</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUARANTEES -->
+    <section class="guarantees reveal">
+      <p class="section-label" data-i18n="guarantee_label">гарантии</p>
+      <div class="guarantee-grid">
+        <div class="guarantee-card">
+          <span class="guarantee-num">100%</span>
+          <span class="guarantee-desc" data-i18n="guarantee_1_desc">возврат средств, если не достигнем согласованного результата</span>
+        </div>
+        <div class="guarantee-card">
+          <span class="guarantee-num">1 мес</span>
+          <span class="guarantee-desc" data-i18n="guarantee_2_desc">бесплатной поддержки после завершения проекта</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-contacts">
+        <a href="tel:+77017717840">+7 (701) 771 78 40</a>
+        <a href="mailto:k.partners2030@gmail.com">k.partners2030@gmail.com</a>
+        <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://t.me/askarbapen" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <p class="footer-copy" data-i18n="footer_copy">© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS</p>
+    </div>
+  </footer>
+
+</div>
+
+<script src="main.js"></script>
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+
+  // AR language handling
+  function setLanguage(lang) {
+    document.querySelectorAll('.lang-switcher button').forEach(b => b.classList.remove('active'));
+    const btn = document.getElementById('btn-' + lang);
+    if (btn) btn.classList.add('active');
+    localStorage.setItem('lang', lang);
+    if (lang === 'ar') {
+      document.getElementById('main-content').style.display = 'none';
+      document.getElementById('ar-message').style.display = 'block';
+      document.documentElement.dir = 'rtl';
+    } else {
+      document.getElementById('main-content').style.display = 'block';
+      document.getElementById('ar-message').style.display = 'none';
+      document.documentElement.dir = 'ltr';
+      if (typeof applyTranslations === 'function') applyTranslations(lang);
+    }
+  }
+
+  // Init language
+  const savedLang = localStorage.getItem('lang') || 'ru';
+  setLanguage(savedLang);
+</script>
 </body>
 </html>
