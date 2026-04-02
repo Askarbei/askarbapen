@@ -44,12 +44,7 @@
       border-bottom: 0.5px solid var(--border2);
       padding: 18px 0;
     }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .nav-logo {
       font-family: var(--font-head);
       font-size: 20px;
@@ -58,17 +53,9 @@
       color: var(--text);
     }
     .nav-logo span { color: var(--gold); }
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
     .nav-links { display: flex; gap: 28px; }
-    .nav-links a {
-      font-size: 15px;
-      color: var(--text);
-      transition: color 0.15s;
-    }
+    .nav-links a { font-size: 15px; color: var(--text); transition: color 0.15s; }
     .nav-links a:hover,
     .nav-links a.active { color: var(--gold); }
     .nav-social { display: flex; gap: 14px; }
@@ -94,22 +81,14 @@
       letter-spacing: 0.05em;
     }
     .lang-switcher button:hover,
-    .lang-switcher button.active {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-    .nav-logo-img {
-      height: 36px;
-      opacity: 0.85;
-      transition: opacity 0.15s;
-    }
+    .lang-switcher button.active { border-color: var(--gold); color: var(--gold); }
+    .nav-logo-img { height: 36px; opacity: 0.85; transition: opacity 0.15s; }
     .nav-logo-img:hover { opacity: 1; }
 
     /* HEADER */
     .page-header {
       padding: 64px 0 48px;
       border-bottom: 0.5px solid var(--border2);
-      margin-bottom: 0;
     }
     .page-header h1 {
       font-family: var(--font-head);
@@ -117,16 +96,11 @@
       font-weight: 500;
       margin-bottom: 12px;
     }
-    .page-header p {
-      font-size: 17px;
-      color: var(--text2);
-    }
+    .page-header p { font-size: 17px; color: var(--text2); }
 
     /* ACCORDION */
     .accordion { max-width: 780px; margin: 0 auto; padding: 48px 0 64px; }
-    .acc-item {
-      border-bottom: 0.5px solid var(--border2);
-    }
+    .acc-item { border-bottom: 0.5px solid var(--border2); }
     .acc-header {
       display: flex;
       justify-content: space-between;
@@ -145,10 +119,7 @@
       margin-bottom: 4px;
       transition: color 0.15s;
     }
-    .acc-tool {
-      font-size: 13px;
-      color: var(--text3);
-    }
+    .acc-tool { font-size: 13px; color: var(--text3); }
     .acc-arrow {
       font-size: 20px;
       color: var(--gold);
@@ -157,20 +128,9 @@
       margin-top: 2px;
     }
     .acc-item.open .acc-arrow { transform: rotate(180deg); }
-    .acc-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease;
-    }
-    .acc-body-inner {
-      padding-bottom: 28px;
-    }
-    .acc-desc {
-      font-size: 15px;
-      color: var(--text2);
-      line-height: 1.75;
-      margin-bottom: 18px;
-    }
+    .acc-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .acc-body-inner { padding-bottom: 28px; }
+    .acc-desc { font-size: 15px; color: var(--text2); line-height: 1.75; margin-bottom: 18px; }
     .acc-list {
       list-style: none;
       margin-bottom: 24px;
@@ -184,12 +144,7 @@
       padding-left: 16px;
       position: relative;
     }
-    .acc-list li::before {
-      content: '-';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-    }
+    .acc-list li::before { content: '-'; position: absolute; left: 0; color: var(--gold); }
     .btn-enquiry {
       display: inline-block;
       font-size: 14px;
@@ -203,17 +158,10 @@
       transition: all 0.15s;
       text-decoration: none;
     }
-    .btn-enquiry:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
+    .btn-enquiry:hover { border-color: var(--gold); color: var(--gold); }
 
     /* FOOTER */
-    footer {
-      border-top: 0.5px solid var(--border2);
-      padding: 48px 0;
-      text-align: center;
-    }
+    footer { border-top: 0.5px solid var(--border2); padding: 48px 0; text-align: center; }
     .footer-contacts {
       display: flex;
       justify-content: center;
@@ -221,11 +169,7 @@
       flex-wrap: wrap;
       margin-bottom: 20px;
     }
-    .footer-contacts a {
-      font-size: 15px;
-      color: var(--text2);
-      transition: color 0.15s;
-    }
+    .footer-contacts a { font-size: 15px; color: var(--text2); transition: color 0.15s; }
     .footer-contacts a:hover { color: var(--gold); }
     .footer-copy { font-size: 12px; color: var(--text3); }
 
@@ -233,12 +177,32 @@
     .ar-message {
       display: none;
       text-align: center;
-      padding: 120px 32px;
+      padding: 80px 32px 120px;
       font-size: 28px;
       color: var(--gold);
       font-family: serif;
       direction: rtl;
     }
+    .ar-lang-bar {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 48px;
+      direction: ltr;
+    }
+    .ar-lang-bar button {
+      background: none;
+      border: 0.5px solid rgba(245,242,234,0.12);
+      color: #9a9488;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      padding: 4px 8px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s;
+      letter-spacing: 0.05em;
+    }
+    .ar-lang-bar button:hover { border-color: #D4A843; color: #D4A843; }
 
     /* REVEAL */
     .reveal {
@@ -258,7 +222,15 @@
 </head>
 <body>
 
-<div id="ar-message" class="ar-message">هذه الصفحة قيد الإنشاء</div>
+<div id="ar-message" class="ar-message">
+  <div class="ar-lang-bar">
+    <button onclick="setLanguage('ru')">RU</button>
+    <button onclick="setLanguage('kz')">KZ</button>
+    <button onclick="setLanguage('en')">EN</button>
+    <button onclick="setLanguage('ar')" class="active">AR</button>
+  </div>
+  هذه الصفحة قيد الإنشاء
+</div>
 
 <div id="main-content">
   <nav>
@@ -309,7 +281,7 @@
               <li data-i18n="c1_i2">описание процессов через инструменты RACI, SIPOC, BPMN</li>
               <li data-i18n="c1_i3">разработка стандартов и регламентов</li>
             </ul>
-            <a href="/cdn-cgi/l/email-protection#2b40055b4a595f454e5958191b181b6b4c464a42470548444614585e49414e485f16fbb5faadfb93faaffaabfb95fb99fb91fb9b0bfb91fb95fb97fb94fb9bfb96fb93fb93" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+            <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
           </div>
         </div>
       </div>
@@ -330,7 +302,7 @@
               <li data-i18n="c2_i2">оптимизация процессов</li>
               <li data-i18n="c2_i3">стандартизация и контроль</li>
             </ul>
-            <a href="/cdn-cgi/l/email-protection#33581d435241475d5641400103000373545e525a5f1d505c5e0c404651595650470ee390e2b2e2b1e2b3e383e38ee386e38ee38be38613e38ce38de2b1e386e2b3e2bf" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+            <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
           </div>
         </div>
       </div>
@@ -351,7 +323,7 @@
               <li data-i18n="c3_i2">развертывание до уровня команды</li>
               <li data-i18n="c3_i3">X-матрица как итоговый документ</li>
             </ul>
-            <a href="/cdn-cgi/l/email-protection#6b00451b0a191f050e1918595b585b2b0c060a02074508040654181e09010e081f56bbcabae9baebbbdbbae9bbdebbd8bbd3baecbbdebaeabbd1bbdbbae44bbaeabbdebaeabaeabbd3bae4" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+            <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
           </div>
         </div>
       </div>
@@ -372,7 +344,7 @@
               <li data-i18n="c4_i2">поиск скрытых ресурсов бизнеса</li>
               <li data-i18n="c4_i3">генерация идей и план внедрения</li>
             </ul>
-            <a href="/cdn-cgi/l/email-protection#5c37722c3d2e2832392e2f6e6c6f6c1c3b313d3530723f3331632f293e36393f28618ccd8ce48ceb8ce18ce98ddd718cfe8cfc8cc48ccb7c8ddc8ce98dd48ce98ce18ce48dd3" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+            <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
           </div>
         </div>
       </div>
@@ -393,7 +365,7 @@
               <li data-i18n="c5_i2">проверка через VESC-фильтр</li>
               <li data-i18n="c5_i3">готовый план внедрения через X-Matrix</li>
             </ul>
-            <a href="/cdn-cgi/l/email-protection#02692c726370766c6770713032313242656f636b6e2c616d6f3d717760686761763f523050225172706b6c76" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+            <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
           </div>
         </div>
       </div>
@@ -414,7 +386,7 @@
               <li data-i18n="c6_i2">внедрение системы инициатив</li>
               <li data-i18n="c6_i3">культура постоянных улучшений</li>
             </ul>
-            <a href="/cdn-cgi/l/email-protection#02692c726370766c6770713032313242656f636b6e2c616d6f3d717760686761763fd298d2bcd2bed2b2d2bfd2b6d2bcd2bcd2b3d382d2b2d2b5d2bcd2b0d2b2d2bfd2bad2b7" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+            <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
           </div>
         </div>
       </div>
@@ -426,7 +398,7 @@
     <div class="container">
       <div class="footer-contacts">
         <a href="tel:+77017717840">+7 (701) 771 78 40</a>
-        <a href="/cdn-cgi/l/email-protection#19723769786b6d777c6b6a2b292a29597e74787075377a7674"><span class="__cf_email__" data-cfemail="6b00451b0a191f050e1918595b585b2b0c060a020745080406">[email&#160;protected]</span></a>
+        <a href="mailto:k.partners2030@gmail.com">k.partners2030@gmail.com</a>
         <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://t.me/askarbapen" target="_blank" rel="noopener">Telegram</a>
       </div>
@@ -436,9 +408,8 @@
 
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+<script src="main.js"></script>
 <script>
-  // Accordion
   function toggleAcc(header) {
     const item = header.closest('.acc-item');
     const body = item.querySelector('.acc-body');
@@ -453,13 +424,34 @@
     }
   }
 
-  // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08 });
+  }, { threshold: 0, rootMargin: '0px 0px -20px 0px' });
   reveals.forEach(r => observer.observe(r));
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+  }, 300);
 
-  // AR language
   function setLanguage(lang) {
-    document.querySelectorAll('.lang-switcher button').for
+    document.querySelectorAll('.lang-switcher button').forEach(b => b.classList.remove('active'));
+    const btn = document.getElementById('btn-' + lang);
+    if (btn) btn.classList.add('active');
+    localStorage.setItem('lang', lang);
+    if (lang === 'ar') {
+      document.getElementById('main-content').style.display = 'none';
+      document.getElementById('ar-message').style.display = 'block';
+      document.documentElement.dir = 'rtl';
+    } else {
+      document.getElementById('main-content').style.display = 'block';
+      document.getElementById('ar-message').style.display = 'none';
+      document.documentElement.dir = 'ltr';
+      if (typeof applyTranslations === 'function') applyTranslations(lang);
+    }
+  }
+
+  const savedLang = localStorage.getItem('lang') || 'ru';
+  setLanguage(savedLang);
+</script>
+</body>
+</html>
