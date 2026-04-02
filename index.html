@@ -462,9 +462,80 @@
       document.getElementById('main-content').style.display = 'block';
       document.getElementById('ar-message').style.display = 'none';
       document.documentElement.dir = 'ltr';
-      if (typeof applyTranslations === 'function') applyTranslations(lang);
+      applyTranslations(lang);
     }
   }
+
+  function applyTranslations(lang) {
+    const t = indexTranslations[lang] || indexTranslations['ru'];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[key]) el.textContent = t[key];
+    });
+  }
+
+  const indexTranslations = {
+    ru: {
+      nav_cases: 'Кейсы', nav_about: 'Обо мне',
+      hero_badge: '1 из 7 Мастеров Бизнес-ТРИЗ в мире',
+      hero_name: 'Аскар Бапен',
+      hero_sub: 'Нахожу решения там, где привычные методы заводят в тупик. Производство, медицина, IT, HoReCa, логистика, образование, связь и другие отрасли.',
+      fork_question: 'Что вам нужно?',
+      fork_1_title: 'Бизнес-решения', fork_1_desc: 'Работаем вместе над конкретной задачей. Результат - под ключ.',
+      fork_2_title: 'Бизнес-обучение', fork_2_desc: 'Обучаем руководителей и команды. Инструменты остаются в компании.',
+      stats_label: 'результаты клиентов',
+      stat_1_desc: 'эффект одного проекта', stat_2_desc: 'ускорение процессов',
+      stat_3_desc: 'складских потерь', stat_4_desc: 'отраслей',
+      cred_label: 'почему доверяют',
+      cred_1_title: 'Мастер Бизнес-ТРИЗ',
+      cred_2_title: 'Официальный представитель IBTA',
+      cred_3_title: 'Сертифицированный тренер Toyota Production System',
+      guarantee_label: 'гарантии',
+      guarantee_1_desc: 'возврат средств, если не достигнем согласованного результата',
+      guarantee_2_desc: 'бесплатной поддержки после завершения проекта',
+      footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
+    },
+    en: {
+      nav_cases: 'Cases', nav_about: 'About',
+      hero_badge: 'Master of Business TRIZ',
+      hero_name: 'Askar Bapen',
+      hero_sub: 'We find solutions where conventional methods fail. Manufacturing, healthcare, IT, HoReCa, logistics, education, telecoms and more.',
+      fork_question: 'What is your challenge?',
+      fork_1_title: 'Business Solutions', fork_1_desc: 'We work alongside you on a specific challenge. Full turnkey delivery.',
+      fork_2_title: 'Business Training', fork_2_desc: 'We develop managers and teams. The knowledge and tools remain within your organisation.',
+      stats_label: 'client results',
+      stat_1_desc: 'impact of a single project', stat_2_desc: 'process acceleration',
+      stat_3_desc: 'reduction in warehouse waste', stat_4_desc: 'industries served',
+      cred_label: 'why clients trust us',
+      cred_1_title: 'Master of Business TRIZ',
+      cred_2_title: 'Official IBTA Representative',
+      cred_3_title: 'Certified Toyota Production System Trainer',
+      guarantee_label: 'guarantees',
+      guarantee_1_desc: 'full refund if agreed results are not achieved',
+      guarantee_2_desc: 'complimentary support for one month following project completion',
+      footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
+    },
+    kz: {
+      nav_cases: 'Жобалар', nav_about: 'Мен туралы',
+      hero_badge: 'Бизнес-ТРИЗ Мастері',
+      hero_name: 'Асқар Бапен',
+      hero_sub: 'Дәстүрлі тәсілдер жұмыс істемеген жерде жолын табамыз. Өндіріс, медицина, IT, HoReCa - 8 саладан астам.',
+      fork_question: 'Мәселеңіз қандай?',
+      fork_1_title: 'Бизнес-шешімдер', fork_1_desc: 'Нақты мәселемен бірге жұмыс істеп, нәтижеге дейін жеткіземіз.',
+      fork_2_title: 'Бизнес-тренинг', fork_2_desc: 'Басшылар мен командаларды оқытамыз. Берген білім мен үйреткен құралдар компания ішінде қалады.',
+      stats_label: 'клиенттер нәтижелері',
+      stat_1_desc: 'бір жобаның әсері', stat_2_desc: 'процестерді жеделдету',
+      stat_3_desc: 'қойма шығындарын қысқарту', stat_4_desc: 'салалар',
+      cred_label: 'бізге неге сенеді',
+      cred_1_title: 'Бизнес-ТРИЗ Мастері',
+      cred_2_title: 'IBTA ресми өкілі',
+      cred_3_title: 'Toyota Production System сертификатталған тренері',
+      guarantee_label: 'гарантиялар',
+      guarantee_1_desc: 'келісілген нәтиже болмаған жағдайда ақшаны толық қайтарамыз',
+      guarantee_2_desc: 'жоба біткен соң тегін қолдау көрсетеміз',
+      footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
+    }
+  };
 
   const savedLang = localStorage.getItem('lang') || 'ru';
   setLanguage(savedLang);
