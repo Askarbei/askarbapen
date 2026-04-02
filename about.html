@@ -1,73 +1,720 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обо мне | Askar Bapen</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обо мне | Askar Bapen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1a1917;
+      --bg2: #222018;
+      --bg3: #2a2820;
+      --gold: #D4A843;
+      --gold-light: #e8c070;
+      --text: #F5F2EA;
+      --text2: #ccc7bb;
+      --text3: #9a9488;
+      --border: rgba(212,168,67,0.25);
+      --border2: rgba(245,242,234,0.12);
+      --font-head: 'Cormorant Garamond', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 0.5px solid var(--border2);
+      padding: 18px 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-logo {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a {
+      font-size: 15px;
+      color: var(--text);
+      transition: color 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--gold); }
+    .nav-social { display: flex; gap: 14px; }
+    .nav-social a {
+      font-size: 13px;
+      color: var(--text2);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: color 0.15s;
+    }
+    .nav-social a:hover { color: var(--gold); }
+    .lang-switcher { display: flex; gap: 4px; }
+    .lang-switcher button {
+      background: none;
+      border: 0.5px solid var(--border2);
+      color: var(--text3);
+      font-family: var(--font-body);
+      font-size: 11px;
+      padding: 4px 8px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s;
+      letter-spacing: 0.05em;
+    }
+    .lang-switcher button:hover,
+    .lang-switcher button.active {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .nav-logo-img {
+      height: 36px;
+      opacity: 0.85;
+      transition: opacity 0.15s;
+    }
+    .nav-logo-img:hover { opacity: 1; }
+
+    /* HERO */
+    .about-hero {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 56px;
+      align-items: start;
+      padding: 64px 0 56px;
+      border-bottom: 0.5px solid var(--border2);
+    }
+    .about-photo {
+      width: 200px;
+      height: 200px;
+      background: var(--bg3);
+      border: 0.5px solid var(--border2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 42px;
+      color: var(--gold);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: none;
+    }
+    .about-photo img.loaded { display: block; }
+    .about-photo-placeholder { font-family: var(--font-head); font-size: 42px; color: var(--gold); }
+    .about-intro-name {
+      font-family: var(--font-head);
+      font-size: 52px;
+      font-weight: 500;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .about-intro-name span { color: var(--gold); }
+    .about-intro-role {
+      font-size: 15px;
+      color: var(--text2);
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+    .about-cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--bg);
+      background: var(--gold);
+      padding: 10px 22px;
+      border-radius: 3px;
+      border: none;
+      transition: background 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text2);
+      background: none;
+      padding: 10px 22px;
+      border-radius: 3px;
+      border: 0.5px solid var(--border2);
+      transition: all 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* STORY */
+    .story-section {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 64px;
+      padding: 64px 0 56px;
+      border-bottom: 0.5px solid var(--border2);
+    }
+    .story-text p {
+      font-size: 16px;
+      color: var(--text2);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+    .story-text p:last-child { margin-bottom: 0; }
+    .story-blockquote {
+      border-left: 2px solid var(--gold);
+      padding: 20px 24px;
+      margin: 28px 0;
+      background: var(--bg2);
+    }
+    .story-blockquote p {
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .story-aside {
+      padding-top: 4px;
+    }
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text3);
+      margin-bottom: 24px;
+    }
+    .stats-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .stat-row {
+      display: flex;
+      gap: 16px;
+      align-items: baseline;
+    }
+    .stat-num {
+      font-family: var(--font-head);
+      font-size: 32px;
+      font-weight: 500;
+      color: var(--gold);
+      white-space: nowrap;
+      min-width: 64px;
+    }
+    .stat-desc {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.5;
+    }
+
+    /* CREDENTIALS */
+    .credentials-section {
+      padding: 56px 0 56px;
+      border-bottom: 0.5px solid var(--border2);
+    }
+    .credentials-section h2 {
+      font-family: var(--font-head);
+      font-size: 36px;
+      font-weight: 500;
+      margin-bottom: 36px;
+    }
+    .cred-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .cred-item {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 0.5px solid var(--border2);
+    }
+    .cred-item:first-child { border-top: 0.5px solid var(--border2); }
+    .cred-num {
+      font-family: var(--font-head);
+      font-size: 22px;
+      color: var(--gold);
+      min-width: 28px;
+      opacity: 0.6;
+    }
+    .cred-body { flex: 1; }
+    .cred-title {
+      font-size: 16px;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .cred-link {
+      font-size: 13px;
+      color: var(--gold);
+      margin-top: 3px;
+      display: inline-block;
+      transition: opacity 0.15s;
+    }
+    .cred-link:hover { opacity: 0.75; }
+
+    /* BOOK */
+    .book-section {
+      padding: 56px 0 80px;
+    }
+    .book-card {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      background: var(--bg2);
+      border: 0.5px solid var(--border2);
+      padding: 36px 40px;
+      transition: border-color 0.15s;
+    }
+    .book-card:hover { border-color: var(--border); }
+    .book-cover {
+      width: 80px;
+      height: 110px;
+      background: var(--bg3);
+      border: 0.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      padding: 8px;
+    }
+    .book-cover-text {
+      font-family: var(--font-head);
+      font-size: 9px;
+      line-height: 1.4;
+      color: var(--gold);
+      text-align: center;
+    }
+    .book-info { flex: 1; }
+    .book-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text3);
+      margin-bottom: 8px;
+    }
+    .book-title {
+      font-family: var(--font-head);
+      font-size: 26px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .book-desc {
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.6;
+      max-width: 440px;
+      margin-bottom: 20px;
+    }
+    .btn-amazon {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--gold);
+      border: 0.5px solid var(--border);
+      padding: 8px 18px;
+      border-radius: 3px;
+      transition: all 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .btn-amazon:hover {
+      background: rgba(212,168,67,0.08);
+      border-color: var(--gold);
+    }
+    .btn-amazon::after { content: '↗'; }
+
+    /* FOOTER */
+    footer {
+      border-top: 0.5px solid var(--border2);
+      padding: 48px 0;
+      text-align: center;
+    }
+    .footer-contacts {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .footer-contacts a {
+      font-size: 15px;
+      color: var(--text2);
+      transition: color 0.15s;
+    }
+    .footer-contacts a:hover { color: var(--gold); }
+    .footer-copy { font-size: 12px; color: var(--text3); }
+
+    /* AR MESSAGE */
+    .ar-message {
+      display: none;
+      text-align: center;
+      padding: 80px 32px 120px;
+      font-size: 28px;
+      color: var(--gold);
+      font-family: serif;
+      direction: rtl;
+    }
+    .ar-lang-bar {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 48px;
+      direction: ltr;
+    }
+    .ar-lang-bar button {
+      background: none;
+      border: 0.5px solid rgba(245,242,234,0.12);
+      color: #9a9488;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      padding: 4px 8px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s;
+      letter-spacing: 0.05em;
+    }
+    .ar-lang-bar button:hover { border-color: #D4A843; color: #D4A843; }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      .story-section { grid-template-columns: 1fr; gap: 40px; }
+      .story-aside { border-top: 0.5px solid var(--border2); padding-top: 36px; }
+    }
+    @media (max-width: 768px) {
+      .about-hero { grid-template-columns: 1fr; gap: 32px; }
+      .about-intro-name { font-size: 38px; }
+      .nav-links { display: none; }
+      .nav-social { display: none; }
+      .book-card { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
-    <div id="ar-message" class="ar-message">هذه الصفحة قيد الإنشاء</div>
 
-    <div class="main-content container">
-        <nav class="reveal">
-            <a href="index.html" class="logo">ASKAR BAPEN</a>
-            <div class="nav-right">
-                <div class="nav-links">
-                    <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
-                    <a href="about.html" data-i18n="nav_about" class="active">Обо мне</a>
-                </div>
-                <div class="lang-switcher">
-                    <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
-                    <button id="btn-kz" onclick="setLanguage('kz')">KZ</button>
-                    <button id="btn-en" onclick="setLanguage('en')">EN</button>
-                    <button id="btn-ar" onclick="setLanguage('ar')">AR</button>
-                </div>
-            </div>
-        </nav>
+<div id="ar-message" class="ar-message">
+  <div class="ar-lang-bar">
+    <button onclick="setLanguage('ru')">RU</button>
+    <button onclick="setLanguage('kz')">KZ</button>
+    <button onclick="setLanguage('en')">EN</button>
+    <button onclick="setLanguage('ar')" class="active">AR</button>
+  </div>
+  هذه الصفحة قيد الإنشاء
+</div>
 
-        <section class="reveal" style="padding: 80px 0; display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start;">
-            <div class="about-visual">
-                <div style="border: 1px solid var(--gold); padding: 40px; border-radius: 12px; text-align: center;">
-                    <div style="font-family: 'Cormorant Garamond'; font-size: 64px; color: var(--gold); margin-bottom: 20px;">АБ</div>
-                    <p style="font-weight: 500; text-transform: uppercase; letter-spacing: 1px; font-size: 12px;">Askar Bapen</p>
-                </div>
-            </div>
-
-            <div class="about-text">
-                <h1 style="margin-bottom: 30px;">Профессиональный путь</h1>
-                <p style="margin-bottom: 20px;">Я являюсь **1 из 7 Мастеров Бизнес-ТРИЗ** в мире, сертифицированных международной ассоциацией IBTA. Моя специализация — решение неразрешимых задач в бизнесе и управлении.</p>
-                
-                <div class="card" style="margin-bottom: 30px; background: var(--block-bg);">
-                    <h3 style="margin-bottom: 10px; color: var(--gold);">Автор книги</h3>
-                    <p style="font-size: 14px;">Первая практическая работа на казахском языке о применении инструментов ТРИЗ и Кайдзен в условиях современного рынка Казахстана и СНГ.</p>
-                </div>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <div>
-                        <h4 style="font-family: 'Cormorant Garamond'; font-size: 18px; margin-bottom: 10px;">Экспертиза</h4>
-                        <ul style="list-style: none; font-size: 14px; color: var(--gray);">
-                            <li>• Бизнес-ТРИЗ (Level 4)</li>
-                            <li>• Lean Manufacturing</li>
-                            <li>• Kaizen & BPMN</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 style="font-family: 'Cormorant Garamond'; font-size: 18px; margin-bottom: 10px;">Образование</h4>
-                        <ul style="list-style: none; font-size: 14px; color: var(--gray);">
-                            <li>• MBA / Экономика</li>
-                            <li>• Сертификация IBTA</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="reveal" style="padding: 40px 0; border-top: 0.5px solid var(--border); text-align: center;">
-            <p class="copyright" data-i18n="footer_copy">© 2026 Аскар Бапен. KAIZEN-TRIZ PARTNERS</p>
-        </footer>
+<div id="main-content">
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Askar <span>Bapen</span></a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
+          <a href="about.html" class="active" data-i18n="nav_about">Обо мне</a>
+        </div>
+        <div class="nav-social">
+          <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://t.me/askarbapen" target="_blank" rel="noopener">Telegram</a>
+        </div>
+        <div class="lang-switcher">
+          <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
+          <button id="btn-kz" onclick="setLanguage('kz')">KZ</button>
+          <button id="btn-en" onclick="setLanguage('en')">EN</button>
+          <button id="btn-ar" onclick="setLanguage('ar')">AR</button>
+        </div>
+        <img src="logo_light.png" alt="KAIZEN-TRIZ PARTNERS" class="nav-logo-img">
+      </div>
     </div>
+  </nav>
 
-    <script src="main.js"></script>
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="about-hero reveal">
+      <div class="about-photo" id="photo-block">
+        <img src="photo.jpg" alt="Askar Bapen" id="photo-img">
+        <span class="about-photo-placeholder" id="photo-placeholder">АБ</span>
+      </div>
+      <div class="about-intro">
+        <h1 class="about-intro-name">Askar <span>Bapen</span></h1>
+        <p class="about-intro-role" data-i18n="about_role">Генеральный директор KAIZEN-TRIZ PARTNERS - Мастер Бизнес-ТРИЗ</p>
+        <div class="about-cta-row">
+          <a href="consulting.html" class="btn-primary" data-i18n="about_cta_consult">Бизнес-решения</a>
+          <a href="mailto:k.partners2030@gmail.com" class="btn-outline" data-i18n="about_cta_contact">Написать</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY + STATS -->
+    <section class="story-section">
+      <div class="story-text reveal">
+        <p data-i18n="story_p1">Я начинал как дипломат. Арабский и английский языки, длительные командировки на Ближний Восток, международные переговоры, EXPO-2017 в Астане - координировал участие 115 стран. Там я понял: одного системного взгляда недостаточно. Нужны конкретные инструменты.</p>
+        <p data-i18n="story_p2">Когда перешел в бизнес-консалтинг, начал изучать Кайдзен и Lean. Это закрывало 90% задач - потери, процессы, стандарты. Но оставались задачи, где любое решение упиралось в противоречие.</p>
+        <div class="story-blockquote">
+          <p data-i18n="story_quote">Например: ЕСЛИ увеличить штат отдела продаж, ТО вырастут продажи, НО вырастет и ФОТ. ЕСЛИ оставить штат как есть, ТО ФОТ не изменится, НО и продажи не вырастут. Кайдзен здесь не давал ответа.</p>
+        </div>
+        <p data-i18n="story_p3">Поиск инструмента для таких задач привел меня к Бизнес-ТРИЗ. Я прошел путь от первого уровня до Мастера Бизнес-ТРИЗ. Под руководством Валерия Сушкова, президента IBTA, разработал инструмент P2R по поиску скрытых ресурсов в бизнесе. Сегодня таких специалистов в мире семеро.</p>
+      </div>
+
+      <div class="story-aside reveal">
+        <p class="section-label" data-i18n="stats_label">в цифрах</p>
+        <div class="stats-list">
+          <div class="stat-row">
+            <span class="stat-num">7</span>
+            <span class="stat-desc" data-i18n="stat_1">Мастеров Бизнес-ТРИЗ в мире</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-num">20+</span>
+            <span class="stat-desc" data-i18n="stat_2">завершенных проектов</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-num">8</span>
+            <span class="stat-desc" data-i18n="stat_3">отраслей</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-num">115</span>
+            <span class="stat-desc" data-i18n="stat_4">стран на EXPO-2017</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDENTIALS -->
+    <section class="credentials-section reveal">
+      <h2 data-i18n="cred_title">Регалии</h2>
+      <ul class="cred-list">
+        <li class="cred-item">
+          <span class="cred-num">01</span>
+          <div class="cred-body">
+            <div class="cred-title" data-i18n="cred_1">Мастер Бизнес-ТРИЗ</div>
+            <a href="https://biztriz.net" target="_blank" rel="noopener" class="cred-link">biztriz.net</a>
+          </div>
+        </li>
+        <li class="cred-item">
+          <span class="cred-num">02</span>
+          <div class="cred-body">
+            <div class="cred-title" data-i18n="cred_2">Официальный представитель IBTA в Казахстане и Центральной Азии</div>
+          </div>
+        </li>
+        <li class="cred-item">
+          <span class="cred-num">03</span>
+          <div class="cred-body">
+            <div class="cred-title" data-i18n="cred_3">Сертифицированный тренер Toyota Production System (TPS Grade 4)</div>
+          </div>
+        </li>
+        <li class="cred-item">
+          <span class="cred-num">04</span>
+          <div class="cred-body">
+            <div class="cred-title" data-i18n="cred_4">Дипломат, арабист - координировал участие 115 стран на EXPO-2017 в Астане</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- BOOK -->
+    <section class="book-section reveal">
+      <p class="section-label" data-i18n="book_label">книга</p>
+      <a href="https://amazon.com" target="_blank" rel="noopener" class="book-card">
+        <div class="book-cover">
+          <div class="book-cover-text">Focus Mastery in Uncertainty</div>
+        </div>
+        <div class="book-info">
+          <p class="book-label" data-i18n="book_platform">Amazon</p>
+          <h3 class="book-title">Focus Mastery in Uncertainty</h3>
+          <p class="book-desc" data-i18n="book_desc">Инструменты удержания фокуса и принятия решений в условиях неопределенности. Для руководителей и консультантов.</p>
+          <span class="btn-amazon" data-i18n="book_cta">Читать на Amazon</span>
+        </div>
+      </a>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-contacts">
+        <a href="tel:+77017717840">+7 (701) 771 78 40</a>
+        <a href="mailto:k.partners2030@gmail.com">k.partners2030@gmail.com</a>
+        <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://t.me/askarbapen" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <p class="footer-copy" data-i18n="footer_copy">© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS</p>
+    </div>
+  </footer>
+
+</div>
+
+<script src="main.js"></script>
+<script>
+  // Photo fallback
+  const photoImg = document.getElementById('photo-img');
+  const photoPlaceholder = document.getElementById('photo-placeholder');
+  photoImg.onload = function() {
+    this.classList.add('loaded');
+    photoPlaceholder.style.display = 'none';
+  };
+  photoImg.onerror = function() {
+    this.style.display = 'none';
+  };
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Language
+  function setLanguage(lang) {
+    document.querySelectorAll('.lang-switcher button').forEach(b => b.classList.remove('active'));
+    const btn = document.getElementById('btn-' + lang);
+    if (btn) btn.classList.add('active');
+    localStorage.setItem('lang', lang);
+    if (lang === 'ar') {
+      document.getElementById('main-content').style.display = 'none';
+      document.getElementById('ar-message').style.display = 'block';
+      document.documentElement.dir = 'rtl';
+    } else {
+      document.getElementById('main-content').style.display = 'block';
+      document.getElementById('ar-message').style.display = 'none';
+      document.documentElement.dir = 'ltr';
+      applyTranslations(lang);
+    }
+  }
+
+  function applyTranslations(lang) {
+    const t = translations[lang] || translations['ru'];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[key]) el.textContent = t[key];
+    });
+  }
+
+  const translations = {
+    ru: {
+      nav_cases: 'Кейсы', nav_about: 'Обо мне',
+      about_role: 'Генеральный директор KAIZEN-TRIZ PARTNERS - Мастер Бизнес-ТРИЗ',
+      about_cta_consult: 'Бизнес-решения', about_cta_contact: 'Написать',
+      story_p1: 'Я начинал как дипломат. Арабский и английский языки, длительные командировки на Ближний Восток, международные переговоры, EXPO-2017 в Астане - координировал участие 115 стран. Там я понял: одного системного взгляда недостаточно. Нужны конкретные инструменты.',
+      story_p2: 'Когда перешел в бизнес-консалтинг, начал изучать Кайдзен и Lean. Это закрывало 90% задач - потери, процессы, стандарты. Но оставались задачи, где любое решение упиралось в противоречие.',
+      story_quote: 'Например: ЕСЛИ увеличить штат отдела продаж, ТО вырастут продажи, НО вырастет и ФОТ. ЕСЛИ оставить штат как есть, ТО ФОТ не изменится, НО и продажи не вырастут. Кайдзен здесь не давал ответа.',
+      story_p3: 'Поиск инструмента для таких задач привел меня к Бизнес-ТРИЗ. Я прошел путь от первого уровня до Мастера Бизнес-ТРИЗ. Под руководством Валерия Сушкова, президента IBTA, разработал инструмент P2R по поиску скрытых ресурсов в бизнесе. Сегодня таких специалистов в мире семеро.',
+      stats_label: 'в цифрах',
+      stat_1: 'Мастеров Бизнес-ТРИЗ в мире', stat_2: 'завершенных проектов',
+      stat_3: 'отраслей', stat_4: 'стран на EXPO-2017',
+      cred_title: 'Регалии',
+      cred_1: 'Мастер Бизнес-ТРИЗ',
+      cred_2: 'Официальный представитель IBTA в Казахстане и Центральной Азии',
+      cred_3: 'Сертифицированный тренер Toyota Production System (TPS Grade 4)',
+      cred_4: 'Дипломат, арабист - координировал участие 115 стран на EXPO-2017 в Астане',
+      book_label: 'книга', book_platform: 'Amazon',
+      book_desc: 'Инструменты удержания фокуса и принятия решений в условиях неопределенности. Для руководителей и консультантов.',
+      book_cta: 'Читать на Amazon',
+      footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
+    },
+    en: {
+      nav_cases: 'Cases', nav_about: 'About',
+      about_role: 'CEO of KAIZEN-TRIZ PARTNERS - Master of Business TRIZ',
+      about_cta_consult: 'Business solutions', about_cta_contact: 'Get in touch',
+      story_p1: 'I started as a diplomat. Arabic and English languages, extended assignments in the Middle East, international negotiations, EXPO-2017 in Astana - coordinated the participation of 115 countries. There I realised: a systemic perspective alone is not enough. You need concrete tools.',
+      story_p2: 'When I moved into business consulting, I began studying Kaizen and Lean. These covered 90% of tasks - waste, processes, standards. But some tasks ran into a wall of contradictions.',
+      story_quote: 'For example: IF you increase the sales team headcount, THEN sales will grow, BUT so will the payroll. IF you keep headcount as is, THEN payroll stays flat, BUT so do sales. Kaizen had no answer here.',
+      story_p3: 'The search for tools to handle these tasks led me to Business TRIZ. I progressed from Level 1 to Master of Business TRIZ. Under the guidance of Valery Souchkov, IBTA president, I developed the P2R methodology for finding hidden resources in business. There are seven such specialists in the world today.',
+      stats_label: 'by the numbers',
+      stat_1: 'Business TRIZ Masters in the world', stat_2: 'completed projects',
+      stat_3: 'industries', stat_4: 'countries at EXPO-2017',
+      cred_title: 'Credentials',
+      cred_1: 'Master of Business TRIZ',
+      cred_2: 'Official IBTA Representative in Kazakhstan and Central Asia',
+      cred_3: 'Certified Toyota Production System Trainer (TPS Grade 4)',
+      cred_4: 'Diplomat, Arabist - coordinated the participation of 115 countries at EXPO-2017 in Astana',
+      book_label: 'book', book_platform: 'Amazon',
+      book_desc: 'Tools for maintaining focus and making decisions under uncertainty. For executives and consultants.',
+      book_cta: 'Read on Amazon',
+      footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
+    },
+    kz: {
+      nav_cases: 'Кейстер', nav_about: 'Мен туралы',
+      about_role: 'KAIZEN-TRIZ PARTNERS Бас директоры - Бизнес-ТРИЗ Шебер',
+      about_cta_consult: 'Бизнес-шешiмдер', about_cta_contact: 'Жазу',
+      story_p1: 'Мен дипломат ретiнде бастадым. Араб жане агылшын тiлдерi, Таяу Шыгысыа узак iс-сапарлар, халыкаралык келiссоздер, Астанадагы EXPO-2017 - 115 елдiн катысуын унйлестiрдiм. Сонда тустiм: бiр жуйелi коз-карас жеткiлiксiз. Нактi куралдар кажет.',
+      story_p2: 'Бизнес-консалтингке откенде, Кайдзен мен Lean-дi уйрене бастадым. Бул тапсырмалардын 90%-н жабады - шыгындар, процестер, стандарттар. Бiрак кандай шешiм болмасын карама-кайшылыкка тiрелетiн тапсырмалар кала бердi.',
+      story_quote: 'Мысалы: ЕГЕР сату болiмiнiн штатын улгайтсак, ОНДА сатылым осер, БIРАК ЖКФ та осер. ЕГЕР штатты солай калдырсак, ОНДА ЖКФ озгермейдi, БIРАК сатылым да озгермейдi. Кайдзен бул жерде жауап бере алмады.',
+      story_p3: 'Мундай тапсырмалар ушiн курал iздеу мене Бизнес-ТРИЗ-ге алiп келдi. Мен бiрiншi денгейден Бизнес-ТРИЗ Шеберiне дейiн жеттiм. IBTA президентi Валерий Сушковтын жетекшiлiгiмен бизнестегi жасырын ресурстарды iздеу ушiн P2R куралын жасадым. Бугiн аламда мундай маманALDар жетеу.',
+      stats_label: 'сандарда',
+      stat_1: 'Алемдегi Бизнес-ТРИЗ Шеберлерi', stat_2: 'аяктаган жобалар',
+      stat_3: 'сала', stat_4: 'EXPO-2017 кел',
+      cred_title: 'Регалиялар',
+      cred_1: 'Бизнес-ТРИЗ Шебер',
+      cred_2: 'Казакстан мен Орталык Азиядагы ресми IBTA окiлi',
+      cred_3: 'Сертификатталган Toyota тiндiрiс жуйесi трен (TPS Grade 4)',
+      cred_4: 'Дипломат, арабтанушы - Астанадагы EXPO-2017 115 елдiн катысуын унйлестiрдi',
+      book_label: 'кiтап', book_platform: 'Amazon',
+      book_desc: 'Белгiсiздiк жагдайында фокусты устап тuру жане шешiм кабылдау куралдары. Басшылар мен консультанттар ушiн.',
+      book_cta: 'Amazon-да оку',
+      footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
+    }
+  };
+
+  // Init
+  (function() {
+    const saved = localStorage.getItem('lang') || 'ru';
+    setLanguage(saved);
+  })();
+</script>
+
 </body>
 </html>
