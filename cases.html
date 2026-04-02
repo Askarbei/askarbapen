@@ -297,32 +297,41 @@
 
     <header class="page-header reveal">
       <h1 data-i18n="cases_title">Кейсы</h1>
-      <p data-i18n="cases_sub">22 завершённых проекта в 8 отраслях. Измеримые результаты.</p>
+      <p data-i18n="cases_sub">22 завершённых проекта в 13 отраслях. Измеримые результаты.</p>
     </header>
 
     <div class="filter-bar reveal">
-      <button class="filter-btn active" data-filter="all" onclick="filterCases(this)" data-i18n="filter_all">Все</button>
-      <button class="filter-btn" data-filter="производство" onclick="filterCases(this)" data-i18n="filter_manufacturing">Производство</button>
-      <button class="filter-btn" data-filter="питание" onclick="filterCases(this)" data-i18n="filter_food">Питание</button>
-      <button class="filter-btn" data-filter="логистика" onclick="filterCases(this)" data-i18n="filter_logistics">Логистика</button>
+      <button class="filter-btn active" data-filter="all" onclick="filterCases(this)">Все</button>
+      <button class="filter-btn" data-filter="нефтегаз" onclick="filterCases(this)">Нефтегазовая пром.</button>
+      <button class="filter-btn" data-filter="строительство" onclick="filterCases(this)">Строительство</button>
+      <button class="filter-btn" data-filter="общепит" onclick="filterCases(this)">Общепит</button>
+      <button class="filter-btn" data-filter="фасовка" onclick="filterCases(this)">Фасовка</button>
+      <button class="filter-btn" data-filter="логистика" onclick="filterCases(this)">Логистика</button>
+      <button class="filter-btn" data-filter="ритейл" onclick="filterCases(this)">Ритейл и склад</button>
       <button class="filter-btn" data-filter="horeca" onclick="filterCases(this)">HoReCa</button>
-      <button class="filter-btn" data-filter="медицина" onclick="filterCases(this)" data-i18n="filter_medicine">Медицина</button>
-      <button class="filter-btn" data-filter="образование" onclick="filterCases(this)" data-i18n="filter_education">Образование</button>
-      <button class="filter-btn" data-filter="it" onclick="filterCases(this)" data-i18n="filter_it">Связь и IT</button>
-      <button class="filter-btn" data-filter="сервис" onclick="filterCases(this)" data-i18n="filter_service">Сервис</button>
+      <button class="filter-btn" data-filter="медицина" onclick="filterCases(this)">Медицина</button>
+      <button class="filter-btn" data-filter="образование" onclick="filterCases(this)">Образование</button>
+      <button class="filter-btn" data-filter="it" onclick="filterCases(this)">Связь и IT</button>
+      <button class="filter-btn" data-filter="сервис" onclick="filterCases(this)">Сервис</button>
+      <button class="filter-btn" data-filter="охрана" onclick="filterCases(this)">Охрана</button>
     </div>
 
     <div class="cases-grid">
 
-      <div class="case-card reveal" data-industry="производство">
-        <span class="case-industry" data-i18n="ind_manufacturing">Производство</span>
-        <span class="case-company">Newtech System Group</span>
-        <span class="case-problem">Сбои в складировании и замерах</span>
-        <span class="case-result">Процессы прозрачны от замеров до склада</span>
+      <!-- НЕФТЕГАЗОВАЯ ПРОМЫШЛЕННОСТЬ -->
+      <div class="case-card reveal" data-industry="нефтегаз">
+        <span class="case-industry">Нефтегазовая промышленность</span>
+        <span class="case-company">Meris Construction / Newtech System Group</span>
+        <span class="case-problem">Потери при складировании теплоизоляционных материалов, сбои в замерах</span>
+        <span class="case-result">Выявлены "слепые зоны" в складировании, процессы прозрачны от замеров до склада</span>
+        <div class="case-footer">
+          <a href="reviews/MerisConstruction.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
       </div>
 
-      <div class="case-card reveal" data-industry="производство">
-        <span class="case-industry" data-i18n="ind_manufacturing">Производство</span>
+      <!-- СТРОИТЕЛЬСТВО -->
+      <div class="case-card reveal" data-industry="строительство">
+        <span class="case-industry">Строительство</span>
         <span class="case-company">КазИнтегСтрой</span>
         <span class="case-problem">Высокие затраты на ГСМ, слабая управляемость</span>
         <span class="case-result"><strong>2 новых бизнес-направления,</strong> цифровой учет техники</span>
@@ -331,8 +340,9 @@
         </div>
       </div>
 
-      <div class="case-card reveal" data-industry="производство">
-        <span class="case-industry" data-i18n="ind_manufacturing">Производство</span>
+      <!-- НЕФТЕГАЗОВАЯ - Bagashar Meken (химическая жидкость) -->
+      <div class="case-card reveal" data-industry="нефтегаз">
+        <span class="case-industry">Нефтегазовая промышленность</span>
         <span class="case-company">Bagashar Meken</span>
         <span class="case-problem">Долгая обработка заявок, брак</span>
         <span class="case-result">Время обработки <strong>с 105 до 20 минут,</strong> брак в заявках исключен</span>
@@ -341,25 +351,9 @@
         </div>
       </div>
 
-      <div class="case-card reveal" data-industry="производство">
-        <span class="case-industry" data-i18n="ind_manufacturing">Производство</span>
-        <span class="case-company">Meris Construction</span>
-        <span class="case-problem">Потери при складировании теплоизоляционных материалов</span>
-        <span class="case-result">Выявлены "слепые зоны" в процессе складирования готовых к инсталляции материалов</span>
-        <div class="case-footer">
-          <a href="reviews/MerisConstruction.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
-        </div>
-      </div>
-
-      <div class="case-card reveal" data-industry="производство">
-        <span class="case-industry" data-i18n="ind_manufacturing">Производство</span>
-        <span class="case-company">Makilla</span>
-        <span class="case-problem">Высокая конкуренция, ограниченный рынок</span>
-        <span class="case-result">Найдена новая рыночная ниша без конкуренции</span>
-      </div>
-
-      <div class="case-card reveal" data-industry="питание">
-        <span class="case-industry" data-i18n="ind_food">Питание</span>
+      <!-- ОБЩЕПИТ -->
+      <div class="case-card reveal" data-industry="общепит">
+        <span class="case-industry">Общепит</span>
         <span class="case-company">Fitness Food</span>
         <span class="case-problem">Высокий брак, неоцифрованные процессы</span>
         <span class="case-result">Брак <strong>-43%,</strong> процессы оцифрованы на 98%</span>
@@ -368,8 +362,8 @@
         </div>
       </div>
 
-      <div class="case-card reveal" data-industry="питание">
-        <span class="case-industry" data-i18n="ind_food">Питание</span>
+      <div class="case-card reveal" data-industry="общепит">
+        <span class="case-industry">Общепит</span>
         <span class="case-company">Abokado Sushi</span>
         <span class="case-problem">Медленное выполнение заказов</span>
         <span class="case-result">Время заказа <strong>с 31,6 до 17,7 минут,</strong> скорость выдачи удвоена</span>
@@ -378,8 +372,8 @@
         </div>
       </div>
 
-      <div class="case-card reveal" data-industry="питание">
-        <span class="case-industry" data-i18n="ind_food">Питание</span>
+      <div class="case-card reveal" data-industry="общепит">
+        <span class="case-industry">Общепит</span>
         <span class="case-company">Qazagrofood</span>
         <span class="case-problem">Текучка управленцев, низкая производительность</span>
         <span class="case-result">Система найма директората разработана, менеджмент подобран профессионально</span>
@@ -388,8 +382,9 @@
         </div>
       </div>
 
-      <div class="case-card reveal" data-industry="питание">
-        <span class="case-industry" data-i18n="ind_food">Питание</span>
+      <!-- ФАСОВКА -->
+      <div class="case-card reveal" data-industry="фасовка">
+        <span class="case-industry">Фасовка</span>
         <span class="case-company">Баракат</span>
         <span class="case-problem">Долгая переналадка, нестабильность качества</span>
         <span class="case-result">Переналадка <strong>с 24 до 11 минут,</strong> трудозатраты с 3 до 1 человека</span>
@@ -398,18 +393,9 @@
         </div>
       </div>
 
+      <!-- ЛОГИСТИКА -->
       <div class="case-card reveal" data-industry="логистика">
-        <span class="case-industry" data-i18n="ind_logistics">Логистика</span>
-        <span class="case-company">Life Food</span>
-        <span class="case-problem">Складские потери, пересорт, возврат товара</span>
-        <span class="case-result">Запасы освобождены на <strong>9 млн ₸,</strong> недостачи -85%</span>
-        <div class="case-footer">
-          <a href="reviews/Lifefood.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
-        </div>
-      </div>
-
-      <div class="case-card reveal" data-industry="логистика">
-        <span class="case-industry" data-i18n="ind_logistics">Логистика</span>
+        <span class="case-industry">Логистика</span>
         <span class="case-company">Atyrau Nomad Auto</span>
         <span class="case-problem">Текучка водителей, непрозрачность базы</span>
         <span class="case-result">Устранены корневые причины текучки, улучшены условия труда</span>
@@ -418,13 +404,25 @@
         </div>
       </div>
 
-      <div class="case-card reveal" data-industry="логистика">
-        <span class="case-industry" data-i18n="ind_logistics">Логистика</span>
+      <!-- РИТЕЙЛ И СКЛАД -->
+      <div class="case-card reveal" data-industry="ритейл">
+        <span class="case-industry">Ритейл и склад</span>
+        <span class="case-company">Life Food</span>
+        <span class="case-problem">Складские потери, пересорт, возврат товара</span>
+        <span class="case-result">Запасы освобождены на <strong>9 млн ₸,</strong> недостачи -85%</span>
+        <div class="case-footer">
+          <a href="reviews/Lifefood.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+      <div class="case-card reveal" data-industry="ритейл">
+        <span class="case-industry">Ритейл и склад</span>
         <span class="case-company">Miras</span>
         <span class="case-problem">Хаотичный склад, потери, нет аналитики</span>
         <span class="case-result">Брак <strong>-71%,</strong> адресное хранение внедрено</span>
       </div>
 
+      <!-- HORECA -->
       <div class="case-card reveal" data-industry="horeca">
         <span class="case-industry">HoReCa</span>
         <span class="case-company">Manica Concierge</span>
@@ -438,12 +436,13 @@
       <div class="case-card reveal" data-industry="horeca">
         <span class="case-industry">HoReCa</span>
         <span class="case-company">Janym Soul</span>
-        <span class="case-problem">Низкий КПД, ошибки в обслуживании</span>
-        <span class="case-result">КПД <strong>с 23% до 37%</strong></span>
+        <span class="case-problem">Низкий КПД приемки, высокий расход моющих средств</span>
+        <span class="case-result">КПД приемки товара <strong>+23%,</strong> расход моющих средств <strong>-42%</strong></span>
       </div>
 
+      <!-- МЕДИЦИНА -->
       <div class="case-card reveal" data-industry="медицина">
-        <span class="case-industry" data-i18n="ind_medicine">Медицина</span>
+        <span class="case-industry">Медицина</span>
         <span class="case-company">Shaskin Clinic</span>
         <span class="case-problem">Долгое ожидание операции, неэффективная реабилитация</span>
         <span class="case-result">Ожидание таламотомии <strong>с 2,7 ч до 12 минут,</strong> пропускная способность реабилитации с 9 до 12 человек</span>
@@ -453,7 +452,7 @@
       </div>
 
       <div class="case-card reveal" data-industry="медицина">
-        <span class="case-industry" data-i18n="ind_medicine">Медицина</span>
+        <span class="case-industry">Медицина</span>
         <span class="case-company">Expert Neuro</span>
         <span class="case-problem">Неэффективная загрузка персонала</span>
         <span class="case-result">Экономический эффект <strong>17 022 894 ₸</strong></span>
@@ -463,14 +462,15 @@
       </div>
 
       <div class="case-card reveal" data-industry="медицина">
-        <span class="case-industry" data-i18n="ind_medicine">Медицина</span>
+        <span class="case-industry">Медицина</span>
         <span class="case-company">Cardios</span>
         <span class="case-problem">Хаос в запасах, неструктурированное пространство</span>
         <span class="case-result"><strong>296 функций</strong> описано, улучшения по 5S до 48,9%</span>
       </div>
 
+      <!-- ОБРАЗОВАНИЕ -->
       <div class="case-card reveal" data-industry="образование">
-        <span class="case-industry" data-i18n="ind_education">Образование</span>
+        <span class="case-industry">Образование</span>
         <span class="case-company">Orator Club</span>
         <span class="case-problem">Огромная нагрузка на собственника</span>
         <span class="case-result">Время подготовки к выступлениям <strong>-37%,</strong> ресурсы участников мобилизованы</span>
@@ -480,34 +480,44 @@
       </div>
 
       <div class="case-card reveal" data-industry="образование">
-        <span class="case-industry" data-i18n="ind_education">Образование</span>
+        <span class="case-industry">Образование</span>
         <span class="case-company">Qaynar Bulaq / AlmaU</span>
         <span class="case-problem">Нечеткая бизнес-модель</span>
         <span class="case-result">Стратегия монетизации при сохранении социальной миссии</span>
       </div>
 
       <div class="case-card reveal" data-industry="образование">
-        <span class="case-industry" data-i18n="ind_education">Образование</span>
+        <span class="case-industry">Образование</span>
         <span class="case-company">Alma School</span>
         <span class="case-problem">Размытые зоны ответственности</span>
         <span class="case-result"><strong>363 функции,</strong> 57 процессов, 42 стандарта</span>
       </div>
 
+      <!-- СВЯЗЬ И IT -->
       <div class="case-card reveal" data-industry="it">
-        <span class="case-industry" data-i18n="ind_it">Связь и IT</span>
+        <span class="case-industry">Связь и IT</span>
         <span class="case-company">Mobile Business Solutions</span>
         <span class="case-problem">Избыточные затраты, дублирование</span>
         <span class="case-result"><strong>124 км кабеля</strong> устранено, договоры с 3 ч до 35 мин</span>
       </div>
 
+      <!-- СЕРВИС -->
       <div class="case-card reveal" data-industry="сервис">
-        <span class="case-industry" data-i18n="ind_service">Сервис</span>
+        <span class="case-industry">Сервис</span>
         <span class="case-company">Prof Cleaning</span>
         <span class="case-problem">Хаос в процессах, зависимость от людей</span>
         <span class="case-result"><strong>48 потерь</strong> устранено, клининговые операции стандартизированы</span>
         <div class="case-footer">
           <a href="reviews/ProfCleaning.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
         </div>
+      </div>
+
+      <!-- ОХРАНА -->
+      <div class="case-card reveal" data-industry="охрана">
+        <span class="case-industry">Охрана</span>
+        <span class="case-company">OTIS</span>
+        <span class="case-problem">Управленческие решения принимаются интуитивно</span>
+        <span class="case-result">Топ-менеджмент обучен методу сильных решений</span>
       </div>
 
     </div>
