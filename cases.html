@@ -571,14 +571,14 @@
   }
 
   function applyTranslations(lang) {
-    const t = translations[lang] || translations['ru'];
+    const t = caseTranslations[lang] || caseTranslations['ru'];
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.dataset.i18n;
       if (t[key]) el.textContent = t[key];
     });
   }
 
-  const translations = {
+  const caseTranslations = {
     ru: {
       nav_cases: 'Кейсы', nav_about: 'Обо мне',
       cases_title: 'Кейсы', cases_sub: '22 завершённых проекта в 8 отраслях. Измеримые результаты.',
