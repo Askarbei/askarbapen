@@ -518,8 +518,12 @@
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.05 });
+  }, { threshold: 0, rootMargin: '0px 0px -20px 0px' });
   reveals.forEach(r => observer.observe(r));
+  // Fallback: show all if observer doesn't fire within 300ms
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+  }, 300);
 
   function setLanguage(lang) {
     document.querySelectorAll('.lang-switcher button').forEach(b => b.classList.remove('active'));
