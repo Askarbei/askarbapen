@@ -1,76 +1,595 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кейсы | Askar Bapen</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кейсы | Askar Bapen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1a1917;
+      --bg2: #222018;
+      --bg3: #2a2820;
+      --gold: #D4A843;
+      --gold-light: #e8c070;
+      --text: #F5F2EA;
+      --text2: #ccc7bb;
+      --text3: #9a9488;
+      --border: rgba(212,168,67,0.25);
+      --border2: rgba(245,242,234,0.12);
+      --font-head: 'Cormorant Garamond', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 0.5px solid var(--border2);
+      padding: 18px 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-logo {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a {
+      font-size: 15px;
+      color: var(--text);
+      transition: color 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--gold); }
+    .nav-social { display: flex; gap: 14px; }
+    .nav-social a {
+      font-size: 13px;
+      color: var(--text2);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: color 0.15s;
+    }
+    .nav-social a:hover { color: var(--gold); }
+    .lang-switcher { display: flex; gap: 4px; }
+    .lang-switcher button {
+      background: none;
+      border: 0.5px solid var(--border2);
+      color: var(--text3);
+      font-family: var(--font-body);
+      font-size: 11px;
+      padding: 4px 8px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.15s;
+      letter-spacing: 0.05em;
+    }
+    .lang-switcher button:hover,
+    .lang-switcher button.active { border-color: var(--gold); color: var(--gold); }
+    .nav-logo-img { height: 36px; opacity: 0.85; transition: opacity 0.15s; }
+    .nav-logo-img:hover { opacity: 1; }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 64px 0 48px;
+      border-bottom: 0.5px solid var(--border2);
+    }
+    .page-header h1 {
+      font-family: var(--font-head);
+      font-size: 48px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .page-header p { font-size: 17px; color: var(--text2); max-width: 540px; }
+
+    /* FILTER */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 36px 0 32px;
+    }
+    .filter-btn {
+      background: none;
+      border: 0.5px solid var(--border2);
+      color: var(--text2);
+      font-family: var(--font-body);
+      font-size: 13px;
+      padding: 7px 16px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .filter-btn:hover { border-color: var(--gold); color: var(--text); }
+    .filter-btn.active {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(212,168,67,0.06);
+    }
+
+    /* CASES GRID */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border2);
+      border: 0.5px solid var(--border2);
+      margin-bottom: 80px;
+    }
+    .case-card {
+      background: var(--bg);
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: background 0.15s;
+    }
+    .case-card:hover { background: var(--bg2); }
+    .case-card.hidden { display: none; }
+    .case-industry {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+    }
+    .case-company {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+    .case-problem {
+      font-size: 13px;
+      color: var(--text3);
+      line-height: 1.5;
+    }
+    .case-result {
+      font-size: 14px;
+      color: var(--text2);
+      padding-top: 10px;
+      border-top: 0.5px solid var(--border2);
+      line-height: 1.55;
+    }
+    .case-result strong { color: var(--gold-light); font-weight: 400; }
+    .case-footer { margin-top: auto; padding-top: 14px; }
+    .btn-review {
+      display: inline-flex;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text3);
+      border: 0.5px solid var(--border2);
+      padding: 6px 12px;
+      border-radius: 3px;
+      transition: all 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .btn-review:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-review::after { content: ' \2197'; }
+
+    /* FOOTER */
+    footer {
+      border-top: 0.5px solid var(--border2);
+      padding: 48px 0;
+      text-align: center;
+    }
+    .footer-contacts {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .footer-contacts a { font-size: 15px; color: var(--text2); transition: color 0.15s; }
+    .footer-contacts a:hover { color: var(--gold); }
+    .footer-copy { font-size: 12px; color: var(--text3); }
+
+    .ar-message {
+      display: none;
+      text-align: center;
+      padding: 120px 32px;
+      font-size: 28px;
+      color: var(--gold);
+      font-family: serif;
+      direction: rtl;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) { .cases-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 34px; }
+      .nav-links { display: none; }
+      .nav-social { display: none; }
+      .cases-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <div id="ar-message" class="ar-message">هذه الصفحة قيد الإنشاء</div>
 
-    <div class="main-content container">
-        <nav class="reveal">
-            <a href="index.html" class="logo">ASKAR BAPEN</a>
-            <div class="nav-right">
-                <div class="nav-links">
-                    <a href="cases.html" data-i18n="nav_cases" class="active">Кейсы</a>
-                    <a href="about.html" data-i18n="nav_about">Обо мне</a>
-                </div>
-                <div class="lang-switcher">
-                    <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
-                    <button id="btn-kz" onclick="setLanguage('kz')">KZ</button>
-                    <button id="btn-en" onclick="setLanguage('en')">EN</button>
-                    <button id="btn-ar" onclick="setLanguage('ar')">AR</button>
-                </div>
-            </div>
-        </nav>
+<div id="ar-message" class="ar-message">هذه الصفحة قيد الإنشاء</div>
 
-        <header class="reveal" style="padding: 60px 0; text-align: center;">
-            <h1 data-i18n="nav_cases">Кейсы</h1>
-            <p style="color: var(--gray); margin-top: 10px;">Результаты внедрения инструментов Бизнес-ТРИЗ, Lean и Kaizen.</p>
-        </header>
+<div id="main-content">
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Askar <span>Bapen</span></a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="cases.html" class="active" data-i18n="nav_cases">Кейсы</a>
+          <a href="about.html" data-i18n="nav_about">Обо мне</a>
+        </div>
+        <div class="nav-social">
+          <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://t.me/askarbapen" target="_blank" rel="noopener">Telegram</a>
+        </div>
+        <div class="lang-switcher">
+          <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
+          <button id="btn-kz" onclick="setLanguage('kz')">KZ</button>
+          <button id="btn-en" onclick="setLanguage('en')">EN</button>
+          <button id="btn-ar" onclick="setLanguage('ar')">AR</button>
+        </div>
+        <img src="logo_light.png" alt="KAIZEN-TRIZ PARTNERS" class="nav-logo-img">
+      </div>
+    </div>
+  </nav>
 
-        <section class="reveal" style="margin-bottom: 80px; overflow-x: auto;">
-            <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
-                <thead>
-                    <tr style="border-bottom: 2px solid var(--gold); text-align: left;">
-                        <th style="padding: 15px; font-family: 'Cormorant Garamond'; font-size: 18px;">Отрасль</th>
-                        <th style="padding: 15px; font-family: 'Cormorant Garamond'; font-size: 18px;">Задача</th>
-                        <th style="padding: 15px; font-family: 'Cormorant Garamond'; font-size: 18px;">Результат</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom: 0.5px solid var(--border);">
-                        <td style="padding: 20px; font-weight: 500;">Логистика</td>
-                        <td style="padding: 20px; color: var(--gray);">Оптимизация склада запчастей и адресного хранения.</td>
-                        <td style="padding: 20px; color: var(--gold); font-weight: 500;">-75% потерь времени</td>
-                    </tr>
-                    <tr style="border-bottom: 0.5px solid var(--border);">
-                        <td style="padding: 20px; font-weight: 500;">Медицина</td>
-                        <td style="padding: 20px; color: var(--gray);">Увеличение пропускной способности приемного покоя.</td>
-                        <td style="padding: 20px; color: var(--gold); font-weight: 500;">x2 пациентов в час</td>
-                    </tr>
-                    <tr style="border-bottom: 0.5px solid var(--border);">
-                        <td style="padding: 20px; font-weight: 500;">Ритейл</td>
-                        <td style="padding: 20px; color: var(--gray);">Снижение очередей на кассах в пиковые часы.</td>
-                        <td style="padding: 20px; color: var(--gold); font-weight: 500;">+30% лояльности</td>
-                    </tr>
-                    <tr style="border-bottom: 0.5px solid var(--border);">
-                        <td style="padding: 20px; font-weight: 500;">Производство</td>
-                        <td style="padding: 20px; color: var(--gray);">Внедрение системы 5S и сокращение брака.</td>
-                        <td style="padding: 20px; color: var(--gold); font-weight: 500;">17 млн ₸ экономии</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p style="margin-top: 20px; font-size: 13px; color: var(--gray); text-align: center;">* Всего более 20 реализованных кейсов в 8 отраслях.</p>
-        </section>
+  <div class="container">
 
-        <footer class="reveal" style="padding: 40px 0; border-top: 0.5px solid var(--border); text-align: center;">
-            <p class="copyright" data-i18n="footer_copy">© 2026 Аскар Бапен. KAIZEN-TRIZ PARTNERS</p>
-        </footer>
+    <header class="page-header reveal">
+      <h1 data-i18n="cases_title">Кейсы</h1>
+      <p data-i18n="cases_sub">22 завершённых проекта в 8 отраслях. Измеримые результаты.</p>
+    </header>
+
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all" onclick="filterCases(this)" data-i18n="filter_all">Все</button>
+      <button class="filter-btn" data-filter="производство" onclick="filterCases(this)" data-i18n="filter_manufacturing">Производство</button>
+      <button class="filter-btn" data-filter="питание" onclick="filterCases(this)" data-i18n="filter_food">Питание</button>
+      <button class="filter-btn" data-filter="логистика" onclick="filterCases(this)" data-i18n="filter_logistics">Логистика</button>
+      <button class="filter-btn" data-filter="horeca" onclick="filterCases(this)">HoReCa</button>
+      <button class="filter-btn" data-filter="медицина" onclick="filterCases(this)" data-i18n="filter_medicine">Медицина</button>
+      <button class="filter-btn" data-filter="образование" onclick="filterCases(this)" data-i18n="filter_education">Образование</button>
+      <button class="filter-btn" data-filter="it" onclick="filterCases(this)" data-i18n="filter_it">Связь и IT</button>
+      <button class="filter-btn" data-filter="сервис" onclick="filterCases(this)" data-i18n="filter_service">Сервис</button>
     </div>
 
-    <script src="main.js"></script>
+    <div class="cases-grid">
+
+      <div class="case-card reveal" data-industry="производство">
+        <span class="case-industry" data-i18n="ind_manufacturing">Производство</span>
+        <span class="case-company">Newtech System Group</span>
+        <span class="case-problem">Сбои в складировании и замерах</span>
+        <span class="case-result">Процессы прозрачны от замеров до склада</span>
+      </div>
+
+      <div class="case-card reveal" data-industry="производство">
+        <span class="case-industry" data-i18n="ind_manufacturing">Производство</span>
+        <span class="case-company">КазИнтегСтрой</span>
+        <span class="case-problem">Высокие затраты на ГСМ, слабая управляемость</span>
+        <span class="case-result"><strong>2 новых бизнес-направления,</strong> цифровой учет техники</span>
+        <div class="case-footer">
+          <a href="reviews/kazintegstroy.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+      <div class="case-card reveal" data-industry="производство">
+        <span class="case-industry" data-i18n="ind_manufacturing">Производство</span>
+        <span class="case-company">Bagashar Meken</span>
+        <span class="case-problem">Долгая обработка заявок, брак</span>
+        <span class="case-result">Время обработки <strong>с 105 до 20 минут,</strong> брак в заявках исключен</span>
+        <div class="case-footer">
+          <a href="reviews/bagasharmeken.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+      <div class="case-card reveal" data-industry="производство">
+        <span class="case-industry" data-i18n="ind_manufacturing">Производство</span>
+        <span class="case-company">Meris Construction</span>
+        <span class="case-problem">Потери при складировании теплоизоляционных материалов</span>
+        <span class="case-result">Выявлены "слепые зоны" в процессе складирования готовых к инсталляции материалов</span>
+        <div class="case-footer">
+          <a href="reviews/meris.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+      <div class="case-card reveal" data-industry="производство">
+        <span class="case-industry" data-i18n="ind_manufacturing">Производство</span>
+        <span class="case-company">Makilla</span>
+        <span class="case-problem">Высокая конкуренция, ограниченный рынок</span>
+        <span class="case-result">Найдена новая рыночная ниша без конкуренции</span>
+        <div class="case-footer">
+          <a href="reviews/makilla.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+      <div class="case-card reveal" data-industry="питание">
+        <span class="case-industry" data-i18n="ind_food">Питание</span>
+        <span class="case-company">Fitness Food</span>
+        <span class="case-problem">Высокий брак, неоцифрованные процессы</span>
+        <span class="case-result">Брак <strong>-43%,</strong> процессы оцифрованы на 98%</span>
+        <div class="case-footer">
+          <a href="reviews/fitnessfood.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+      <div class="case-card reveal" data-industry="питание">
+        <span class="case-industry" data-i18n="ind_food">Питание</span>
+        <span class="case-company">Abokado Sushi</span>
+        <span class="case-problem">Медленное выполнение заказов</span>
+        <span class="case-result">Время заказа <strong>с 31,6 до 17,7 минут,</strong> скорость выдачи удвоена</span>
+        <div class="case-footer">
+          <a href="reviews/abokado.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+      <div class="case-card reveal" data-industry="питание">
+        <span class="case-industry" data-i18n="ind_food">Питание</span>
+        <span class="case-company">Qazagrofood</span>
+        <span class="case-problem">Текучка управленцев, низкая производительность</span>
+        <span class="case-result">Система найма директората разработана, менеджмент подобран профессионально</span>
+        <div class="case-footer">
+          <a href="reviews/qazagrofood.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+      <div class="case-card reveal" data-industry="питание">
+        <span class="case-industry" data-i18n="ind_food">Питание</span>
+        <span class="case-company">Баракат</span>
+        <span class="case-problem">Долгая переналадка, нестабильность качества</span>
+        <span class="case-result">Переналадка <strong>с 24 до 11 минут,</strong> трудозатраты с 3 до 1 человека</span>
+        <div class="case-footer">
+          <a href="reviews/barakat.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+      <div class="case-card reveal" data-industry="логистика">
+        <span class="case-industry" data-i18n="ind_logistics">Логистика</span>
+        <span class="case-company">Life Food</span>
+        <span class="case-problem">Складские потери, пересорт, возврат товара</span>
+        <span class="case-result">Запасы освобождены на <strong>9 млн ₸,</strong> недостачи -85%</span>
+        <div class="case-footer">
+          <a href="reviews/lifefood.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+      <div class="case-card reveal" data-industry="логистика">
+        <span class="case-industry" data-i18n="ind_logistics">Логистика</span>
+        <span class="case-company">Atyrau Nomad Auto</span>
+        <span class="case-problem">Текучка водителей, непрозрачность базы</span>
+        <span class="case-result">Устранены корневые причины текучки, улучшены условия труда</span>
+        <div class="case-footer">
+          <a href="reviews/atyraunomadauto.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+      <div class="case-card reveal" data-industry="логистика">
+        <span class="case-industry" data-i18n="ind_logistics">Логистика</span>
+        <span class="case-company">Miras</span>
+        <span class="case-problem">Хаотичный склад, потери, нет аналитики</span>
+        <span class="case-result">Брак <strong>-71%,</strong> адресное хранение внедрено</span>
+      </div>
+
+      <div class="case-card reveal" data-industry="horeca">
+        <span class="case-industry">HoReCa</span>
+        <span class="case-company">Manica Concierge</span>
+        <span class="case-problem">Брак в продажах, долгая подготовка апартаментов</span>
+        <span class="case-result">Заселение <strong>с 35 до 5 минут,</strong> выручка +15%, брак в продажах -95%</span>
+        <div class="case-footer">
+          <a href="reviews/manica.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+      <div class="case-card reveal" data-industry="horeca">
+        <span class="case-industry">HoReCa</span>
+        <span class="case-company">Janym Soul</span>
+        <span class="case-problem">Низкий КПД, ошибки в обслуживании</span>
+        <span class="case-result">КПД <strong>с 23% до 37%</strong></span>
+      </div>
+
+      <div class="case-card reveal" data-industry="медицина">
+        <span class="case-industry" data-i18n="ind_medicine">Медицина</span>
+        <span class="case-company">Shaskin Clinic</span>
+        <span class="case-problem">Долгое ожидание операции, неэффективная реабилитация</span>
+        <span class="case-result">Ожидание таламотомии <strong>с 2,7 ч до 12 минут,</strong> пропускная способность реабилитации с 9 до 12 человек</span>
+        <div class="case-footer">
+          <a href="reviews/shashkinclinic.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+      <div class="case-card reveal" data-industry="медицина">
+        <span class="case-industry" data-i18n="ind_medicine">Медицина</span>
+        <span class="case-company">Expert Neuro</span>
+        <span class="case-problem">Неэффективная загрузка персонала</span>
+        <span class="case-result">Экономический эффект <strong>17 022 894 ₸</strong></span>
+        <div class="case-footer">
+          <a href="reviews/expertneuro.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+      <div class="case-card reveal" data-industry="медицина">
+        <span class="case-industry" data-i18n="ind_medicine">Медицина</span>
+        <span class="case-company">Cardios</span>
+        <span class="case-problem">Хаос в запасах, неструктурированное пространство</span>
+        <span class="case-result"><strong>296 функций</strong> описано, улучшения по 5S до 48,9%</span>
+      </div>
+
+      <div class="case-card reveal" data-industry="образование">
+        <span class="case-industry" data-i18n="ind_education">Образование</span>
+        <span class="case-company">Orator Club</span>
+        <span class="case-problem">Огромная нагрузка на собственника</span>
+        <span class="case-result">Время подготовки к выступлениям <strong>-37%,</strong> ресурсы участников мобилизованы</span>
+        <div class="case-footer">
+          <a href="reviews/oratorclub.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+      <div class="case-card reveal" data-industry="образование">
+        <span class="case-industry" data-i18n="ind_education">Образование</span>
+        <span class="case-company">Qaynar Bulaq / AlmaU</span>
+        <span class="case-problem">Нечеткая бизнес-модель</span>
+        <span class="case-result">Стратегия монетизации при сохранении социальной миссии</span>
+      </div>
+
+      <div class="case-card reveal" data-industry="образование">
+        <span class="case-industry" data-i18n="ind_education">Образование</span>
+        <span class="case-company">Alma School</span>
+        <span class="case-problem">Размытые зоны ответственности</span>
+        <span class="case-result"><strong>363 функции,</strong> 57 процессов, 42 стандарта</span>
+      </div>
+
+      <div class="case-card reveal" data-industry="it">
+        <span class="case-industry" data-i18n="ind_it">Связь и IT</span>
+        <span class="case-company">Mobile Business Solutions</span>
+        <span class="case-problem">Избыточные затраты, дублирование</span>
+        <span class="case-result"><strong>124 км кабеля</strong> устранено, договоры с 3 ч до 35 мин</span>
+      </div>
+
+      <div class="case-card reveal" data-industry="сервис">
+        <span class="case-industry" data-i18n="ind_service">Сервис</span>
+        <span class="case-company">Prof Cleaning</span>
+        <span class="case-problem">Хаос в процессах, зависимость от людей</span>
+        <span class="case-result"><strong>48 потерь</strong> устранено, клининговые операции стандартизированы</span>
+        <div class="case-footer">
+          <a href="reviews/profcleaning.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-contacts">
+        <a href="tel:+77017717840">+7 (701) 771 78 40</a>
+        <a href="mailto:k.partners2030@gmail.com">k.partners2030@gmail.com</a>
+        <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://t.me/askarbapen" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <p class="footer-copy" data-i18n="footer_copy">© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS</p>
+    </div>
+  </footer>
+
+</div>
+
+<script src="main.js"></script>
+<script>
+  function filterCases(btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.case-card').forEach(card => {
+      if (filter === 'all' || card.dataset.industry === filter) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 });
+  reveals.forEach(r => observer.observe(r));
+
+  function setLanguage(lang) {
+    document.querySelectorAll('.lang-switcher button').forEach(b => b.classList.remove('active'));
+    const btn = document.getElementById('btn-' + lang);
+    if (btn) btn.classList.add('active');
+    localStorage.setItem('lang', lang);
+    if (lang === 'ar') {
+      document.getElementById('main-content').style.display = 'none';
+      document.getElementById('ar-message').style.display = 'block';
+      document.documentElement.dir = 'rtl';
+    } else {
+      document.getElementById('main-content').style.display = 'block';
+      document.getElementById('ar-message').style.display = 'none';
+      document.documentElement.dir = 'ltr';
+      applyTranslations(lang);
+    }
+  }
+
+  function applyTranslations(lang) {
+    const t = translations[lang] || translations['ru'];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[key]) el.textContent = t[key];
+    });
+  }
+
+  const translations = {
+    ru: {
+      nav_cases: 'Кейсы', nav_about: 'Обо мне',
+      cases_title: 'Кейсы', cases_sub: '22 завершённых проекта в 8 отраслях. Измеримые результаты.',
+      filter_all: 'Все', filter_manufacturing: 'Производство', filter_food: 'Питание',
+      filter_logistics: 'Логистика', filter_medicine: 'Медицина', filter_education: 'Образование',
+      filter_it: 'Связь и IT', filter_service: 'Сервис',
+      ind_manufacturing: 'Производство', ind_food: 'Питание', ind_logistics: 'Логистика',
+      ind_medicine: 'Медицина', ind_education: 'Образование', ind_it: 'Связь и IT', ind_service: 'Сервис',
+      btn_review: 'Читать отзыв',
+      footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
+    },
+    en: {
+      nav_cases: 'Cases', nav_about: 'About',
+      cases_title: 'Cases', cases_sub: '22 completed projects across 8 industries. Measurable results.',
+      filter_all: 'All', filter_manufacturing: 'Manufacturing', filter_food: 'Food',
+      filter_logistics: 'Logistics', filter_medicine: 'Healthcare', filter_education: 'Education',
+      filter_it: 'Telecom & IT', filter_service: 'Service',
+      ind_manufacturing: 'Manufacturing', ind_food: 'Food', ind_logistics: 'Logistics',
+      ind_medicine: 'Healthcare', ind_education: 'Education', ind_it: 'Telecom & IT', ind_service: 'Service',
+      btn_review: 'Read review',
+      footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
+    },
+    kz: {
+      nav_cases: 'Кейстер', nav_about: 'Мен туралы',
+      cases_title: 'Кейстер', cases_sub: '8 салада 22 аяктаган жоба. Олшенетiн натижелер.',
+      filter_all: 'Барлыгы', filter_manufacturing: 'Ондiрiс', filter_food: 'Тамак',
+      filter_logistics: 'Логистика', filter_medicine: 'Медицина', filter_education: 'Бiлiм',
+      filter_it: 'Байланыс жане IT', filter_service: 'Кызмет',
+      ind_manufacturing: 'Ондiрiс', ind_food: 'Тамак', ind_logistics: 'Логистика',
+      ind_medicine: 'Медицина', ind_education: 'Бiлiм', ind_it: 'Байланыс жане IT', ind_service: 'Кызмет',
+      btn_review: 'Пiкiрдi оку',
+      footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
+    }
+  };
+
+  (function() {
+    const saved = localStorage.getItem('lang') || 'ru';
+    setLanguage(saved);
+  })();
+</script>
+
 </body>
 </html>
