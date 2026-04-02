@@ -522,10 +522,6 @@
             <span class="stat-desc" data-i18n="stat_2">завершенных проектов</span>
           </div>
           <div class="stat-row">
-            <span class="stat-num">8</span>
-            <span class="stat-desc" data-i18n="stat_3">отраслей</span>
-          </div>
-          <div class="stat-row">
             <span class="stat-num">115</span>
             <span class="stat-desc" data-i18n="stat_4">стран на EXPO-2017</span>
           </div>
@@ -614,8 +610,11 @@
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08 });
+  }, { threshold: 0, rootMargin: '0px 0px -20px 0px' });
   reveals.forEach(r => observer.observe(r));
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+  }, 300);
 
   // Language
   function setLanguage(lang) {
@@ -636,14 +635,14 @@
   }
 
   function applyTranslations(lang) {
-    const t = translations[lang] || translations['ru'];
+    const t = aboutTranslations[lang] || aboutTranslations['ru'];
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.dataset.i18n;
       if (t[key]) el.textContent = t[key];
     });
   }
 
-  const translations = {
+  const aboutTranslations = {
     ru: {
       nav_cases: 'Кейсы', nav_about: 'Обо мне',
       about_role: 'Генеральный директор KAIZEN-TRIZ PARTNERS - Мастер Бизнес-ТРИЗ',
