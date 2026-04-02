@@ -446,9 +446,95 @@
       document.getElementById('main-content').style.display = 'block';
       document.getElementById('ar-message').style.display = 'none';
       document.documentElement.dir = 'ltr';
-      if (typeof applyTranslations === 'function') applyTranslations(lang);
+      applyTranslations(lang);
     }
   }
+
+  function applyTranslations(lang) {
+    const t = consultingTranslations[lang] || consultingTranslations['ru'];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[key]) el.textContent = t[key];
+    });
+  }
+
+  const consultingTranslations = {
+    ru: {
+      nav_cases: 'Кейсы', nav_about: 'Обо мне',
+      consulting_title: 'Бизнес-решения',
+      consulting_sub: 'Работаем вместе над конкретной задачей. Результат - под ключ.',
+      c1_pain: 'Хаос в процессах', c1_tool: 'Оцифровка компании',
+      c1_desc: 'Через 3 дня у вас будет карта процессов с четкими зонами ответственности.',
+      c1_i1: 'составление бизнес-системы', c1_i2: 'описание процессов через инструменты RACI, SIPOC, BPMN', c1_i3: 'разработка стандартов и регламентов',
+      c2_pain: 'Много работы - мало результата', c2_tool: 'Устранение потерь',
+      c2_desc: 'Находим 3 ключевых источника потерь - процессы ускоряются, затраты снижаются за 30 дней.',
+      c2_i1: 'выявление потерь и неэффективности', c2_i2: 'оптимизация процессов', c2_i3: 'стандартизация и контроль',
+      c3_pain: 'Непонятно куда двигаться', c3_tool: 'Стратегическая сессия',
+      c3_desc: 'За 2 дня стратегической сессии получаете план на год - с конкретными целями и ответственными на каждом уровне.',
+      c3_i1: 'формулировка стратегических целей', c3_i2: 'развертывание до уровня команды', c3_i3: 'X-матрица как итоговый документ',
+      c4_pain: 'Проблема не решается привычными методами', c4_tool: 'Бизнес-ТРИЗ решения',
+      c4_desc: 'За 2 рабочих дня найдем решение, которое не нашли раньше.',
+      c4_i1: 'анализ и устранение противоречий', c4_i2: 'поиск скрытых ресурсов бизнеса', c4_i3: 'генерация идей и план внедрения',
+      c5_pain: 'Нужны новые источники дохода', c5_tool: 'P2R Sprint',
+      c5_desc: 'За 2 дня находим минимум 3 новых направления роста на основе ресурсов, которые уже есть в вашем бизнесе.',
+      c5_i1: 'генерация решений через P2R Matrix', c5_i2: 'проверка через VESC-фильтр', c5_i3: 'готовый план внедрения через X-Matrix',
+      c6_pain: 'Нет вовлеченности, каждый сам за себя', c6_tool: 'Командообразование',
+      c6_desc: 'Внедряем систему активизации персонала - сотрудники сами находят и устраняют проблемы, кадровая текучесть снижается.',
+      c6_i1: 'активизация персонала', c6_i2: 'внедрение системы инициатив', c6_i3: 'культура постоянных улучшений',
+      btn_enquiry: 'Оставить заявку',
+      footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
+    },
+    en: {
+      nav_cases: 'Cases', nav_about: 'About',
+      consulting_title: 'Business Solutions',
+      consulting_sub: 'We work alongside you on a specific challenge. Full turnkey delivery.',
+      c1_pain: 'Operational Chaos', c1_tool: 'Business System Digitalisation',
+      c1_desc: 'Accountability is unclear and processes rely on individuals rather than systems. We build your business system from the ground up - from functions to standards.',
+      c1_i1: 'business system design', c1_i2: 'process mapping via RACI, SIPOC and BPMN', c1_i3: 'development of standards and operating procedures',
+      c2_pain: 'High Effort, Low Output', c2_tool: 'Waste Elimination',
+      c2_desc: 'Processes exist but consume excessive time and resources. We identify and eliminate waste across any industry.',
+      c2_i1: 'identification of waste and inefficiency', c2_i2: 'process optimisation', c2_i3: 'standardisation and control',
+      c3_pain: 'No Clear Strategic Direction', c3_tool: 'Strategic Session',
+      c3_desc: 'Objectives exist but fail to translate into concrete action. We facilitate a strategic session using Hoshin Kanri - from vision to execution.',
+      c3_i1: 'formulation of strategic objectives', c3_i2: 'deployment to team level', c3_i3: 'X-Matrix as the key output document',
+      c4_pain: 'Problems Conventional Methods Fail to Solve', c4_tool: 'Business TRIZ Solutions',
+      c4_desc: 'Conventional approaches have been exhausted without result. We apply Business TRIZ tools to identify non-obvious solutions.',
+      c4_i1: 'analysis and resolution of contradictions', c4_i2: 'identification of hidden business resources', c4_i3: 'idea generation and implementation plan',
+      c5_pain: 'Unable to Identify New Revenue Streams', c5_tool: 'P2R Sprint',
+      c5_desc: 'A proprietary methodology that uncovers solutions through the hidden resources of your business system. Property-to-Resource.',
+      c5_i1: 'solution generation via the P2R Matrix', c5_i2: 'validation through the VESC filter', c5_i3: 'implementation plan via the X-Matrix',
+      c6_pain: 'Low Staff Engagement and Siloed Working', c6_tool: 'Team Development',
+      c6_desc: 'Staff are present but function without cohesion. We engage your staff and embed a culture of continuous improvement within your organisation.',
+      c6_i1: 'staff engagement', c6_i2: 'implementation of an initiative system', c6_i3: 'culture of continuous improvement',
+      btn_enquiry: 'Submit an enquiry',
+      footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
+    },
+    kz: {
+      nav_cases: 'Жобалар', nav_about: 'Мен туралы',
+      consulting_title: 'Бизнес-шешімдер',
+      consulting_sub: 'Нақты мәселемен бірге жұмыс істеп, нәтижеге дейін жеткіземіз.',
+      c1_pain: 'Үдерістердегі (процестер) апыр-топыр', c1_tool: 'Компанияны цифрлық жүйеге көшіру',
+      c1_desc: 'Кімнің неге жауапты екені белгісіз, процестер жүйеге емес, адамдарға тәуелді. Бизнес-жүйені негізінен, функциялардан бастап стандарттарға дейін құрастырамыз.',
+      c1_i1: 'бизнес-жүйені құру', c1_i2: 'RACI, SIPOC, BPMN құралдары арқылы процестерді сипаттау', c1_i3: 'стандарттар мен регламенттерді әзірлеу',
+      c2_pain: 'Күш салу көп, нәтиже аз', c2_tool: 'Шығын-ысыраптарды жою',
+      c2_desc: 'Процестер сипатталған, бірақ оларға уақыт пен қаражат көп кетеді. Кез келген саладағы шығын-ысырапты тауып, жоямыз.',
+      c2_i1: 'шығын-ысырап пен тиімсіздікті анықтау', c2_i2: 'процестерді оңтайландыру', c2_i3: 'стандарттау және бақылау',
+      c3_pain: 'Қай бағытқа қозғалу керегі түсініксіз', c3_tool: 'Стратегиялық сессия',
+      c3_desc: 'Мақсаттар қойылған, бірақ оларға жету үшін нақты әрекеттер жасай алмайды. Хосин Канри бойынша стратегиялық сессия өткіземіз.',
+      c3_i1: 'стратегиялық мақсаттарды тұжырымдау', c3_i2: 'команда деңгейіне дейін жеткізу', c3_i3: 'бір бетті X-матрица',
+      c4_pain: 'Мәселе күнделікті әдістермен шешілмейді', c4_tool: 'Бизнес-ТРИЗ шешімдері',
+      c4_desc: 'Бәрін қолданып көрдік - ештеңе жұмыс істемейді. Бизнес-ТРИЗ құралдарын қолданамыз.',
+      c4_i1: 'қарама-қайшылықтарды талдау және жою', c4_i2: 'бизнестің жасырын ресурстарын табу', c4_i3: 'идеяларды әзірлеу және енгізу жоспары',
+      c5_pain: 'Жаңа табыс көзі қажет', c5_tool: 'P2R Sprint',
+      c5_desc: 'Жүйенің жасырын ресурстары арқылы шешімдерді табудың авторлық әдістемесі. Property-to-Resource.',
+      c5_i1: 'P2R Matrix көмегімен шешімдерді табу', c5_i2: 'VESC-фильтр арқылы тексеру', c5_i3: 'X-Matrix негізінде дайын енгізу жоспары',
+      c6_pain: 'Іске араласуы төмен, әркім өз бетімен жүр', c6_tool: 'Команда құру, командалық рух қалыптастыру',
+      c6_desc: 'Персонал бар, команда жоқ. Қызметкерлерді ынталандырамыз және компания ішінде жақсарту мәдениетін қалыптастырамыз.',
+      c6_i1: 'персоналды жұмылдыру', c6_i2: 'бастамалар жүйесін енгізу', c6_i3: 'тұрақты жақсарту мәдениеті',
+      btn_enquiry: 'Өтінім қалдыру',
+      footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
+    }
+  };
 
   const savedLang = localStorage.getItem('lang') || 'ru';
   setLanguage(savedLang);
