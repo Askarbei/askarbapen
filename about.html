@@ -315,15 +315,15 @@
     }
     .book-card:hover { border-color: var(--border); }
     .book-cover {
-      width: 80px;
-      height: 110px;
+      width: 120px;
+      height: 170px;
       background: var(--bg3);
       border: 0.5px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      padding: 8px;
+      overflow: hidden;
     }
     .book-cover-text {
       font-family: var(--font-head);
@@ -494,6 +494,7 @@
         <p class="about-intro-role" data-i18n="about_role">Генеральный директор KAIZEN-TRIZ PARTNERS - Мастер Бизнес-ТРИЗ</p>
         <div class="about-cta-row">
           <a href="consulting.html" class="btn-primary" data-i18n="about_cta_consult">Бизнес-решения</a>
+          <a href="training.html" class="btn-outline" data-i18n="about_cta_training">Бизнес-обучение</a>
           <a href="mailto:k.partners2030@gmail.com" class="btn-outline" data-i18n="about_cta_contact">Написать</a>
         </div>
       </div>
@@ -564,14 +565,14 @@
     <!-- BOOK -->
     <section class="book-section reveal">
       <p class="section-label" data-i18n="book_label">книга</p>
-      <a href="https://amazon.com" target="_blank" rel="noopener" class="book-card">
+      <a href="https://a.co/d/07ToEj6y" target="_blank" rel="noopener" class="book-card">
         <div class="book-cover">
-          <div class="book-cover-text">Focus Mastery in Uncertainty</div>
+          <img src="book-cover.jpg" alt="Focus Mastery in Uncertainty" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div class="book-info">
           <p class="book-label" data-i18n="book_platform">Amazon</p>
           <h3 class="book-title">Focus Mastery in Uncertainty</h3>
-          <p class="book-desc" data-i18n="book_desc">Инструменты удержания фокуса и принятия решений в условиях неопределенности. Для руководителей и консультантов.</p>
+          <p class="book-desc" data-i18n="book_desc">Инструменты удержания фокуса и принятия решений в условиях неопределенности.</p>
           <span class="btn-amazon" data-i18n="book_cta">Читать на Amazon</span>
         </div>
       </a>
@@ -646,7 +647,7 @@
     ru: {
       nav_cases: 'Кейсы', nav_about: 'Обо мне',
       about_role: 'Генеральный директор KAIZEN-TRIZ PARTNERS - Мастер Бизнес-ТРИЗ',
-      about_cta_consult: 'Бизнес-решения', about_cta_contact: 'Написать',
+      about_cta_consult: 'Бизнес-решения', about_cta_training: 'Бизнес-обучение', about_cta_contact: 'Написать',
       story_p1: 'Я начинал как дипломат. Арабский и английский языки, длительные командировки на Ближний Восток, международные переговоры, EXPO-2017 в Астане - координировал участие 115 стран. Там я понял: одного системного взгляда недостаточно. Нужны конкретные инструменты.',
       story_p2: 'Когда перешел в бизнес-консалтинг, начал изучать Кайдзен и Lean. Это закрывало 90% задач - потери, процессы, стандарты. Но оставались задачи, где любое решение упиралось в противоречие.',
       story_quote: 'Например: ЕСЛИ увеличить штат отдела продаж, ТО вырастут продажи, НО вырастет и ФОТ. ЕСЛИ оставить штат как есть, ТО ФОТ не изменится, НО и продажи не вырастут. Кайдзен здесь не давал ответа.',
@@ -660,14 +661,14 @@
       cred_3: 'Сертифицированный тренер Toyota Production System (TPS Grade 4)',
       cred_4: 'Дипломат, арабист - координировал участие 115 стран на EXPO-2017 в Астане',
       book_label: 'книга', book_platform: 'Amazon',
-      book_desc: 'Инструменты удержания фокуса и принятия решений в условиях неопределенности. Для руководителей и консультантов.',
+      book_desc: 'Инструменты удержания фокуса и принятия решений в условиях неопределенности.',
       book_cta: 'Читать на Amazon',
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     en: {
       nav_cases: 'Cases', nav_about: 'About',
       about_role: 'CEO of KAIZEN-TRIZ PARTNERS - Master of Business TRIZ',
-      about_cta_consult: 'Business solutions', about_cta_contact: 'Get in touch',
+      about_cta_consult: 'Business solutions', about_cta_training: 'Business training', about_cta_contact: 'Get in touch',
       story_p1: 'I started as a diplomat. Arabic and English languages, extended assignments in the Middle East, international negotiations, EXPO-2017 in Astana - coordinated the participation of 115 countries. There I realised: a systemic perspective alone is not enough. You need concrete tools.',
       story_p2: 'When I moved into business consulting, I began studying Kaizen and Lean. These covered 90% of tasks - waste, processes, standards. But some tasks ran into a wall of contradictions.',
       story_quote: 'For example: IF you increase the sales team headcount, THEN sales will grow, BUT so will the payroll. IF you keep headcount as is, THEN payroll stays flat, BUT so do sales. Kaizen had no answer here.',
@@ -681,14 +682,14 @@
       cred_3: 'Certified Toyota Production System Trainer (TPS Grade 4)',
       cred_4: 'Diplomat, Arabist - coordinated the participation of 115 countries at EXPO-2017 in Astana',
       book_label: 'book', book_platform: 'Amazon',
-      book_desc: 'Tools for maintaining focus and making decisions under uncertainty. For executives and consultants.',
+      book_desc: 'Tools for maintaining focus and making decisions under uncertainty.',
       book_cta: 'Read on Amazon',
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     kz: {
       nav_cases: 'Кейстер', nav_about: 'Мен туралы',
       about_role: 'KAIZEN-TRIZ PARTNERS Бас директоры - Бизнес-ТРИЗ Шебер',
-      about_cta_consult: 'Бизнес-шешiмдер', about_cta_contact: 'Жазу',
+      about_cta_consult: 'Бизнес-шешiмдер', about_cta_training: 'Бизнес-окыту', about_cta_contact: 'Жазу',
       story_p1: 'Мен дипломат ретiнде бастадым. Араб жане агылшын тiлдерi, Таяу Шыгысыа узак iс-сапарлар, халыкаралык келiссоздер, Астанадагы EXPO-2017 - 115 елдiн катысуын унйлестiрдiм. Сонда тустiм: бiр жуйелi коз-карас жеткiлiксiз. Нактi куралдар кажет.',
       story_p2: 'Бизнес-консалтингке откенде, Кайдзен мен Lean-дi уйрене бастадым. Бул тапсырмалардын 90%-н жабады - шыгындар, процестер, стандарттар. Бiрак кандай шешiм болмасын карама-кайшылыкка тiрелетiн тапсырмалар кала бердi.',
       story_quote: 'Мысалы: ЕГЕР сату болiмiнiн штатын улгайтсак, ОНДА сатылым осер, БIРАК ЖКФ та осер. ЕГЕР штатты солай калдырсак, ОНДА ЖКФ озгермейдi, БIРАК сатылым да озгермейдi. Кайдзен бул жерде жауап бере алмады.',
