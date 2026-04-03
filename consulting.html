@@ -250,6 +250,25 @@
   هذه الصفحة قيد الإنشاء
 </div>
 
+
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" onclick="closeBurger()">✕</button>
+  <a href="consulting.html" data-i18n="nav_consulting">Бизнес-решения</a>
+  <a href="training.html" data-i18n="nav_training">Бизнес-ағарту</a>
+  <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
+  <a href="about.html" data-i18n="nav_about">Обо мне</a>
+  <div class="mobile-social">
+    <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://t.me/bapeninsights" target="_blank" rel="noopener">Bapen Insights</a>
+  </div>
+  <div class="mobile-lang">
+    <button onclick="setLanguage('ru');closeBurger()">RU</button>
+    <button onclick="setLanguage('kz');closeBurger()">KZ</button>
+    <button onclick="setLanguage('en');closeBurger()">EN</button>
+    <button onclick="setLanguage('ar');closeBurger()">AR</button>
+  </div>
+</div>
+
 <div id="main-content">
   <nav>
     <div class="container nav-inner">
@@ -506,7 +525,7 @@
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     en: {
-      nav_consulting: 'Business Solutions', nav_training: 'Business Training', nav_cases: 'Cases', nav_about: 'About',
+      nav_consulting: 'Business Solutions', nav_training: 'Business Trainings', nav_cases: 'Cases', nav_about: 'About',
       consulting_title: 'Business Solutions',
       consulting_sub: 'We work alongside you on a specific challenge. Full turnkey delivery.',
       c1_pain: 'Operational Chaos', c1_tool: 'Business System Digitalisation',
@@ -531,7 +550,7 @@
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     kz: {
-      nav_consulting: 'Бизнес-шешімдер', nav_training: 'Бизнес тренингтер', nav_cases: 'Жобалар', nav_about: 'Мен туралы',
+      nav_consulting: 'Бизнес-шешімдер', nav_training: 'Бизнес-ағарту', nav_cases: 'Жобалар', nav_about: 'Мен туралы',
       consulting_title: 'Бизнес-шешімдер',
       consulting_sub: 'Нақты мәселемен бірге жұмыс істеп, нәтижеге дейін жеткіземіз.',
       c1_pain: 'Үдерістердегі (процестер) апыр-топыр', c1_tool: 'Компанияны цифрлық жүйеге көшіру',
