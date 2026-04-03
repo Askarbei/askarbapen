@@ -12,8 +12,8 @@
       --bg: #1a1917;
       --bg2: #222018;
       --gold: #D4A843;
-      --text: #F5F2EA;
-      --text2: #ccc7bb;
+      --text: #FFFFFF;
+      --text2: #E0DDD6;
       --text3: #9a9488;
       --border: rgba(212,168,67,0.25);
       --border2: rgba(245,242,234,0.12);
@@ -22,19 +22,19 @@
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
     nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 0.5px solid var(--border2); padding: 18px 0; }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .nav-logo { font-family: var(--font-head); font-size: 20px; font-weight: 500; letter-spacing: 0.04em; color: var(--text); }
+    .nav-logo { text-transform: uppercase; font-family: var(--font-head); font-size: 20px; font-weight: 500; letter-spacing: 0.04em; color: var(--text); }
     .nav-logo span { color: var(--gold); }
     .nav-right { display: flex; align-items: center; gap: 32px; }
     .nav-links { display: flex; gap: 28px; }
-    .nav-links a { font-size: 15px; color: var(--text); transition: color 0.15s; }
+    .nav-links a { text-transform: uppercase; font-size: 15px; color: var(--text); transition: color 0.15s; }
     .nav-links a:hover { color: var(--gold); }
     .nav-social { display: flex; gap: 14px; }
-    .nav-social a { font-size: 13px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.15s; }
+    .nav-social a { text-transform: uppercase; font-size: 13px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.15s; }
     .nav-social a:hover { color: var(--gold); }
     .lang-switcher { display: flex; gap: 4px; }
     .lang-switcher button { background: none; border: 0.5px solid var(--border2); color: var(--text3); font-family: var(--font-body); font-size: 11px; padding: 4px 8px; cursor: pointer; border-radius: 3px; transition: all 0.15s; letter-spacing: 0.05em; }
@@ -95,6 +95,8 @@
       <a href="index.html" class="nav-logo">Askar <span>Bapen</span></a>
       <div class="nav-right">
         <div class="nav-links">
+          <a href="consulting.html" data-i18n="nav_consulting">Бизнес-решения</a>
+          <a href="training.html" data-i18n="nav_training">Бизнес-обучение</a>
           <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
           <a href="about.html" data-i18n="nav_about">Обо мне</a>
         </div>
@@ -141,7 +143,7 @@
                 <li data-i18n="tr_p1_i2">X-матрица как инструмент управления</li>
                 <li data-i18n="tr_p1_i3">контроль исполнения на всех уровнях</li>
               </ul>
-              <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+              <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
             </div>
           </div>
         </div>
@@ -162,7 +164,7 @@
                 <li data-i18n="tr_p2_i2">Gemba walk и визуальный менеджмент</li>
                 <li data-i18n="tr_p2_i3">создание культуры инициативности</li>
               </ul>
-              <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+              <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
             </div>
           </div>
         </div>
@@ -183,7 +185,7 @@
                 <li data-i18n="tr_p3_i2">делегирование и контроль</li>
                 <li data-i18n="tr_p3_i3">управление по целям</li>
               </ul>
-              <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+              <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
             </div>
           </div>
         </div>
@@ -204,7 +206,7 @@
                 <li data-i18n="tr_p4_i2">поиск скрытых ресурсов бизнеса</li>
                 <li data-i18n="tr_p4_i3">применение на реальных задачах компании</li>
               </ul>
-              <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+              <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
             </div>
           </div>
         </div>
@@ -225,7 +227,7 @@
                 <li data-i18n="tr_p5_i2">вовлеченность и инициативность</li>
                 <li data-i18n="tr_p5_i3">инструменты командной работы</li>
               </ul>
-              <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+              <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
             </div>
           </div>
         </div>
@@ -250,7 +252,7 @@
                 <li data-i18n="tr_p6_i2">инструменты 5S и визуального менеджмента</li>
                 <li data-i18n="tr_p6_i3">система подачи предложений</li>
               </ul>
-              <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+              <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
             </div>
           </div>
         </div>
@@ -275,7 +277,7 @@
                 <li data-i18n="tr_p7_i2">медицина и здравоохранение</li>
                 <li data-i18n="tr_p7_i3">HoReCa, логистика, офис</li>
               </ul>
-              <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+              <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
             </div>
           </div>
         </div>
@@ -295,7 +297,7 @@
           <div class="acc-body">
             <div class="acc-body-inner">
               <p class="acc-desc" data-i18n="tr_p8_desc">Группа получает единый язык и инструменты улучшений - команда начинает видеть потери и устранять их самостоятельно.</p>
-              <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+              <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
             </div>
           </div>
         </div>
@@ -311,7 +313,7 @@
           <div class="acc-body">
             <div class="acc-body-inner">
               <p class="acc-desc" data-i18n="tr_p9_desc">Участники получают международный сертификат IBTA и умеют решать сложные бизнес-задачи и разрабатывать системные инновации.</p>
-              <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+              <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
             </div>
           </div>
         </div>
@@ -331,7 +333,7 @@
           <div class="acc-body">
             <div class="acc-body-inner">
               <p class="acc-desc" data-i18n="tr_p10_desc">Компания получает своего внутреннего эксперта - сотрудник самостоятельно ведет проекты улучшений без привлечения внешних консультантов.</p>
-              <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+              <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
             </div>
           </div>
         </div>
@@ -347,7 +349,7 @@
           <div class="acc-body">
             <div class="acc-body-inner">
               <p class="acc-desc" data-i18n="tr_p11_desc">Специалист получает международный сертификат IBTA и становится экспертом по решению сложных бизнес-задач и разработке системных инноваций.</p>
-              <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+              <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
             </div>
           </div>
         </div>
@@ -367,7 +369,7 @@
           <div class="acc-body">
             <div class="acc-body-inner">
               <p class="acc-desc" data-i18n="tr_p12_desc">Заказчик видит скрытые причины конфликтов, низкой вовлеченности и текучести - и понимает кто есть кто в команде. Получает отчет и рекомендации по развитию, мотивации и расстановке людей на правильные роли.</p>
-              <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+              <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
             </div>
           </div>
         </div>
@@ -442,7 +444,7 @@
 
   const trainingTranslations = {
     ru: {
-      nav_cases: 'Кейсы', nav_about: 'Обо мне',
+      nav_consulting: 'Бизнес-решения', nav_training: 'Бизнес-обучение', nav_cases: 'Кейсы', nav_about: 'Обо мне',
       tr_title: 'Бизнес-обучение', tr_sub: 'Обучаем руководителей и команды. Инструменты остаются в компании.',
       tr_g1_label: 'для топ-менеджмента', tr_g2_label: 'для линейного персонала',
       tr_g3_label: 'по отраслям', tr_g4_label: 'групповое обучение',
@@ -481,7 +483,7 @@
       btn_enquiry: 'Оставить заявку', footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     en: {
-      nav_cases: 'Cases', nav_about: 'About',
+      nav_consulting: 'Business Solutions', nav_training: 'Business Training', nav_cases: 'Cases', nav_about: 'About',
       tr_title: 'Business Training', tr_sub: 'We develop managers and teams. The knowledge and tools remain within your organisation.',
       tr_g1_label: 'for senior management', tr_g2_label: 'for frontline staff',
       tr_g3_label: 'by industry', tr_g4_label: 'group training',
@@ -520,7 +522,7 @@
       btn_enquiry: 'Submit an enquiry', footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     kz: {
-      nav_cases: 'Жобалар', nav_about: 'Мен туралы',
+      nav_consulting: 'Бизнес-шешімдер', nav_training: 'Бизнес тренингтер', nav_cases: 'Жобалар', nav_about: 'Мен туралы',
       tr_title: 'Бизнес тренингтер', tr_sub: 'Басшылар мен командаларды оқытамыз. Берген білім мен үйреткен құралдар компания ішінде қалады.',
       tr_g1_label: 'топ-менеджментке арналған', tr_g2_label: 'желілік персоналға арналған',
       tr_g3_label: 'салалар бойынша', tr_g4_label: 'топтық оқыту',
@@ -560,8 +562,29 @@
     }
   };
 
+  const formLinks = {
+    ru: 'https://forms.gle/g8WSxrX66azKQbbd8',
+    kz: 'https://forms.gle/pYbbQdkHM6ExnQV47',
+    en: 'https://forms.gle/aeNmpCuyZVbZxPQU7'
+  };
+
+  function updateFormLinks(lang) {
+    document.querySelectorAll('.form-link').forEach(el => {
+      el.href = formLinks[lang] || formLinks['ru'];
+      el.target = '_blank';
+      el.rel = 'noopener';
+    });
+  }
+
   const savedLang = localStorage.getItem('lang') || 'ru';
   setLanguage(savedLang);
+  updateFormLinks(savedLang);
+
+  const _origSetLang = setLanguage;
+  setLanguage = function(lang) {
+    _origSetLang(lang);
+    updateFormLinks(lang);
+  };
 </script>
 </body>
 </html>
