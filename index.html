@@ -14,8 +14,8 @@
       --bg3: #2a2820;
       --gold: #D4A843;
       --gold-light: #e8c070;
-      --text: #F5F2EA;
-      --text2: #ccc7bb;
+      --text: #FFFFFF;
+      --text2: #E0DDD6;
       --text3: #9a9488;
       --border: rgba(212,168,67,0.25);
       --border2: rgba(245,242,234,0.12);
@@ -28,7 +28,7 @@
       background: var(--bg);
       color: var(--text);
       font-family: var(--font-body);
-      font-size: 16px;
+      font-size: 17px;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
     }
@@ -50,7 +50,7 @@
       justify-content: space-between;
       gap: 24px;
     }
-    .nav-logo {
+    .nav-logo { text-transform: uppercase;
       font-family: var(--font-head);
       font-size: 20px;
       font-weight: 500;
@@ -61,7 +61,7 @@
     .nav-logo span { color: var(--gold); }
     .nav-right { display: flex; align-items: center; gap: 32px; }
     .nav-links { display: flex; gap: 28px; }
-    .nav-links a {
+    .nav-links a { text-transform: uppercase;
       font-size: 15px;
       color: var(--text);
       transition: color 0.15s;
@@ -69,7 +69,7 @@
     }
     .nav-links a:hover { color: var(--gold); }
     .nav-social { display: flex; gap: 14px; align-items: center; }
-    .nav-social a {
+    .nav-social a { text-transform: uppercase;
       color: var(--text2);
       font-size: 13px;
       letter-spacing: 0.05em;
@@ -219,7 +219,7 @@
       border-radius: 12px;
       padding: 22px;
     }
-    .cred-title { font-size: 16px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+    .cred-title { font-size: 17px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
     .cred-link { font-size: 13px; color: var(--gold); opacity: 0.9; transition: opacity 0.15s; }
     .cred-link:hover { opacity: 1; }
 
@@ -325,6 +325,8 @@
       <a href="index.html" class="nav-logo">Askar <span>Bapen</span></a>
       <div class="nav-right">
         <div class="nav-links">
+          <a href="consulting.html" data-i18n="nav_consulting">Бизнес-решения</a>
+          <a href="training.html" data-i18n="nav_training">Бизнес-обучение</a>
           <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
           <a href="about.html" data-i18n="nav_about">Обо мне</a>
         </div>
@@ -349,7 +351,7 @@
       <div class="hero-text">
         <span class="badge" data-i18n="hero_badge">Мастер Бизнес-ТРИЗ</span>
         <h1 data-i18n="hero_name">Аскар Бапен</h1>
-        <p class="hero-sub" data-i18n="hero_sub">Нахожу решения там, где привычные методы заводят в тупик. Производство, медицина, IT, HoReCa, логистика, образование, связь и другие отрасли.</p>
+        <p class="hero-sub" data-i18n="hero_sub">Нахожу решения там, где привычные методы заводят в тупик.</p>
       </div>
       <div class="hero-photo">
         <span class="hero-photo-placeholder">АБ</span>
@@ -476,10 +478,10 @@
 
   const indexTranslations = {
     ru: {
-      nav_cases: 'Кейсы', nav_about: 'Обо мне',
+      nav_consulting: 'Бизнес-решения', nav_training: 'Бизнес-обучение', nav_cases: 'Кейсы', nav_about: 'Обо мне',
       hero_badge: '1 из 7 Мастеров Бизнес-ТРИЗ в мире',
       hero_name: 'Аскар Бапен',
-      hero_sub: 'Нахожу решения там, где привычные методы заводят в тупик. Производство, медицина, IT, HoReCa, логистика, образование, связь и другие отрасли.',
+      hero_sub: 'Нахожу решения там, где привычные методы заводят в тупик.',
       fork_question: 'Что вам нужно?',
       fork_1_title: 'Бизнес-решения', fork_1_desc: 'Работаем вместе над конкретной задачей. Результат - под ключ.',
       fork_2_title: 'Бизнес-обучение', fork_2_desc: 'Обучаем руководителей и команды. Инструменты остаются в компании.',
@@ -497,10 +499,10 @@
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     en: {
-      nav_cases: 'Cases', nav_about: 'About',
+      nav_consulting: 'Business Solutions', nav_training: 'Business Training', nav_cases: 'Cases', nav_about: 'About',
       hero_badge: 'Master of Business TRIZ',
       hero_name: 'Askar Bapen',
-      hero_sub: 'We find solutions where conventional methods fail. Manufacturing, healthcare, IT, HoReCa, logistics, education, telecoms and more.',
+      hero_sub: 'We find solutions where conventional methods fail.',
       fork_question: 'What is your challenge?',
       fork_1_title: 'Business Solutions', fork_1_desc: 'We work alongside you on a specific challenge. Full turnkey delivery.',
       fork_2_title: 'Business Training', fork_2_desc: 'We develop managers and teams. The knowledge and tools remain within your organisation.',
@@ -518,10 +520,10 @@
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     kz: {
-      nav_cases: 'Жобалар', nav_about: 'Мен туралы',
+      nav_consulting: 'Бизнес-шешімдер', nav_training: 'Бизнес тренингтер', nav_cases: 'Жобалар', nav_about: 'Мен туралы',
       hero_badge: 'Бизнес-ТРИЗ Мастері және Kaizen Шебері',
       hero_name: 'Асқар Бапен',
-      hero_sub: 'Ескі әдістер нәтиже бермесе, шығатын жол көрсетеміз. Өндіріс, медицина, IT, HoReCa - 8 саладан астам.',
+      hero_sub: 'Ескі әдістер нәтиже бермесе, шығатын жол көрсетеміз.',
       fork_question: 'Неден бастаймыз?',
       fork_1_title: 'Бизнес-шешімдер', fork_1_desc: 'Нақты мәселемен бірге жұмыс істеп, нәтижеге дейін жеткіземіз.',
       fork_2_title: 'Бизнес тренингтер', fork_2_desc: 'Басшылар мен командаларды оқытамыз. Берген білім мен үйреткен құралдар компания ішінде қалады.',
