@@ -14,8 +14,8 @@
       --bg3: #2a2820;
       --gold: #D4A843;
       --gold-light: #e8c070;
-      --text: #F5F2EA;
-      --text2: #ccc7bb;
+      --text: #FFFFFF;
+      --text2: #E0DDD6;
       --text3: #9a9488;
       --border: rgba(212,168,67,0.25);
       --border2: rgba(245,242,234,0.12);
@@ -28,7 +28,7 @@
       background: var(--bg);
       color: var(--text);
       font-family: var(--font-body);
-      font-size: 16px;
+      font-size: 17px;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
     }
@@ -45,7 +45,7 @@
       padding: 18px 0;
     }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .nav-logo {
+    .nav-logo { text-transform: uppercase;
       font-family: var(--font-head);
       font-size: 20px;
       font-weight: 500;
@@ -55,11 +55,11 @@
     .nav-logo span { color: var(--gold); }
     .nav-right { display: flex; align-items: center; gap: 32px; }
     .nav-links { display: flex; gap: 28px; }
-    .nav-links a { font-size: 15px; color: var(--text); transition: color 0.15s; }
+    .nav-links a { text-transform: uppercase; font-size: 15px; color: var(--text); transition: color 0.15s; }
     .nav-links a:hover,
     .nav-links a.active { color: var(--gold); }
     .nav-social { display: flex; gap: 14px; }
-    .nav-social a {
+    .nav-social a { text-transform: uppercase;
       font-size: 13px;
       color: var(--text2);
       text-transform: uppercase;
@@ -216,7 +216,7 @@
       .page-header h1 { font-size: 34px; }
       .nav-links { display: none; }
       .nav-social { display: none; }
-      .acc-pain { font-size: 16px; }
+      .acc-pain { font-size: 17px; }
     }
   </style>
 </head>
@@ -238,6 +238,8 @@
       <a href="index.html" class="nav-logo">Askar <span>Bapen</span></a>
       <div class="nav-right">
         <div class="nav-links">
+          <a href="consulting.html" data-i18n="nav_consulting">Бизнес-решения</a>
+          <a href="training.html" data-i18n="nav_training">Бизнес-обучение</a>
           <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
           <a href="about.html" data-i18n="nav_about">Обо мне</a>
         </div>
@@ -281,7 +283,7 @@
               <li data-i18n="c1_i2">описание процессов через инструменты RACI, SIPOC, BPMN</li>
               <li data-i18n="c1_i3">разработка стандартов и регламентов</li>
             </ul>
-            <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+            <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
           </div>
         </div>
       </div>
@@ -302,7 +304,7 @@
               <li data-i18n="c2_i2">оптимизация процессов</li>
               <li data-i18n="c2_i3">стандартизация и контроль</li>
             </ul>
-            <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+            <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
           </div>
         </div>
       </div>
@@ -323,7 +325,7 @@
               <li data-i18n="c3_i2">развертывание до уровня команды</li>
               <li data-i18n="c3_i3">X-матрица как итоговый документ</li>
             </ul>
-            <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+            <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
           </div>
         </div>
       </div>
@@ -344,7 +346,7 @@
               <li data-i18n="c4_i2">поиск скрытых ресурсов бизнеса</li>
               <li data-i18n="c4_i3">генерация идей и план внедрения</li>
             </ul>
-            <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+            <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
           </div>
         </div>
       </div>
@@ -365,7 +367,7 @@
               <li data-i18n="c5_i2">проверка через VESC-фильтр</li>
               <li data-i18n="c5_i3">готовый план внедрения через X-Matrix</li>
             </ul>
-            <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+            <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
           </div>
         </div>
       </div>
@@ -386,7 +388,7 @@
               <li data-i18n="c6_i2">внедрение системы инициатив</li>
               <li data-i18n="c6_i3">культура постоянных улучшений</li>
             </ul>
-            <a href="mailto:k.partners2030@gmail.com" class="btn-enquiry" data-i18n="btn_enquiry">Оставить заявку</a>
+            <a href="#" class="btn-enquiry form-link" data-i18n="btn_enquiry">Оставить заявку</a>
           </div>
         </div>
       </div>
@@ -460,7 +462,7 @@
 
   const consultingTranslations = {
     ru: {
-      nav_cases: 'Кейсы', nav_about: 'Обо мне',
+      nav_consulting: 'Бизнес-решения', nav_training: 'Бизнес-обучение', nav_cases: 'Кейсы', nav_about: 'Обо мне',
       consulting_title: 'Бизнес-решения',
       consulting_sub: 'Работаем вместе над конкретной задачей. Результат - под ключ.',
       c1_pain: 'Хаос в процессах', c1_tool: 'Оцифровка компании',
@@ -485,7 +487,7 @@
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     en: {
-      nav_cases: 'Cases', nav_about: 'About',
+      nav_consulting: 'Business Solutions', nav_training: 'Business Training', nav_cases: 'Cases', nav_about: 'About',
       consulting_title: 'Business Solutions',
       consulting_sub: 'We work alongside you on a specific challenge. Full turnkey delivery.',
       c1_pain: 'Operational Chaos', c1_tool: 'Business System Digitalisation',
@@ -510,7 +512,7 @@
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     kz: {
-      nav_cases: 'Жобалар', nav_about: 'Мен туралы',
+      nav_consulting: 'Бизнес-шешімдер', nav_training: 'Бизнес тренингтер', nav_cases: 'Жобалар', nav_about: 'Мен туралы',
       consulting_title: 'Бизнес-шешімдер',
       consulting_sub: 'Нақты мәселемен бірге жұмыс істеп, нәтижеге дейін жеткіземіз.',
       c1_pain: 'Үдерістердегі (процестер) апыр-топыр', c1_tool: 'Компанияны цифрлық жүйеге көшіру',
@@ -536,8 +538,30 @@
     }
   };
 
+  const formLinks = {
+    ru: 'https://forms.gle/g8WSxrX66azKQbbd8',
+    kz: 'https://forms.gle/pYbbQdkHM6ExnQV47',
+    en: 'https://forms.gle/aeNmpCuyZVbZxPQU7'
+  };
+
+  function updateFormLinks(lang) {
+    document.querySelectorAll('.form-link').forEach(el => {
+      el.href = formLinks[lang] || formLinks['ru'];
+      el.target = '_blank';
+      el.rel = 'noopener';
+    });
+  }
+
   const savedLang = localStorage.getItem('lang') || 'ru';
   setLanguage(savedLang);
+  updateFormLinks(savedLang);
+
+  // Override setLanguage to also update form links
+  const _origSetLang = setLanguage;
+  setLanguage = function(lang) {
+    _origSetLang(lang);
+    updateFormLinks(lang);
+  };
 </script>
 </body>
 </html>
