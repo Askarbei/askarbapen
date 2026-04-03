@@ -475,6 +475,25 @@
   هذه الصفحة قيد الإنشاء
 </div>
 
+
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" onclick="closeBurger()">✕</button>
+  <a href="consulting.html" data-i18n="nav_consulting">Бизнес-решения</a>
+  <a href="training.html" data-i18n="nav_training">Бизнес-ағарту</a>
+  <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
+  <a href="about.html" data-i18n="nav_about">Обо мне</a>
+  <div class="mobile-social">
+    <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://t.me/bapeninsights" target="_blank" rel="noopener">Bapen Insights</a>
+  </div>
+  <div class="mobile-lang">
+    <button onclick="setLanguage('ru');closeBurger()">RU</button>
+    <button onclick="setLanguage('kz');closeBurger()">KZ</button>
+    <button onclick="setLanguage('en');closeBurger()">EN</button>
+    <button onclick="setLanguage('ar');closeBurger()">AR</button>
+  </div>
+</div>
+
 <div id="main-content">
   <nav>
     <div class="container nav-inner">
@@ -512,7 +531,7 @@
       </div>
       <div class="about-intro">
         <h1 class="about-intro-name">Askar <span>Bapen</span></h1>
-        <p class="about-intro-role" data-i18n="about_role">Генеральный директор KAIZEN-TRIZ PARTNERS - Мастер Бизнес-ТРИЗ</p>
+        <p class="about-intro-role" data-i18n="about_role">Генеральный директор KAIZEN-TRIZ PARTNERS</p>
         <div class="about-cta-row">
           <a href="consulting.html" class="btn-outline" data-i18n="about_cta_consult">Бизнес-решения</a>
           <a href="training.html" class="btn-outline" data-i18n="about_cta_training">Бизнес-обучение</a>
@@ -673,7 +692,7 @@
   const aboutTranslations = {
     ru: {
       nav_consulting: 'Бизнес-решения', nav_training: 'Бизнес-обучение', nav_cases: 'Кейсы', nav_about: 'Обо мне',
-      about_role: 'Генеральный директор KAIZEN-TRIZ PARTNERS - Мастер Бизнес-ТРИЗ',
+      about_role: 'Генеральный директор KAIZEN-TRIZ PARTNERS',
       about_cta_consult: 'Бизнес-решения', about_cta_training: 'Бизнес-обучение', about_cta_contact: 'Написать',
       story_p1: 'Я начинал как дипломат. Арабский и английский языки, длительные командировки на Ближний Восток, международные переговоры, EXPO-2017 в Астане - координировал участие 115 стран. Там я понял: одного системного взгляда недостаточно. Нужны конкретные инструменты.',
       story_p2: 'Когда перешел в бизнес-консалтинг, начал изучать Кайдзен и Lean. Это закрывало 90% задач - потери, процессы, стандарты. Но оставались задачи, где любое решение упиралось в противоречие.',
@@ -693,9 +712,9 @@
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     en: {
-      nav_consulting: 'Business Solutions', nav_training: 'Business Training', nav_cases: 'Cases', nav_about: 'About',
-      about_role: 'General Director, KAIZEN-TRIZ PARTNERS. Master of Business TRIZ. Almaty, Kazakhstan.',
-      about_cta_consult: 'Business Solutions', about_cta_training: 'Business Training', about_cta_contact: 'Get in touch',
+      nav_consulting: 'Business Solutions', nav_training: 'Business Trainings', nav_cases: 'Cases', nav_about: 'About',
+      about_role: 'General Director, KAIZEN-TRIZ PARTNERS',
+      about_cta_consult: 'Business Solutions', about_cta_training: 'Business Trainings', about_cta_contact: 'Get in touch',
       story_p1: 'I began my career as a diplomat. Fluent in Arabic and English, with long-term assignments across the Middle East, international negotiations and coordination of 115 countries at EXPO-2017 in Astana. It was there I came to understand that a systems perspective alone is insufficient. Concrete, practical tools are indispensable.',
       story_p2: 'On moving into business consultancy, I immersed myself in Kaizen and Lean. These methodologies addressed 90% of challenges - waste, processes and standards. Yet a persistent 10% remained: problems where every solution met an irresolvable contradiction.',
       story_quote: 'For example: IF we expand the sales team, THEN revenue grows - BUT so does the payroll. IF we keep the team as it is, THEN payroll remains stable - BUT revenue does not grow. Kaizen offered no answer.',
@@ -714,9 +733,9 @@
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     kz: {
-      nav_consulting: 'Бизнес-шешімдер', nav_training: 'Бизнес тренингтер', nav_cases: 'Жобалар', nav_about: 'Мен туралы',
-      about_role: 'KAIZEN-TRIZ PARTNERS Бас директоры. Бизнес-ТРИЗ Мастері. Алматы, Қазақстан.',
-      about_cta_consult: 'Бизнес-шешімдер', about_cta_training: 'Бизнес тренингтер', about_cta_contact: 'Сөз бастайық',
+      nav_consulting: 'Бизнес-шешімдер', nav_training: 'Бизнес-ағарту', nav_cases: 'Жобалар', nav_about: 'Мен туралы',
+      about_role: 'KAIZEN-TRIZ PARTNERS Бас директоры',
+      about_cta_consult: 'Бизнес-шешімдер', about_cta_training: 'Бизнес-ағарту', about_cta_contact: 'Сөз бастайық',
       story_p1: 'Дипломат ретінде жұмысымды бастадым. Араб және ағылшын тілдерін меңгеріп, Таяу Шығыс мемлекеттеріне іс-сапарлар болды, халықаралық келіссөздерге жол ашып, Астанадағы EXPO-2017 - 115 елдің қатысуын үйлестірдім. Сол жерде мен бір жүйелі көзқарас жеткіліксіз екенін түсініп, нақты құралдар қажеттілігін өзім үшін аштым.',
       story_p2: 'Бизнес-консалтингке ауысқан кезде, Кайдзен мен Lean-ге үйрендім. Ол 90% қиындықтарды шешіп, яғни шығын-ысырап жояды, процестерді (үдерістер) реттеп, стандарттарға айналдырады. Бірақ қиындықтың 10% қарама-қайшылыққа ұрынып, шешілмей қалатынын байқадым.',
       story_quote: 'Мысалы: ЕГЕР сату бөлімінің штатын ұлғайтсақ, сату көрсеткіші өседі, БІРАҚ еңбекақы қорына (ЕТҚ) кететін шығын да артады. Егер штатты өзгеріссіз қалдырсақ, ЕТҚ өзгермейді, бірақ сату да өспейді. Кайдзен қарама-қайшылықты шешпейді.',
@@ -745,3 +764,4 @@
 
 </body>
 </html>
+
