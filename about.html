@@ -482,8 +482,6 @@
       <a href="index.html" class="nav-logo">Askar <span>Bapen</span></a>
       <div class="nav-right">
         <div class="nav-links">
-          <a href="consulting.html" data-i18n="nav_consulting">Бизнес-решения</a>
-          <a href="training.html" data-i18n="nav_training">Бизнес-обучение</a>
           <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
           <a href="about.html" class="active" data-i18n="nav_about">Обо мне</a>
         </div>
@@ -759,7 +757,19 @@
     const saved = localStorage.getItem('lang') || 'ru';
     setLanguage(saved);
   })();
+
+  function toggleBurger() {
+    document.getElementById('burger-btn').classList.toggle('open');
+    document.getElementById('mobile-menu').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
+  }
+  function closeBurger() {
+    document.getElementById('burger-btn').classList.remove('open');
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
 </script>
 
 </body>
 </html>
+
