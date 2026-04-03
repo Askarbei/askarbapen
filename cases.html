@@ -300,133 +300,125 @@
     </header>
 
     <div class="filter-bar reveal">
-      <button class="filter-btn active" data-filter="all" onclick="filterCases(this)">Все</button>
-      <button class="filter-btn" data-filter="нефтегаз" onclick="filterCases(this)">Нефтегазовая пром.</button>
-      <button class="filter-btn" data-filter="строительство" onclick="filterCases(this)">Строительство</button>
-      <button class="filter-btn" data-filter="общепит" onclick="filterCases(this)">Общепит</button>
-      <button class="filter-btn" data-filter="фасовка" onclick="filterCases(this)">Фасовка</button>
-      <button class="filter-btn" data-filter="логистика" onclick="filterCases(this)">Логистика</button>
-      <button class="filter-btn" data-filter="ритейл" onclick="filterCases(this)">Ритейл и склад</button>
+      <button class="filter-btn active" data-filter="all" onclick="filterCases(this)" data-i18n="f_all">Все</button>
+      <button class="filter-btn" data-filter="нефтегаз" onclick="filterCases(this)" data-i18n="f_oil">Нефтегазовая пром.</button>
+      <button class="filter-btn" data-filter="строительство" onclick="filterCases(this)" data-i18n="f_construction">Строительство</button>
+      <button class="filter-btn" data-filter="общепит" onclick="filterCases(this)" data-i18n="f_food">Общепит</button>
+      <button class="filter-btn" data-filter="фасовка" onclick="filterCases(this)" data-i18n="f_packaging">Фасовка</button>
+      <button class="filter-btn" data-filter="логистика" onclick="filterCases(this)" data-i18n="f_logistics">Логистика</button>
+      <button class="filter-btn" data-filter="ритейл" onclick="filterCases(this)" data-i18n="f_retail">Ритейл и склад</button>
       <button class="filter-btn" data-filter="horeca" onclick="filterCases(this)">HoReCa</button>
-      <button class="filter-btn" data-filter="медицина" onclick="filterCases(this)">Медицина</button>
-      <button class="filter-btn" data-filter="образование" onclick="filterCases(this)">Образование</button>
-      <button class="filter-btn" data-filter="it" onclick="filterCases(this)">Связь и IT</button>
-      <button class="filter-btn" data-filter="сервис" onclick="filterCases(this)">Сервис</button>
-      <button class="filter-btn" data-filter="охрана" onclick="filterCases(this)">Охрана</button>
+      <button class="filter-btn" data-filter="медицина" onclick="filterCases(this)" data-i18n="f_medicine">Медицина</button>
+      <button class="filter-btn" data-filter="образование" onclick="filterCases(this)" data-i18n="f_education">Образование</button>
+      <button class="filter-btn" data-filter="it" onclick="filterCases(this)" data-i18n="f_it">Связь и IT</button>
+      <button class="filter-btn" data-filter="сервис" onclick="filterCases(this)" data-i18n="f_service">Сервис</button>
+      <button class="filter-btn" data-filter="охрана" onclick="filterCases(this)" data-i18n="f_security">Охрана</button>
     </div>
 
     <div class="cases-grid">
 
-      <!-- НЕФТЕГАЗОВАЯ ПРОМЫШЛЕННОСТЬ -->
       <div class="case-card reveal" data-industry="нефтегаз">
-        <span class="case-industry">Нефтегазовая промышленность</span>
+        <span class="case-industry" data-i18n="ind_oil">Нефтегазовая промышленность</span>
         <span class="case-company">Meris Construction / Newtech System Group</span>
-        <span class="case-problem">Потери при складировании теплоизоляционных материалов, сбои в замерах</span>
-        <span class="case-result">Выявлены "слепые зоны" в складировании, процессы прозрачны от замеров до склада</span>
+        <span class="case-problem" data-i18n="c01_prob">Потери при складировании теплоизоляционных материалов, сбои в замерах</span>
+        <span class="case-result" data-i18n="c01_res">Выявлены "слепые зоны" в складировании, процессы прозрачны от замеров до склада</span>
         <div class="case-footer">
           <a href="reviews/MerisConstruction.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
         </div>
       </div>
 
-      <!-- СТРОИТЕЛЬСТВО -->
       <div class="case-card reveal" data-industry="строительство">
-        <span class="case-industry">Строительство</span>
+        <span class="case-industry" data-i18n="ind_construction">Строительство</span>
         <span class="case-company">КазИнтегСтрой</span>
-        <span class="case-problem">Высокие затраты на ГСМ, слабая управляемость</span>
-        <span class="case-result"><strong>2 новых бизнес-направления,</strong> цифровой учет техники</span>
+        <span class="case-problem" data-i18n="c02_prob">Высокие затраты на ГСМ, слабая управляемость</span>
+        <span class="case-result" data-i18n="c02_res">2 новых бизнес-направления, цифровой учет техники</span>
         <div class="case-footer">
           <a href="reviews/KazIntegStroy.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
         </div>
       </div>
 
-      <!-- НЕФТЕГАЗОВАЯ - Bagashar Meken (химическая жидкость) -->
       <div class="case-card reveal" data-industry="нефтегаз">
-        <span class="case-industry">Нефтегазовая промышленность</span>
+        <span class="case-industry" data-i18n="ind_oil">Нефтегазовая промышленность</span>
         <span class="case-company">Bagashar Meken</span>
-        <span class="case-problem">Долгая обработка заявок, брак</span>
-        <span class="case-result">Время обработки <strong>с 105 до 20 минут,</strong> брак в заявках исключен</span>
+        <span class="case-problem" data-i18n="c03_prob">Долгая обработка заявок, брак</span>
+        <span class="case-result" data-i18n="c03_res">Время обработки с 105 до 20 минут, брак в заявках исключен</span>
         <div class="case-footer">
           <a href="reviews/BagasharMeken.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
         </div>
       </div>
 
-      <!-- ОБЩЕПИТ -->
       <div class="case-card reveal" data-industry="общепит">
-        <span class="case-industry">Общепит</span>
+        <span class="case-industry" data-i18n="ind_food">Общепит</span>
         <span class="case-company">Fitness Food</span>
-        <span class="case-problem">Высокий брак, неоцифрованные процессы</span>
-        <span class="case-result">Брак <strong>-43%,</strong> процессы оцифрованы на 98%</span>
+        <span class="case-problem" data-i18n="c04_prob">Высокий брак, неоцифрованные процессы</span>
+        <span class="case-result" data-i18n="c04_res">Брак -43%, процессы оцифрованы на 98%</span>
         <div class="case-footer">
           <a href="reviews/FitnessFood.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
         </div>
       </div>
 
       <div class="case-card reveal" data-industry="общепит">
-        <span class="case-industry">Общепит</span>
+        <span class="case-industry" data-i18n="ind_food">Общепит</span>
         <span class="case-company">Abokado Sushi</span>
-        <span class="case-problem">Медленное выполнение заказов</span>
-        <span class="case-result">Время заказа <strong>с 31,6 до 17,7 минут,</strong> скорость выдачи удвоена</span>
+        <span class="case-problem" data-i18n="c05_prob">Медленное выполнение заказов</span>
+        <span class="case-result" data-i18n="c05_res">Время заказа с 31,6 до 17,7 минут, скорость выдачи удвоена</span>
         <div class="case-footer">
           <a href="reviews/AbokadoSushi.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
         </div>
       </div>
 
       <div class="case-card reveal" data-industry="общепит">
-        <span class="case-industry">Общепит</span>
+        <span class="case-industry" data-i18n="ind_food">Общепит</span>
         <span class="case-company">Qazagrofood</span>
-        <span class="case-problem">Текучка управленцев, низкая производительность</span>
-        <span class="case-result">Система найма директората разработана, менеджмент подобран профессионально</span>
+        <span class="case-problem" data-i18n="c06_prob">Текучка управленцев, низкая производительность</span>
+        <span class="case-result" data-i18n="c06_res">Система найма директората разработана, менеджмент подобран профессионально</span>
         <div class="case-footer">
           <a href="reviews/QazAgroFood.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
         </div>
       </div>
 
-      <!-- ФАСОВКА -->
       <div class="case-card reveal" data-industry="фасовка">
-        <span class="case-industry">Фасовка</span>
+        <span class="case-industry" data-i18n="ind_packaging">Фасовка</span>
         <span class="case-company">Баракат</span>
-        <span class="case-problem">Долгая переналадка, нестабильность качества</span>
-        <span class="case-result">Переналадка <strong>с 24 до 11 минут,</strong> трудозатраты с 3 до 1 человека</span>
+        <span class="case-problem" data-i18n="c07_prob">Долгая переналадка, нестабильность качества</span>
+        <span class="case-result" data-i18n="c07_res">Переналадка с 24 до 11 минут, трудозатраты с 3 до 1 человека</span>
         <div class="case-footer">
           <a href="reviews/Barakat.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
         </div>
       </div>
 
-      <!-- ЛОГИСТИКА -->
       <div class="case-card reveal" data-industry="логистика">
-        <span class="case-industry">Логистика</span>
+        <span class="case-industry" data-i18n="ind_logistics">Логистика</span>
         <span class="case-company">Atyrau Nomad Auto</span>
-        <span class="case-problem">Текучка водителей, непрозрачность базы</span>
-        <span class="case-result">Устранены корневые причины текучки, улучшены условия труда</span>
+        <span class="case-problem" data-i18n="c08_prob">Текучка водителей, непрозрачность базы</span>
+        <span class="case-result" data-i18n="c08_res">Устранены корневые причины текучки, улучшены условия труда</span>
         <div class="case-footer">
           <a href="reviews/AtyrauNomadAvto.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
         </div>
       </div>
 
-      <!-- РИТЕЙЛ И СКЛАД -->
       <div class="case-card reveal" data-industry="ритейл">
-        <span class="case-industry">Ритейл и склад</span>
+        <span class="case-industry" data-i18n="ind_retail">Ритейл и склад</span>
         <span class="case-company">Life Food</span>
-        <span class="case-problem">Складские потери, пересорт, возврат товара</span>
-        <span class="case-result">Запасы освобождены на <strong>9 млн ₸,</strong> недостачи -85%</span>
+        <span class="case-problem" data-i18n="c09_prob">Складские потери, пересорт, возврат товара</span>
+        <span class="case-result" data-i18n="c09_res">Запасы освобождены на 9 млн ₸, недостачи -85%</span>
         <div class="case-footer">
           <a href="reviews/Lifefood.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
         </div>
       </div>
 
       <div class="case-card reveal" data-industry="ритейл">
-        <span class="case-industry">Ритейл и склад</span>
+        <span class="case-industry" data-i18n="ind_retail">Ритейл и склад</span>
         <span class="case-company">Miras</span>
-        <span class="case-problem">Хаотичный склад, потери, нет аналитики</span>
-        <span class="case-result">Брак <strong>-71%,</strong> адресное хранение внедрено</span>
+        <span class="case-problem" data-i18n="c10_prob">Хаотичный склад, потери, нет аналитики</span>
+        <span class="case-result" data-i18n="c10_res">Брак -71%, адресное хранение внедрено</span>
       </div>
 
-      <!-- HORECA -->
       <div class="case-card reveal" data-industry="horeca">
         <span class="case-industry">HoReCa</span>
         <span class="case-company">Manica Concierge</span>
-        <span class="case-problem">Брак в продажах, долгая подготовка апартаментов</span>
-        <span class="case-result">Заселение <strong>с 35 до 5 минут,</strong> выручка +15%, брак в продажах -95%</span>
+        <span class="case-problem" data-i18n="c11_prob">Брак в продажах, долгая подготовка апартаментов</span>
+        <span class="case-result" data-i18n="c11_res">Заселение с 35 до 5 минут, выручка +15%, брак в продажах -95%</span>
         <div class="case-footer">
           <a href="reviews/ManicaConcierge.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
         </div>
@@ -435,88 +427,83 @@
       <div class="case-card reveal" data-industry="horeca">
         <span class="case-industry">HoReCa</span>
         <span class="case-company">Janym Soul</span>
-        <span class="case-problem">Низкий КПД приемки, высокий расход моющих средств</span>
-        <span class="case-result">КПД приемки товара <strong>+23%,</strong> расход моющих средств <strong>-42%</strong></span>
+        <span class="case-problem" data-i18n="c12_prob">Низкий КПД приемки, высокий расход моющих средств</span>
+        <span class="case-result" data-i18n="c12_res">КПД приемки товара +23%, расход моющих средств -42%</span>
       </div>
 
-      <!-- МЕДИЦИНА -->
       <div class="case-card reveal" data-industry="медицина">
-        <span class="case-industry">Медицина</span>
+        <span class="case-industry" data-i18n="ind_medicine">Медицина</span>
         <span class="case-company">Shaskin Clinic</span>
-        <span class="case-problem">Долгое ожидание операции, неэффективная реабилитация</span>
-        <span class="case-result">Ожидание таламотомии <strong>с 2,7 ч до 12 минут,</strong> пропускная способность реабилитации с 9 до 12 человек</span>
+        <span class="case-problem" data-i18n="c13_prob">Долгое ожидание операции, неэффективная реабилитация</span>
+        <span class="case-result" data-i18n="c13_res">Ожидание таламотомии с 2,7 ч до 12 минут, пропускная способность реабилитации с 9 до 12 человек</span>
         <div class="case-footer">
           <a href="reviews/ShashkinClinic.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
         </div>
       </div>
 
       <div class="case-card reveal" data-industry="медицина">
-        <span class="case-industry">Медицина</span>
+        <span class="case-industry" data-i18n="ind_medicine">Медицина</span>
         <span class="case-company">Expert Neuro</span>
-        <span class="case-problem">Неэффективная загрузка персонала</span>
-        <span class="case-result">Экономический эффект <strong>17 022 894 ₸</strong></span>
+        <span class="case-problem" data-i18n="c14_prob">Неэффективная загрузка персонала</span>
+        <span class="case-result" data-i18n="c14_res">Экономический эффект 17 022 894 ₸</span>
         <div class="case-footer">
           <a href="reviews/ExpertNeuro.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
         </div>
       </div>
 
       <div class="case-card reveal" data-industry="медицина">
-        <span class="case-industry">Медицина</span>
+        <span class="case-industry" data-i18n="ind_medicine">Медицина</span>
         <span class="case-company">Cardios</span>
-        <span class="case-problem">Хаос в запасах, неструктурированное пространство</span>
-        <span class="case-result"><strong>296 функций</strong> описано, улучшения по 5S до 48,9%</span>
+        <span class="case-problem" data-i18n="c15_prob">Хаос в запасах, неструктурированное пространство</span>
+        <span class="case-result" data-i18n="c15_res">296 функций описано, улучшения по 5S до 48,9%</span>
       </div>
 
-      <!-- ОБРАЗОВАНИЕ -->
       <div class="case-card reveal" data-industry="образование">
-        <span class="case-industry">Образование</span>
+        <span class="case-industry" data-i18n="ind_education">Образование</span>
         <span class="case-company">Orator Club</span>
-        <span class="case-problem">Огромная нагрузка на собственника</span>
-        <span class="case-result">Время подготовки к выступлениям <strong>-37%,</strong> ресурсы участников мобилизованы</span>
+        <span class="case-problem" data-i18n="c16_prob">Огромная нагрузка на собственника</span>
+        <span class="case-result" data-i18n="c16_res">Время подготовки к выступлениям -37%, ресурсы участников мобилизованы</span>
         <div class="case-footer">
           <a href="reviews/KlubOratorov.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
         </div>
       </div>
 
       <div class="case-card reveal" data-industry="образование">
-        <span class="case-industry">Образование</span>
+        <span class="case-industry" data-i18n="ind_education">Образование</span>
         <span class="case-company">Qaynar Bulaq / AlmaU</span>
-        <span class="case-problem">Нечеткая бизнес-модель</span>
-        <span class="case-result">Стратегия монетизации при сохранении социальной миссии</span>
+        <span class="case-problem" data-i18n="c17_prob">Нечеткая бизнес-модель</span>
+        <span class="case-result" data-i18n="c17_res">Стратегия монетизации при сохранении социальной миссии</span>
       </div>
 
       <div class="case-card reveal" data-industry="образование">
-        <span class="case-industry">Образование</span>
+        <span class="case-industry" data-i18n="ind_education">Образование</span>
         <span class="case-company">Alma School</span>
-        <span class="case-problem">Размытые зоны ответственности</span>
-        <span class="case-result"><strong>363 функции,</strong> 57 процессов, 42 стандарта</span>
+        <span class="case-problem" data-i18n="c18_prob">Размытые зоны ответственности</span>
+        <span class="case-result" data-i18n="c18_res">363 функции, 57 процессов, 42 стандарта</span>
       </div>
 
-      <!-- СВЯЗЬ И IT -->
       <div class="case-card reveal" data-industry="it">
-        <span class="case-industry">Связь и IT</span>
+        <span class="case-industry" data-i18n="ind_it">Связь и IT</span>
         <span class="case-company">Mobile Business Solutions</span>
-        <span class="case-problem">Избыточные затраты, дублирование</span>
-        <span class="case-result"><strong>124 км кабеля</strong> устранено, договоры с 3 ч до 35 мин</span>
+        <span class="case-problem" data-i18n="c19_prob">Избыточные затраты, дублирование</span>
+        <span class="case-result" data-i18n="c19_res">124 км кабеля устранено, договоры с 3 ч до 35 мин</span>
       </div>
 
-      <!-- СЕРВИС -->
       <div class="case-card reveal" data-industry="сервис">
-        <span class="case-industry">Сервис</span>
+        <span class="case-industry" data-i18n="ind_service">Сервис</span>
         <span class="case-company">Prof Cleaning</span>
-        <span class="case-problem">Хаос в процессах, зависимость от людей</span>
-        <span class="case-result"><strong>48 потерь</strong> устранено, клининговые операции стандартизированы</span>
+        <span class="case-problem" data-i18n="c20_prob">Хаос в процессах, зависимость от людей</span>
+        <span class="case-result" data-i18n="c20_res">48 потерь устранено, клининговые операции стандартизированы</span>
         <div class="case-footer">
           <a href="reviews/ProfCleaning.pdf" class="btn-review" target="_blank" rel="noopener" data-i18n="btn_review">Читать отзыв</a>
         </div>
       </div>
 
-      <!-- ОХРАНА -->
       <div class="case-card reveal" data-industry="охрана">
-        <span class="case-industry">Охрана</span>
+        <span class="case-industry" data-i18n="ind_security">Охрана</span>
         <span class="case-company">OTIS</span>
-        <span class="case-problem">Традиционные методы принятия решений</span>
-        <span class="case-result">Топ-менеджмент обучен методу сильных решений Бизнес-ТРИЗ</span>
+        <span class="case-problem" data-i18n="c21_prob">Традиционные методы принятия решений</span>
+        <span class="case-result" data-i18n="c21_res">Топ-менеджмент обучен методу сильных решений Бизнес-ТРИЗ</span>
       </div>
 
     </div>
@@ -590,35 +577,167 @@
   const caseTranslations = {
     ru: {
       nav_cases: 'Кейсы', nav_about: 'Обо мне',
-      cases_title: 'Кейсы', cases_sub: '22 завершённых проекта в 8 отраслях. Измеримые результаты.',
-      filter_all: 'Все', filter_manufacturing: 'Производство', filter_food: 'Питание',
-      filter_logistics: 'Логистика', filter_medicine: 'Медицина', filter_education: 'Образование',
-      filter_it: 'Связь и IT', filter_service: 'Сервис',
-      ind_manufacturing: 'Производство', ind_food: 'Питание', ind_logistics: 'Логистика',
-      ind_medicine: 'Медицина', ind_education: 'Образование', ind_it: 'Связь и IT', ind_service: 'Сервис',
+      f_all: 'Все', f_oil: 'Нефтегазовая пром.', f_construction: 'Строительство',
+      f_food: 'Общепит', f_packaging: 'Фасовка', f_logistics: 'Логистика',
+      f_retail: 'Ритейл и склад', f_medicine: 'Медицина', f_education: 'Образование',
+      f_it: 'Связь и IT', f_service: 'Сервис', f_security: 'Охрана',
+      ind_oil: 'Нефтегазовая промышленность', ind_construction: 'Строительство',
+      ind_food: 'Общепит', ind_packaging: 'Фасовка', ind_logistics: 'Логистика',
+      ind_retail: 'Ритейл и склад', ind_medicine: 'Медицина', ind_education: 'Образование',
+      ind_it: 'Связь и IT', ind_service: 'Сервис', ind_security: 'Охрана',
       btn_review: 'Читать отзыв',
+      c01_prob: 'Потери при складировании теплоизоляционных материалов, сбои в замерах',
+      c01_res: 'Выявлены "слепые зоны" в складировании, процессы прозрачны от замеров до склада',
+      c02_prob: 'Высокие затраты на ГСМ, слабая управляемость',
+      c02_res: '2 новых бизнес-направления, цифровой учет техники',
+      c03_prob: 'Долгая обработка заявок, брак',
+      c03_res: 'Время обработки с 105 до 20 минут, брак в заявках исключен',
+      c04_prob: 'Высокий брак, неоцифрованные процессы',
+      c04_res: 'Брак -43%, процессы оцифрованы на 98%',
+      c05_prob: 'Медленное выполнение заказов',
+      c05_res: 'Время заказа с 31,6 до 17,7 минут, скорость выдачи удвоена',
+      c06_prob: 'Текучка управленцев, низкая производительность',
+      c06_res: 'Система найма директората разработана, менеджмент подобран профессионально',
+      c07_prob: 'Долгая переналадка, нестабильность качества',
+      c07_res: 'Переналадка с 24 до 11 минут, трудозатраты с 3 до 1 человека',
+      c08_prob: 'Текучка водителей, непрозрачность базы',
+      c08_res: 'Устранены корневые причины текучки, улучшены условия труда',
+      c09_prob: 'Складские потери, пересорт, возврат товара',
+      c09_res: 'Запасы освобождены на 9 млн ₸, недостачи -85%',
+      c10_prob: 'Хаотичный склад, потери, нет аналитики',
+      c10_res: 'Брак -71%, адресное хранение внедрено',
+      c11_prob: 'Брак в продажах, долгая подготовка апартаментов',
+      c11_res: 'Заселение с 35 до 5 минут, выручка +15%, брак в продажах -95%',
+      c12_prob: 'Низкий КПД приемки, высокий расход моющих средств',
+      c12_res: 'КПД приемки товара +23%, расход моющих средств -42%',
+      c13_prob: 'Долгое ожидание операции, неэффективная реабилитация',
+      c13_res: 'Ожидание таламотомии с 2,7 ч до 12 минут, пропускная способность реабилитации с 9 до 12 человек',
+      c14_prob: 'Неэффективная загрузка персонала',
+      c14_res: 'Экономический эффект 17 022 894 ₸',
+      c15_prob: 'Хаос в запасах, неструктурированное пространство',
+      c15_res: '296 функций описано, улучшения по 5S до 48,9%',
+      c16_prob: 'Огромная нагрузка на собственника',
+      c16_res: 'Время подготовки к выступлениям -37%, ресурсы участников мобилизованы',
+      c17_prob: 'Нечеткая бизнес-модель',
+      c17_res: 'Стратегия монетизации при сохранении социальной миссии',
+      c18_prob: 'Размытые зоны ответственности',
+      c18_res: '363 функции, 57 процессов, 42 стандарта',
+      c19_prob: 'Избыточные затраты, дублирование',
+      c19_res: '124 км кабеля устранено, договоры с 3 ч до 35 мин',
+      c20_prob: 'Хаос в процессах, зависимость от людей',
+      c20_res: '48 потерь устранено, клининговые операции стандартизированы',
+      c21_prob: 'Традиционные методы принятия решений',
+      c21_res: 'Топ-менеджмент обучен методу сильных решений Бизнес-ТРИЗ',
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     en: {
       nav_cases: 'Cases', nav_about: 'About',
-      cases_title: 'Cases', cases_sub: '22 completed projects across 8 industries. Measurable results.',
-      filter_all: 'All', filter_manufacturing: 'Manufacturing', filter_food: 'Food',
-      filter_logistics: 'Logistics', filter_medicine: 'Healthcare', filter_education: 'Education',
-      filter_it: 'Telecom & IT', filter_service: 'Service',
-      ind_manufacturing: 'Manufacturing', ind_food: 'Food', ind_logistics: 'Logistics',
-      ind_medicine: 'Healthcare', ind_education: 'Education', ind_it: 'Telecom & IT', ind_service: 'Service',
+      f_all: 'All', f_oil: 'Oil & Gas', f_construction: 'Construction',
+      f_food: 'Food & Beverage', f_packaging: 'Packaging', f_logistics: 'Logistics',
+      f_retail: 'Retail & Warehouse', f_medicine: 'Healthcare', f_education: 'Education',
+      f_it: 'Telecoms & IT', f_service: 'Consumer Services', f_security: 'Security',
+      ind_oil: 'Oil & Gas Industry', ind_construction: 'Construction',
+      ind_food: 'Food & Beverage', ind_packaging: 'Packaging', ind_logistics: 'Logistics',
+      ind_retail: 'Retail & Warehouse', ind_medicine: 'Healthcare', ind_education: 'Education',
+      ind_it: 'Telecoms & IT', ind_service: 'Consumer Services', ind_security: 'Security',
       btn_review: 'Read review',
+      c01_prob: 'Warehousing and measurement failures leading to production delays',
+      c01_res: 'Blind spots in storage identified, processes streamlined from measurement to warehouse',
+      c02_prob: 'Excessive fuel costs and weak project management',
+      c02_res: '2 new business lines launched, digital equipment tracking implemented',
+      c03_prob: 'Slow order processing, defects and low staff initiative',
+      c03_res: 'Order processing time reduced from 105 to 20 minutes, defects eliminated',
+      c04_prob: 'High defect rates and undigitised processes',
+      c04_res: 'Defects reduced by 43%, processes 98% digitised',
+      c05_prob: 'Slow order fulfilment leading to client attrition',
+      c05_res: 'Order fulfilment time reduced from 31.6 to 17.7 minutes, throughput doubled',
+      c06_prob: 'High management turnover and low productivity',
+      c06_res: 'Director recruitment system developed, management team selected professionally',
+      c07_prob: 'Lengthy changeover times and inconsistent quality',
+      c07_res: 'Changeover time reduced from 24 to 11 minutes, labour input from 3 to 1 person',
+      c08_prob: 'High driver turnover and lack of operational transparency',
+      c08_res: 'Root causes of staff turnover eliminated, working conditions improved',
+      c09_prob: 'Warehouse losses, mispicking and product returns',
+      c09_res: 'Stock freed up by 9 million KZT, shortages reduced by 85%',
+      c10_prob: 'Disorganised warehouse, losses and no data analytics in place',
+      c10_res: 'Defects reduced by 71%, location-based storage system implemented',
+      c11_prob: 'Errors in sales processes and lengthy apartment turnaround times',
+      c11_res: 'Check-in time reduced from 35 to 5 minutes, revenue increased by 15%, sales defects -95%',
+      c12_prob: 'Low goods reception efficiency, high cleaning product consumption',
+      c12_res: 'Goods reception efficiency +23%, cleaning product consumption -42%',
+      c13_prob: 'Lengthy patient waiting time for surgery and ineffective rehabilitation',
+      c13_res: 'Thalamotomy waiting time reduced from 2.7 hours to 12 minutes, rehabilitation capacity from 9 to 12 patients',
+      c14_prob: 'Ineffective staff utilisation',
+      c14_res: 'Economic impact of 17,022,894 KZT',
+      c15_prob: 'Inventory chaos and unstructured workspace',
+      c15_res: '296 functions mapped, 5S improvements of up to 48.9%',
+      c16_prob: 'Excessive owner workload',
+      c16_res: 'Preparation time for presentations reduced by 37%, participant resources mobilised',
+      c17_prob: 'Unclear business model',
+      c17_res: 'Monetisation strategy developed whilst preserving the social mission',
+      c18_prob: 'Unclear accountability',
+      c18_res: '363 functions, 57 processes and 42 standards developed',
+      c19_prob: 'Excessive costs and duplication of effort',
+      c19_res: '124 km of redundant cabling removed, contract signing time reduced from 3 hours to 35 minutes',
+      c20_prob: 'Process chaos and dependency on key individuals',
+      c20_res: '48 losses eliminated, cleaning operations standardised',
+      c21_prob: 'Conventional decision-making methods',
+      c21_res: 'Senior management trained in the Business TRIZ strong solutions methodology',
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     kz: {
-      nav_cases: 'Кейстер', nav_about: 'Мен туралы',
-      cases_title: 'Кейстер', cases_sub: '8 салада 22 аяктаган жоба. Олшенетiн натижелер.',
-      filter_all: 'Барлыгы', filter_manufacturing: 'Ондiрiс', filter_food: 'Тамак',
-      filter_logistics: 'Логистика', filter_medicine: 'Медицина', filter_education: 'Бiлiм',
-      filter_it: 'Байланыс жане IT', filter_service: 'Кызмет',
-      ind_manufacturing: 'Ондiрiс', ind_food: 'Тамак', ind_logistics: 'Логистика',
-      ind_medicine: 'Медицина', ind_education: 'Бiлiм', ind_it: 'Байланыс жане IT', ind_service: 'Кызмет',
-      btn_review: 'Пiкiрдi оку',
+      nav_cases: 'Жобалар', nav_about: 'Мен туралы',
+      f_all: 'Барлығы', f_oil: 'Мұнай-газ саласы', f_construction: 'Құрылыс',
+      f_food: 'Қоғамдық тамақтану', f_packaging: 'Фасовка', f_logistics: 'Логистика',
+      f_retail: 'Бөлшек сауда және қойма', f_medicine: 'Медицина', f_education: 'Білім беру',
+      f_it: 'Байланыс және IT', f_service: 'Қызмет көрсету', f_security: 'Күзет',
+      ind_oil: 'Мұнай-газ өндіру саласы', ind_construction: 'Құрылыс',
+      ind_food: 'Қоғамдық тамақтану', ind_packaging: 'Фасовка', ind_logistics: 'Логистика',
+      ind_retail: 'Бөлшек сауда және қойма', ind_medicine: 'Медицина', ind_education: 'Білім беру',
+      ind_it: 'Байланыс және IT', ind_service: 'Қызмет көрсету', ind_security: 'Күзет',
+      btn_review: 'Пікірді оқу',
+      c01_prob: 'Қоймалау мен өлшеудегі ақаулар, өндіріс кешігулері',
+      c01_res: 'Қоймалаудағы "соқыр нүктелер" анықталды, процестер (үдерістер) өлшеуден қоймаға дейін жүйелендірілді',
+      c02_prob: 'Жанармай шығындарының көбеюі, жобаларды басқарудың төмен деңгейі',
+      c02_res: '2 жаңа бизнес-бағыт ашылды, техниканы цифрлық есепке алу жүйелендірілді',
+      c03_prob: 'Өтінімдерді ұзақ өңдеу, ақау, бастаманың әлсіздігі',
+      c03_res: 'Өтінімді өңдеу уақыты 105 минуттан 20 минутқа дейін қысқартылды, ақау жойылды',
+      c04_prob: 'ақау саны жоғары, цифрландырылмаған процестер (үдерістер)',
+      c04_res: 'Ақау 43% жойылды, процестер (үдерістер) 98% жүйеленген',
+      c05_prob: 'Тапсырыстарды кешіктіріп орындау, клиенттерді жоғалту',
+      c05_res: 'Тапсырыс уақыты 31,6 минуттан 17,7 минутқа дейін қысқартылды, жылдамдық екі есе артты',
+      c06_prob: 'Басшылардың жиі ауысып тұруы, өнімділіктің төмендігі',
+      c06_res: 'Директорат жалдау жүйесі жасалды, менеджмент кәсіби таңдалды',
+      c07_prob: 'Ұзақ баптау, сапаның тұрақсыздығы',
+      c07_res: 'Қайта реттеу 24 минуттан 11 минутқа дейін, еңбек сіңімі 3 адамнан 1-ге қысқарды',
+      c08_prob: 'Жүргізушілердің жиі жұмыстан шығуы, базаның мөлдірсіздігі',
+      c08_res: 'Кадрлардың ауысу ағымы себебінің түбі жойылды, еңбек жағдайлары жақсартылды',
+      c09_prob: 'Қойма шығындары, тауар араласуы, тауарды қайтару',
+      c09_res: 'Қорлар 9 млн ₸-ге босатылды, жетіспеушілік -85%',
+      c10_prob: 'Ретсіз қойма, шығын-ысырап, жүйе жоқ',
+      c10_res: 'Ақау 71%-ға жойылды, мекенжайлық сақтау жүйесі енгізілді',
+      c11_prob: 'Сату бөліміндегі ақаулар, пәтерлерді дайындау уақыты ұзаққа созылуы',
+      c11_res: 'Қонақтарды орналастыру уақыты 35-тен 5 минутқа дейін қысқарды, табыс +15%, сату ақауы -95%',
+      c12_prob: 'Тауар қабылдаудың төмен ПӘК, жуғыш заттардың жоғары шығыны',
+      c12_res: 'Тауар қабылдау ПӘК +23%, жуғыш заттар шығыны -42%',
+      c13_prob: 'Пациент операция күтуінің ұзақтығы, тиімсіз оңалту',
+      c13_res: 'Таламотомия күту уақыты 2,7 сағаттан 12 минутқа дейін қысқарды, оңалту өткізу қабілеті 9-дан 12 адамға дейін өсті',
+      c14_prob: 'Персоналды тиімсіз жүктеу',
+      c14_res: 'Экономикалық әсер 17 022 894 ₸',
+      c15_prob: 'Қорларда бейберекет, кеңістік жүйеленбеген',
+      c15_res: '296 функция сипатталған, 5S бойынша жақсартулар 48,9%',
+      c16_prob: 'Меншік иесіне шамадан тыс жүктеме',
+      c16_res: 'Сөйлеуге дайындық уақыты 37%-ға қысқартылды, қатысушылардың ресурстары жұмылдырылды',
+      c17_prob: 'Бизнес-модель анық емес',
+      c17_res: 'Әлеуметтік миссияны сақтай отырып, табыс стратегиясы құрастырылды',
+      c18_prob: 'Жауапкершілік аймақтарының бұлыңғырлығы',
+      c18_res: '363 функция, 57 процесс (үдеріс), 42 стандарт құрастырылды',
+      c19_prob: 'Артық шығындар, қайталама жұмыстар',
+      c19_res: 'Кабельдің керек емес 124 км-і босады, келісімшартқа қол қою уақыты 3 сағаттан 35 минутқа дейін қысқартылды',
+      c20_prob: 'Процестер (үдерістер) жүйеленбеген және адамдарға тәуелді',
+      c20_res: '48 шығын-ысырап жойылды, клининг операциялары стандартталды',
+      c21_prob: 'Дәстүрлі шешім қабылдау әдістері',
+      c21_res: 'Топ-менеджмент Бизнес-ТРИЗ күшті шешімдер әдістемесіне үйретілді',
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     }
   };
