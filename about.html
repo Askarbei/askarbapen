@@ -14,8 +14,8 @@
       --bg3: #2a2820;
       --gold: #D4A843;
       --gold-light: #e8c070;
-      --text: #F5F2EA;
-      --text2: #ccc7bb;
+      --text: #FFFFFF;
+      --text2: #E0DDD6;
       --text3: #9a9488;
       --border: rgba(212,168,67,0.25);
       --border2: rgba(245,242,234,0.12);
@@ -28,7 +28,7 @@
       background: var(--bg);
       color: var(--text);
       font-family: var(--font-body);
-      font-size: 16px;
+      font-size: 17px;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
     }
@@ -50,7 +50,7 @@
       justify-content: space-between;
       gap: 24px;
     }
-    .nav-logo {
+    .nav-logo { text-transform: uppercase;
       font-family: var(--font-head);
       font-size: 20px;
       font-weight: 500;
@@ -65,7 +65,7 @@
       gap: 32px;
     }
     .nav-links { display: flex; gap: 28px; }
-    .nav-links a {
+    .nav-links a { text-transform: uppercase;
       font-size: 15px;
       color: var(--text);
       transition: color 0.15s;
@@ -74,7 +74,7 @@
     .nav-links a:hover,
     .nav-links a.active { color: var(--gold); }
     .nav-social { display: flex; gap: 14px; }
-    .nav-social a {
+    .nav-social a { text-transform: uppercase;
       font-size: 13px;
       color: var(--text2);
       text-transform: uppercase;
@@ -199,7 +199,7 @@
       border-bottom: 0.5px solid var(--border2);
     }
     .story-text p {
-      font-size: 16px;
+      font-size: 17px;
       color: var(--text2);
       line-height: 1.85;
       margin-bottom: 20px;
@@ -287,7 +287,7 @@
     }
     .cred-body { flex: 1; }
     .cred-title {
-      font-size: 16px;
+      font-size: 17px;
       color: var(--text);
       line-height: 1.4;
     }
@@ -463,6 +463,8 @@
       <a href="index.html" class="nav-logo">Askar <span>Bapen</span></a>
       <div class="nav-right">
         <div class="nav-links">
+          <a href="consulting.html" data-i18n="nav_consulting">Бизнес-решения</a>
+          <a href="training.html" data-i18n="nav_training">Бизнес-обучение</a>
           <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
           <a href="about.html" class="active" data-i18n="nav_about">Обо мне</a>
         </div>
@@ -493,7 +495,7 @@
         <h1 class="about-intro-name">Askar <span>Bapen</span></h1>
         <p class="about-intro-role" data-i18n="about_role">Генеральный директор KAIZEN-TRIZ PARTNERS - Мастер Бизнес-ТРИЗ</p>
         <div class="about-cta-row">
-          <a href="consulting.html" class="btn-primary" data-i18n="about_cta_consult">Бизнес-решения</a>
+          <a href="consulting.html" class="btn-outline" data-i18n="about_cta_consult">Бизнес-решения</a>
           <a href="training.html" class="btn-outline" data-i18n="about_cta_training">Бизнес-обучение</a>
           <a href="mailto:k.partners2030@gmail.com" class="btn-outline" data-i18n="about_cta_contact">Написать</a>
         </div>
@@ -651,7 +653,7 @@
 
   const aboutTranslations = {
     ru: {
-      nav_cases: 'Кейсы', nav_about: 'Обо мне',
+      nav_consulting: 'Бизнес-решения', nav_training: 'Бизнес-обучение', nav_cases: 'Кейсы', nav_about: 'Обо мне',
       about_role: 'Генеральный директор KAIZEN-TRIZ PARTNERS - Мастер Бизнес-ТРИЗ',
       about_cta_consult: 'Бизнес-решения', about_cta_training: 'Бизнес-обучение', about_cta_contact: 'Написать',
       story_p1: 'Я начинал как дипломат. Арабский и английский языки, длительные командировки на Ближний Восток, международные переговоры, EXPO-2017 в Астане - координировал участие 115 стран. Там я понял: одного системного взгляда недостаточно. Нужны конкретные инструменты.',
@@ -672,7 +674,7 @@
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     en: {
-      nav_cases: 'Cases', nav_about: 'About',
+      nav_consulting: 'Business Solutions', nav_training: 'Business Training', nav_cases: 'Cases', nav_about: 'About',
       about_role: 'General Director, KAIZEN-TRIZ PARTNERS. Master of Business TRIZ. Almaty, Kazakhstan.',
       about_cta_consult: 'Business Solutions', about_cta_training: 'Business Training', about_cta_contact: 'Get in touch',
       story_p1: 'I began my career as a diplomat. Fluent in Arabic and English, with long-term assignments across the Middle East, international negotiations and coordination of 115 countries at EXPO-2017 in Astana. It was there I came to understand that a systems perspective alone is insufficient. Concrete, practical tools are indispensable.',
@@ -693,7 +695,7 @@
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     kz: {
-      nav_cases: 'Жобалар', nav_about: 'Мен туралы',
+      nav_consulting: 'Бизнес-шешімдер', nav_training: 'Бизнес тренингтер', nav_cases: 'Жобалар', nav_about: 'Мен туралы',
       about_role: 'KAIZEN-TRIZ PARTNERS Бас директоры. Бизнес-ТРИЗ Мастері. Алматы, Қазақстан.',
       about_cta_consult: 'Бизнес-шешімдер', about_cta_training: 'Бизнес тренингтер', about_cta_contact: 'Сөз бастайық',
       story_p1: 'Дипломат ретінде жұмысымды бастадым. Араб және ағылшын тілдерін меңгеріп, Таяу Шығыс мемлекеттеріне іс-сапарлар болды, халықаралық келіссөздерге жол ашып, Астанадағы EXPO-2017 - 115 елдің қатысуын үйлестірдім. Сол жерде мен бір жүйелі көзқарас жеткіліксіз екенін түсініп, нақты құралдар қажеттілігін өзім үшін аштым.',
