@@ -14,8 +14,8 @@
       --bg3: #2a2820;
       --gold: #D4A843;
       --gold-light: #e8c070;
-      --text: #F5F2EA;
-      --text2: #ccc7bb;
+      --text: #FFFFFF;
+      --text2: #E0DDD6;
       --text3: #9a9488;
       --border: rgba(212,168,67,0.25);
       --border2: rgba(245,242,234,0.12);
@@ -28,7 +28,7 @@
       background: var(--bg);
       color: var(--text);
       font-family: var(--font-body);
-      font-size: 16px;
+      font-size: 17px;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
     }
@@ -50,7 +50,7 @@
       justify-content: space-between;
       gap: 24px;
     }
-    .nav-logo {
+    .nav-logo { text-transform: uppercase;
       font-family: var(--font-head);
       font-size: 20px;
       font-weight: 500;
@@ -61,7 +61,7 @@
     .nav-logo span { color: var(--gold); }
     .nav-right { display: flex; align-items: center; gap: 32px; }
     .nav-links { display: flex; gap: 28px; }
-    .nav-links a {
+    .nav-links a { text-transform: uppercase;
       font-size: 15px;
       color: var(--text);
       transition: color 0.15s;
@@ -70,7 +70,7 @@
     .nav-links a:hover,
     .nav-links a.active { color: var(--gold); }
     .nav-social { display: flex; gap: 14px; }
-    .nav-social a {
+    .nav-social a { text-transform: uppercase;
       font-size: 13px;
       color: var(--text2);
       text-transform: uppercase;
@@ -275,6 +275,8 @@
       <a href="index.html" class="nav-logo">Askar <span>Bapen</span></a>
       <div class="nav-right">
         <div class="nav-links">
+          <a href="consulting.html" data-i18n="nav_consulting">Бизнес-решения</a>
+          <a href="training.html" data-i18n="nav_training">Бизнес-обучение</a>
           <a href="cases.html" class="active" data-i18n="nav_cases">Кейсы</a>
           <a href="about.html" data-i18n="nav_about">Обо мне</a>
         </div>
@@ -576,7 +578,7 @@
 
   const caseTranslations = {
     ru: {
-      nav_cases: 'Кейсы', nav_about: 'Обо мне',
+      nav_consulting: 'Бизнес-решения', nav_training: 'Бизнес-обучение', nav_cases: 'Кейсы', nav_about: 'Обо мне',
       f_all: 'Все', f_oil: 'Нефтегазовая пром.', f_construction: 'Строительство',
       f_food: 'Общепит', f_packaging: 'Фасовка', f_logistics: 'Логистика',
       f_retail: 'Ритейл и склад', f_medicine: 'Медицина', f_education: 'Образование',
@@ -631,7 +633,7 @@
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     en: {
-      nav_cases: 'Cases', nav_about: 'About',
+      nav_consulting: 'Business Solutions', nav_training: 'Business Training', nav_cases: 'Cases', nav_about: 'About',
       f_all: 'All', f_oil: 'Oil & Gas', f_construction: 'Construction',
       f_food: 'Food & Beverage', f_packaging: 'Packaging', f_logistics: 'Logistics',
       f_retail: 'Retail & Warehouse', f_medicine: 'Healthcare', f_education: 'Education',
@@ -680,20 +682,20 @@
       c19_prob: 'Excessive costs and duplication of effort',
       c19_res: '124 km of redundant cabling removed, contract signing time reduced from 3 hours to 35 minutes',
       c20_prob: 'Process chaos and dependency on key individuals',
-      c20_res: '48 losses eliminated, cleaning operations standardised',
+      c20_res: '48 wastes eliminated, cleaning operations standardised',
       c21_prob: 'Conventional decision-making methods',
-      c21_res: 'Senior management trained in the Business TRIZ strong solutions methodology',
+      c21_res: 'Senior management trained in the Business TRIZ ideal solutions methodology',
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     kz: {
-      nav_cases: 'Жобалар', nav_about: 'Мен туралы',
+      nav_consulting: 'Бизнес-шешімдер', nav_training: 'Бизнес тренингтер', nav_cases: 'Жобалар', nav_about: 'Мен туралы',
       f_all: 'Барлығы', f_oil: 'Мұнай-газ саласы', f_construction: 'Құрылыс',
-      f_food: 'Қоғамдық тамақтану', f_packaging: 'Фасовка', f_logistics: 'Логистика',
-      f_retail: 'Бөлшек сауда және қойма', f_medicine: 'Медицина', f_education: 'Білім беру',
+      f_food: 'азық-түлік өндірісі', f_packaging: 'Фасовка', f_logistics: 'Логистика',
+      f_retail: 'Сауда және қойма', f_medicine: 'Медицина', f_education: 'Білім беру',
       f_it: 'Байланыс және IT', f_service: 'Қызмет көрсету', f_security: 'Күзет',
       ind_oil: 'Мұнай-газ өндіру саласы', ind_construction: 'Құрылыс',
-      ind_food: 'Қоғамдық тамақтану', ind_packaging: 'Фасовка', ind_logistics: 'Логистика',
-      ind_retail: 'Бөлшек сауда және қойма', ind_medicine: 'Медицина', ind_education: 'Білім беру',
+      ind_food: 'азық-түлік өндірісі', ind_packaging: 'Фасовка', ind_logistics: 'Логистика',
+      ind_retail: 'Сауда және қойма', ind_medicine: 'Медицина', ind_education: 'Білім беру',
       ind_it: 'Байланыс және IT', ind_service: 'Қызмет көрсету', ind_security: 'Күзет',
       btn_review: 'Пікірді оқу',
       c01_prob: 'Қоймалау мен өлшеудегі ақаулар, өндіріс кешігулері',
