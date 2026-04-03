@@ -305,6 +305,24 @@
       .nav-links { display: none; }
       .nav-social { display: none; }
     }
+
+    /* BURGER MENU */
+    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .burger span { display: block; width: 22px; height: 1.5px; background: var(--text); transition: all 0.25s; }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--font-head); font-size: 28px; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: 0.04em; transition: color 0.15s; }
+    .mobile-menu a:hover { color: var(--gold); }
+    .mobile-menu .mobile-social { display: flex; gap: 24px; margin-top: 16px; }
+    .mobile-menu .mobile-social a { font-size: 14px; color: var(--text2); font-family: var(--font-body); }
+    .mobile-menu .mobile-lang { display: flex; gap: 8px; margin-top: 8px; }
+    .mobile-menu .mobile-lang button { background: none; border: 0.5px solid var(--border2); color: var(--text3); font-family: var(--font-body); font-size: 13px; padding: 6px 12px; cursor: pointer; border-radius: 3px; transition: all 0.15s; }
+    .mobile-menu .mobile-lang button.active { border-color: var(--gold); color: var(--gold); }
+    .mobile-close { position: absolute; top: 20px; right: 24px; font-size: 28px; color: var(--text2); cursor: pointer; background: none; border: none; }
+    @media (max-width: 768px) { .burger { display: flex; } .nav-links { display: none !important; } .nav-social { display: none !important; } .nav-logo-img { display: none; } }
   </style>
 </head>
 <body>
@@ -340,6 +358,7 @@
           <button id="btn-en" onclick="setLanguage('en')">EN</button>
           <button id="btn-ar" onclick="setLanguage('ar')">AR</button>
         </div>
+        <button class="burger" id="burger-btn" onclick="toggleBurger()"><span></span><span></span><span></span></button>
         <img src="logo_light.png" alt="KAIZEN-TRIZ PARTNERS" class="nav-logo-img">
       </div>
     </div>
