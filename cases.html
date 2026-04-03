@@ -294,8 +294,6 @@
       <a href="index.html" class="nav-logo">Askar <span>Bapen</span></a>
       <div class="nav-right">
         <div class="nav-links">
-          <a href="consulting.html" data-i18n="nav_consulting">Бизнес-решения</a>
-          <a href="training.html" data-i18n="nav_training">Бизнес-обучение</a>
           <a href="cases.html" class="active" data-i18n="nav_cases">Кейсы</a>
           <a href="about.html" data-i18n="nav_about">Обо мне</a>
         </div>
@@ -616,6 +614,7 @@
   const caseTranslations = {
     ru: {
       nav_consulting: 'Бизнес-решения', nav_training: 'Бизнес-обучение', nav_cases: 'Кейсы', nav_about: 'Обо мне',
+      cases_title: 'Кейсы',
       f_all: 'Все', f_oil: 'Нефтехимическая пром.', f_construction: 'Строительство',
       f_food: 'Общепит', f_packaging: 'Фасовка', f_logistics: 'Логистика',
       f_retail: 'Ритейл и склад', f_medicine: 'Медицина', f_education: 'Образование',
@@ -671,6 +670,7 @@
     },
     en: {
       nav_consulting: 'Business Solutions', nav_training: 'Business Trainings', nav_cases: 'Cases', nav_about: 'About',
+      cases_title: 'Case Studies',
       f_all: 'All', f_oil: 'Petrochemical', f_construction: 'Construction',
       f_food: 'Food & Beverage', f_packaging: 'Packaging', f_logistics: 'Logistics',
       f_retail: 'Retail & Warehouse', f_medicine: 'Healthcare', f_education: 'Education',
@@ -726,6 +726,7 @@
     },
     kz: {
       nav_consulting: 'Бизнес-шешімдер', nav_training: 'Бизнес-ағарту', nav_cases: 'Жобалар', nav_about: 'Мен туралы',
+      cases_title: 'Жобалар',
       f_all: 'Барлығы', f_oil: 'Мұнай-химия саласы', f_construction: 'Құрылыс',
       f_food: 'азық-түлік өндірісі', f_packaging: 'Фасовка', f_logistics: 'Логистика',
       f_retail: 'Сауда және қойма', f_medicine: 'Медицина', f_education: 'Білім беру',
@@ -785,6 +786,17 @@
     const saved = localStorage.getItem('lang') || 'ru';
     setLanguage(saved);
   })();
+
+  function toggleBurger() {
+    document.getElementById('burger-btn').classList.toggle('open');
+    document.getElementById('mobile-menu').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
+  }
+  function closeBurger() {
+    document.getElementById('burger-btn').classList.remove('open');
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
 </script>
 
 </body>
