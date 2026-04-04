@@ -549,8 +549,11 @@
   }, { threshold: 0, rootMargin: '0px 0px -20px 0px' });
   reveals.forEach(r => observer.observe(r));
   setTimeout(() => {
-    document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
-  }, 300);
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  }, 100);
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  });
 
   function setLanguage(lang) {
     document.querySelectorAll('.lang-switcher button').forEach(b => b.classList.remove('active'));
