@@ -543,17 +543,16 @@
 
 <script src="main.js"></script>
 <script>
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0, rootMargin: '0px 0px -20px 0px' });
-  reveals.forEach(r => observer.observe(r));
-  setTimeout(() => {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-  }, 100);
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-  });
+  function initReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0, rootMargin: '0px 0px -20px 0px' });
+    reveals.forEach(r => observer.observe(r));
+    setTimeout(() => {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }, 100);
+  }
 
   function setLanguage(lang) {
     document.querySelectorAll('.lang-switcher button').forEach(b => b.classList.remove('active'));
@@ -569,6 +568,7 @@
       document.getElementById('ar-message').style.display = 'none';
       document.documentElement.dir = 'ltr';
       applyTranslations(lang);
+      initReveal();
     }
   }
 
