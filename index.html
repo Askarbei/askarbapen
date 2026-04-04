@@ -395,7 +395,7 @@
       <div class="hero-text">
         <span class="badge" data-i18n="hero_badge">Мастер Бизнес-ТРИЗ и Kaizen/Lean Практик</span>
         <h1 data-i18n="hero_name">Аскар Бапен</h1>
-        <p class="hero-sub" data-i18n="hero_sub">Нахожу решения там, где привычные методы заводят в тупик.</p>
+        <p class="hero-sub" data-i18n="hero_sub">Максимальный результат без дополнительных ресурсов.</p>
       </div>
       <div class="hero-photo">
         <span class="hero-photo-placeholder">АБ</span>
@@ -525,7 +525,7 @@
       nav_consulting: 'Бизнес-решения', nav_training: 'Бизнес-обучение', nav_cases: 'Кейсы', nav_about: 'Обо мне',
       hero_badge: 'Мастер Бизнес-ТРИЗ и Kaizen/Lean Практик',
       hero_name: 'Аскар Бапен',
-      hero_sub: 'Нахожу решения там, где привычные методы заводят в тупик.',
+      hero_sub: 'Максимальный результат без дополнительных ресурсов.',
       fork_question: 'Что вам нужно?',
       fork_1_title: 'Бизнес-решения', fork_1_desc: 'Работаем вместе над конкретной задачей. Результат - под ключ.',
       fork_2_title: 'Бизнес-обучение', fork_2_desc: 'Обучаем руководителей и команды. Инструменты остаются в компании.',
@@ -592,4 +592,13 @@
   function toggleBurger() {
     document.getElementById('burger-btn').classList.toggle('open');
     document.getElementById('mobile-menu').classList.toggle('open');
-    document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ?
+    document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
+  }
+  function closeBurger() {
+    document.getElementById('burger-btn').classList.remove('open');
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+</script>
+</body>
+</html>
