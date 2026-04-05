@@ -385,12 +385,12 @@
       'CEO KAIZEN-TRIZ PARTNERS'
     ],
     kz: [
-      'Әлемдегі 7 Бизнес-ТРИЗ Мастерінің бірі',
+      'Aлемдеги 7 Бизнес-ТРИЗ Мастерінің бірі',
       'Kaizen/Lean - практик',
-      '20+ аяқталған жоба',
+      '20+ аяктаган жоба',
       'EXPO-2017 - 115 ел',
       'Focus Mastery in Uncertainty кітабының авторы',
-      'Toyota Production System сертификатталған тренері',
+      'Toyota Production System сертификатталган тренері',
       'IBTA ресми өкілі',
       'CEO KAIZEN-TRIZ PARTNERS'
     ]
@@ -471,15 +471,15 @@
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     },
     kz: {
-      nav_consulting: 'Бизнес-шешімдер', nav_training: 'Бизнес-ағарту', nav_cases: 'Жобалар', nav_about: 'Мен туралы',
+      nav_consulting: 'Бизнес-шешімдер', nav_training: 'Бизнес-агарту', nav_cases: 'Жобалар', nav_about: 'Мен туралы',
       about_role: 'KAIZEN-TRIZ PARTNERS Бас директоры',
-      about_cta_consult: 'Бизнес-шешімдер', about_cta_training: 'Бизнес-ағарту', about_cta_contact: 'Сөз бастайық',
+      about_cta_consult: 'Бизнес-шешімдер', about_cta_training: 'Бизнес-агарту', about_cta_contact: 'Сөз бастайык',
       story_p1: 'Дипломат ретінде жұмысымды бастадым. Араб және ағылшын тілдерін меңгеріп, Таяу Шығыс мемлекеттеріне іс-сапарлар болды, халықаралық келіссөздерге жол ашып, Астанадағы EXPO-2017 - 115 елдің қатысуын үйлестірдім. Сол жерде мен бір жүйелі көзқарас жеткіліксіз екенін түсініп, нақты құралдар қажеттілігін өзім үшін аштым.',
       story_p2: 'Бизнес-консалтингке ауысқан кезде, Кайдзен мен Lean-ге үйрендім. Ол 90% қиындықтарды шешіп, яғни шығын-ысырап жояды, процестерді реттеп, стандарттарға айналдырады. Бірақ қиындықтың 10% қарама-қайшылыққа ұрынып, шешілмей қалатынын байқадым.',
       story_quote: 'Мысалы: ЕГЕР сату бөлімінің штатын ұлғайтсақ, сату көрсеткіші өседі, БІРАҚ еңбекақы қорына кететін шығын да артады. Егер штатты өзгеріссіз қалдырсақ, ЕТҚ өзгермейді, бірақ сату да өспейді. Кайдзен қарама-қайшылықты шешпейді.',
       story_p3: 'Осындай мәселелерді шешу үшін Бизнес-ТРИЗ-ге келдім. Бірінші сатыдан бастап Бизнес-ТРИЗ Мастеріне дейін жеттім. Ол үшін IBTA президенті Валерий Сушковтың жетекшілігімен P2R бизнес-ресурстарды табу құралын шығардым.',
       stats_label: 'сандарда',
-      stat_1: 'Әлемдегі Бизнес-ТРИЗ Мастерлері', stat_2: 'аяқталған жобалар', stat_4: 'EXPO-2017 елдері',
+      stat_1: 'Алемдегі Бизнес-ТРИЗ Мастерлері', stat_2: 'аяқталған жобалар', stat_4: 'EXPO-2017 елдері',
       cred_title: 'Марапаттар',
       cred_1: 'Бизнес-ТРИЗ Мастері және Kaizen Шебері',
       cred_2: 'Қазақстан мен Орта Азияда International Business TRIZ Association ресми өкілі',
@@ -487,12 +487,26 @@
       cred_4: 'Kaizen Center дипломды тренері',
       cred_5: 'Дипломат, арабист - Астанадағы EXPO-2017 көрмесінде 115 елдің қатысуын үйлестірді',
       book_label: 'кітап', book_platform: 'Amazon',
-      book_desc: 'Беймәлім жағдайда ойлаудың айқындығын сақтау және шешім қабылдау туралы.',
+      book_desc: 'Беймалім жагдайда ойлаудың айқындығын сақтау және шешім қабылдау туралы.',
       book_cta: 'Amazon-да оқыңыз',
       sem_title: 'Сараптама',
       footer_copy: '© 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS'
     }
+  };
+
+  (function() {
+    const saved = localStorage.getItem('lang') || 'ru';
+    setLanguage(saved);
+  })();
+
+  function toggleBurger() {
+    document.getElementById('burger-btn').classList.toggle('open');
+    document.getElementById('mobile-menu').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
   }
+  function closeBurger() {
+    document.getElementById('burger-btn').classList.remove('open');
+    document.getElementById('mobile-menu').classList.remove('open');
     document.body.style.overflow = '';
   }
 </script>
