@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://askarbapen.com/sitemap.xml
+
+# Static assets — allow all
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.pdf
+
+# Client reviews — accessible, but not a crawl priority
+Allow: /reviews/
