@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заявка принята | Askar Bapen</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1a1917;
+      --bg2: #222018;
+      --gold: #D4A843;
+      --gold-light: #e8c070;
+      --text: #FFFFFF;
+      --text2: #E0DDD6;
+      --text3: #9a9488;
+      --border: rgba(212,168,67,0.25);
+      --border2: rgba(245,242,234,0.12);
+      --font-head: 'Cormorant Garamond', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    nav { background: var(--bg); border-bottom: 0.5px solid var(--border2); padding: 18px 0; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { text-transform: uppercase; font-family: var(--font-head); font-size: 20px; font-weight: 500; letter-spacing: 0.04em; }
+    .nav-logo span { color: var(--gold); }
+    .lang-switcher { display: flex; gap: 4px; }
+    .lang-switcher button { background: none; border: 0.5px solid var(--border2); color: var(--text3); font-family: var(--font-body); font-size: 11px; padding: 4px 8px; cursor: pointer; border-radius: 3px; transition: all 0.15s; letter-spacing: 0.05em; }
+    .lang-switcher button:hover, .lang-switcher button.active { border-color: var(--gold); color: var(--gold); }
+    .thanks-wrap { flex: 1; display: flex; align-items: center; justify-content: center; padding: 64px 32px; }
+    .thanks-inner { max-width: 560px; width: 100%; text-align: center; }
+    .thanks-check { width: 64px; height: 64px; border-radius: 50%; background: rgba(212,168,67,0.1); border: 0.5px solid var(--border); display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; font-size: 26px; color: var(--gold); }
+    .thanks-title { font-family: var(--font-head); font-size: 52px; font-weight: 500; margin-bottom: 10px; line-height: 1.1; }
+    .thanks-timing { font-size: 15px; color: var(--text3); margin-bottom: 44px; }
+    .what-next { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 12px; padding: 28px 32px; margin-bottom: 24px; text-align: left; }
+    .what-next-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text3); margin-bottom: 18px; }
+    .step-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .step-list li { display: flex; gap: 16px; align-items: flex-start; font-size: 15px; color: var(--text2); line-height: 1.5; }
+    .step-num { font-family: var(--font-head); font-size: 20px; color: var(--gold); min-width: 20px; opacity: 0.6; flex-shrink: 0; }
+    .cta-block { display: flex; flex-direction: column; gap: 10px; }
+    .btn-primary { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--gold); color: var(--bg); font-size: 15px; font-weight: 500; padding: 14px 28px; border-radius: 6px; transition: background 0.15s; }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-secondary { display: flex; align-items: center; justify-content: center; gap: 8px; background: none; color: var(--text2); font-size: 14px; padding: 12px 24px; border-radius: 6px; border: 0.5px solid var(--border2); transition: all 0.15s; }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-tertiary { display: flex; align-items: center; justify-content: center; gap: 8px; background: none; color: var(--text3); font-size: 13px; padding: 10px 20px; border-radius: 6px; border: 0.5px solid var(--border2); transition: all 0.15s; }
+    .btn-tertiary:hover { border-color: var(--gold); color: var(--gold); }
+    footer { border-top: 0.5px solid var(--border2); padding: 32px 0; text-align: center; margin-top: auto; }
+    .footer-copy { font-size: 12px; color: var(--text3); }
+    @media (max-width: 768px) { .thanks-title { font-size: 36px; } .what-next { padding: 20px; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Askar <span>Bapen</span></a>
+      <div class="lang-switcher">
+        <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
+        <button id="btn-kz" onclick="setLanguage('kz')">KZ</button>
+        <button id="btn-en" onclick="setLanguage('en')">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="thanks-wrap">
+    <div class="thanks-inner">
+
+      <div class="thanks-check">&#10003;</div>
+      <h1 class="thanks-title" id="t-title">Заявка принята</h1>
+      <p class="thanks-timing" id="t-timing">Ответ в течение 24 часов в рабочие дни.</p>
+
+      <div class="what-next">
+        <p class="what-next-label" id="t-next-label">что будет дальше</p>
+        <ul class="step-list">
+          <li><span class="step-num">1</span><span id="t-step1">Изучу вашу задачу и подготовлю вопросы.</span></li>
+          <li><span class="step-num">2</span><span id="t-step2">Свяжусь для короткого уточняющего звонка - 20-30 минут.</span></li>
+          <li><span class="step-num">3</span><span id="t-step3">Предложу конкретный формат работы под вашу задачу.</span></li>
+        </ul>
+      </div>
+
+      <div class="cta-block" id="cta-block">
+        <!-- Заполняется через JS в зависимости от языка -->
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p class="footer-copy">&#169; 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS</p>
+    </div>
+  </footer>
+
+<script>
+  const t = {
+    ru: {
+      title: 'Заявка принята',
+      timing: 'Ответ в течение 24 часов в рабочие дни.',
+      next_label: 'что будет дальше',
+      step1: 'Изучу вашу задачу и подготовлю вопросы.',
+      step2: 'Свяжусь для короткого уточняющего звонка - 20-30 минут.',
+      step3: 'Предложу конкретный формат работы под вашу задачу.',
+      cta: `
+        <a href="https://t.me/bapeninsights" target="_blank" rel="noopener" class="btn-primary">Подписаться на Bapen Insights в Telegram</a>
+        <a href="cases.html" class="btn-secondary">Посмотреть кейсы пока ждете</a>
+      `
+    },
+    kz: {
+      title: 'Қабылданды',
+      timing: 'Жұмыс күндері 24 сагат ішінде жауап береміз.',
+      next_label: 'бұдан кейін не болады',
+      step1: 'Мәселеңізбен танысып, сұрақтар дайындаймын.',
+      step2: 'Нақтылау үшін қысқа қоңырау шаламын - 20-30 минут.',
+      step3: 'Мәселеңізге сай нақты жұмыс форматын ұсынамын.',
+      cta: `
+        <a href="https://t.me/bapeninsights" target="_blank" rel="noopener" class="btn-primary">Bapen Insights телеграм арнасына жазылыңыз</a>
+        <a href="cases.html" class="btn-secondary">Жобалармен танысып көріңіз</a>
+      `
+    },
+    en: {
+      title: 'Enquiry received',
+      timing: 'You will hear back within 24 hours on working days.',
+      next_label: 'what happens next',
+      step1: 'I will review your challenge and prepare questions.',
+      step2: 'I will reach out for a short clarifying call - 20 to 30 minutes.',
+      step3: 'I will propose a format of work tailored to your challenge.',
+      cta: `
+        <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener" class="btn-primary">Connect on LinkedIn</a>
+        <a href="https://a.co/d/07ToEj6y" target="_blank" rel="noopener" class="btn-secondary">Read Focus Mastery in Uncertainty on Amazon</a>
+        <a href="cases.html" class="btn-tertiary">Browse case studies</a>
+      `
+    }
+  };
+
+  function setLanguage(lang) {
+    document.querySelectorAll('.lang-switcher button').forEach(b => b.classList.remove('active'));
+    const btn = document.getElementById('btn-' + lang);
+    if (btn) btn.classList.add('active');
+    localStorage.setItem('lang', lang);
+    const l = t[lang] || t['ru'];
+    document.getElementById('t-title').textContent = l.title;
+    document.getElementById('t-timing').textContent = l.timing;
+    document.getElementById('t-next-label').textContent = l.next_label;
+    document.getElementById('t-step1').textContent = l.step1;
+    document.getElementById('t-step2').textContent = l.step2;
+    document.getElementById('t-step3').textContent = l.step3;
+    document.getElementById('cta-block').innerHTML = l.cta;
+  }
+
+  const savedLang = localStorage.getItem('lang') || 'ru';
+  setLanguage(savedLang);
+</script>
+</body>
+</html>
