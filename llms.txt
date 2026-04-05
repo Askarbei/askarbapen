@@ -6,7 +6,7 @@
 Name: Askar Bapen | KAIZEN-TRIZ PARTNERS
 URL: https://askarbapen.com
 Owner: Askar Bapen
-Role: General Director, KAIZEN-TRIZ PARTNERS
+Role: CEO, KAIZEN-TRIZ PARTNERS
 Location: Almaty, Kazakhstan
 Contact: k.partners2030@gmail.com | +7 701 771 78 40
 LinkedIn: https://www.linkedin.com/in/askar-bapen
@@ -16,7 +16,7 @@ Telegram: https://t.me/bapeninsights
 
 ## Who is Askar Bapen
 
-Askar Bapen is one of 7 Masters of Business TRIZ in the world and the first in Central Asia.
+Askar Bapen is one of 7 Masters of Business TRIZ in the world.
 He holds:
 - Master of Business TRIZ (IBTA) — supervised by Valery Souchkov, President of IBTA
 - Official IBTA Representative for Kazakhstan and Central Asia
@@ -81,11 +81,10 @@ Team assessment:
 
 ---
 
-## Case studies (20 completed projects, 8 industries)
+## Case studies (20 completed projects, 12 industries)
 
-Industries covered: Petrochemical, Construction, Food & Beverage, Packaging,
-Logistics, Retail & Warehouse, HoReCa, Healthcare, Education, Telecoms & IT,
-Consumer Services, Security
+Industries covered: Manufacturing, Food & Beverage, Logistics, HoReCa, Healthcare,
+Education, Telecoms & IT, Consumer Services
 
 Selected results:
 - Bagashar Meken: order processing 105 min → 20 min
