@@ -7,7 +7,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-2T02M1XMWW');
 </script>
   <meta charset="UTF-8">
@@ -17,12 +16,12 @@
   <meta name="author" content="Askar Bapen">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="apple-touch-icon" href="favicon-192.png">
+  <link rel="apple-touch-icon" href="favicon-192.png">
   <link rel="canonical" href="https://askarbapen.com/">
   <link rel="alternate" hreflang="x-default" href="https://askarbapen.com/">
-  <link rel="alternate" hreflang="ru"         href="https://askarbapen.com/">
-  <link rel="alternate" hreflang="kk"         href="https://askarbapen.com/">
-  <link rel="alternate" hreflang="en"         href="https://askarbapen.com/">
+  <link rel="alternate" hreflang="ru" href="https://askarbapen.com/">
+  <link rel="alternate" hreflang="kk" href="https://askarbapen.com/">
+  <link rel="alternate" hreflang="en" href="https://askarbapen.com/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://askarbapen.com/">
   <meta property="og:title" content="Askar Bapen | Business TRIZ, Kaizen and Lean">
@@ -83,6 +82,18 @@
     .fork-card:hover { border-color: var(--gold); border-top-color: var(--gold-light); background: var(--bg3); }
     .fork-card h3 { font-family: var(--font-head); font-size: 26px; font-weight: 500; color: var(--text); margin-bottom: 12px; }
     .fork-card-desc { font-size: 15px; color: var(--text); margin-bottom: 20px; line-height: 1.65; }
+
+    /* --- Diagnostic block --- */
+    .diagnostic { padding: 70px 0; border-bottom: 0.5px solid var(--border2); }
+    .diagnostic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .diag-card { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 20px; }
+    .diag-icon { width: 48px; height: 48px; border-radius: 8px; background: rgba(212,168,67,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .diag-title { font-family: var(--font-head); font-size: 22px; font-weight: 500; color: var(--text); letter-spacing: 0.06em; }
+    .diag-btn { display: block; text-align: center; border: 0.5px solid var(--gold); color: var(--gold); padding: 12px 20px; border-radius: 6px; font-size: 14px; font-family: var(--font-body); transition: background 0.15s, color 0.15s; margin-top: auto; }
+    .diag-btn:hover { background: var(--gold); color: var(--bg); }
+    @media (max-width: 768px) { .diagnostic-grid { grid-template-columns: 1fr; } }
+    /* --- end diagnostic --- */
+
     .stats { padding: 70px 0; border-bottom: 0.5px solid var(--border2); }
     .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     .stat-card { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 8px; padding: 20px; text-align: center; }
@@ -213,6 +224,38 @@
           <h3 data-i18n="fork_2_title">Бизнес-обучение</h3>
           <p class="fork-card-desc" data-i18n="fork_2_desc">Обучаем руководителей и команды. Инструменты остаются в компании.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="diagnostic reveal">
+      <p class="section-label" data-i18n="diag_label">бесплатная диагностика</p>
+      <div class="diagnostic-grid">
+
+        <div class="diag-card">
+          <div class="diag-icon">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+              <path d="M13 3 L13 23 M3 13 L23 13" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="13" cy="13" r="5" stroke="#D4A843" stroke-width="1.5" fill="none"/>
+              <circle cx="13" cy="13" r="2" fill="#D4A843"/>
+            </svg>
+          </div>
+          <div class="diag-title">KAIZEN BRIEF</div>
+          <a href="https://forms.gle/Da1oPj64JiYycLMu5" target="_blank" rel="noopener" class="diag-btn" data-i18n="diag_btn_1">Оценить операционную зрелость бизнеса</a>
+        </div>
+
+        <div class="diag-card">
+          <div class="diag-icon">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+              <path d="M4 28 C4 28 6 28 9 24 C12 20 14 16 16 13 C18 10 22 5 28 4" stroke="#D4A843" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              <circle cx="28" cy="4" r="3.5" fill="#D4A843"/>
+              <line x1="4" y1="28" x2="28" y2="28" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+              <line x1="4" y1="4" x2="4" y2="28" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="diag-title">S-CURVE DIAGNOSTIC</div>
+          <a href="https://forms.gle/398yD5mPpji3MrAh9" target="_blank" rel="noopener" class="diag-btn" data-i18n="diag_btn_2">Оценить стадию развития бизнеса</a>
+        </div>
+
       </div>
     </section>
 
@@ -368,6 +411,9 @@
       fork_question: 'Что вам нужно?',
       fork_1_title: 'Бизнес-решения', fork_1_desc: 'Работаем вместе над конкретной задачей. Результат - под ключ.',
       fork_2_title: 'Бизнес-обучение', fork_2_desc: 'Обучаем руководителей и команды. Инструменты остаются в компании.',
+      diag_label: 'бесплатная диагностика',
+      diag_btn_1: 'Оценить операционную зрелость бизнеса',
+      diag_btn_2: 'Оценить стадию развития бизнеса',
       stats_label: 'результаты клиентов',
       stat_1_desc: 'эффект одного проекта', stat_2_desc: 'ускорение процессов',
       stat_3_desc: 'складских потерь', stat_4_desc: 'отраслей',
@@ -386,6 +432,9 @@
       fork_question: 'What is your challenge?',
       fork_1_title: 'Business Solutions', fork_1_desc: 'We work alongside you on a specific challenge. Full turnkey delivery.',
       fork_2_title: 'Business Trainings', fork_2_desc: 'We develop managers and teams. The knowledge and tools remain within your organisation.',
+      diag_label: 'free diagnostics',
+      diag_btn_1: 'Assess business operational maturity',
+      diag_btn_2: 'Assess business development stage',
       stats_label: 'client results',
       stat_1_desc: 'impact of a single project', stat_2_desc: 'process acceleration',
       stat_3_desc: 'reduction in warehouse waste', stat_4_desc: 'industries served',
@@ -404,6 +453,9 @@
       fork_question: 'Неден бастаймыз?',
       fork_1_title: 'Бизнес-шешімдер', fork_1_desc: 'Нақты мәселемен бірге жұмыс істеп, нәтижеге дейін жеткіземіз.',
       fork_2_title: 'Бизнес-ағарту', fork_2_desc: 'Басшылар мен командаларды оқытамыз. Берген білім мен үйреткен құралдар компания ішінде қалады.',
+      diag_label: 'тегін диагностика',
+      diag_btn_1: 'Бизнестiң операциондық жетiлуiн бағалау',
+      diag_btn_2: 'Бизнестiң даму сатысын бағалау',
       stats_label: 'клиенттер нәтижелері',
       stat_1_desc: 'бір жобаның әсері', stat_2_desc: 'процестерді жеделдету',
       stat_3_desc: 'қойма шығындарын қысқарту', stat_4_desc: 'сала',
