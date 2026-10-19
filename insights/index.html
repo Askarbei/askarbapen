@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2T02M1XMWW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2T02M1XMWW');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bapen Insights | Что событие значит для бизнеса</title>
+  <meta name="description" content="Что событие значит для бизнеса и какие ходы оно открывает. Разборы новостей через Бизнес-ТРИЗ и Lean/Kaizen.">
+  <meta name="author" content="Askar Bapen">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../favicon-192.png">
+  <link rel="canonical" href="https://askarbapen.com/insights/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://askarbapen.com/insights/">
+  <meta property="og:title" content="Bapen Insights">
+  <meta property="og:description" content="Что событие значит для бизнеса и какие ходы оно открывает. Разборы новостей через Бизнес-ТРИЗ и Lean/Kaizen.">
+  <meta property="og:image" content="https://askarbapen.com/photo.jpg">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Bapen Insights">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bapen Insights">
+  <meta name="twitter:description" content="Что событие значит для бизнеса и какие ходы оно открывает. Разборы новостей через Бизнес-ТРИЗ и Lean/Kaizen.">
+  <meta name="twitter:image" content="https://askarbapen.com/photo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1a1917; --bg2: #222018; --bg3: #2a2820;
+      --gold: #D4A843; --gold-light: #e8c070;
+      --text: #FFFFFF; --text2: #E0DDD6; --text3: #9a9488;
+      --border: rgba(212,168,67,0.25); --border2: rgba(245,242,234,0.12);
+      --font-head: 'Cormorant Garamond', serif; --font-body: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 0.5px solid var(--border2); padding: 18px 0; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo { text-transform: uppercase; font-family: var(--font-head); font-size: 20px; font-weight: 500; letter-spacing: 0.04em; color: var(--text); white-space: nowrap; }
+    .nav-logo span { color: var(--gold); }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; gap: 12px; }
+    .nav-links a { text-transform: uppercase; font-size: 10px; color: var(--text); transition: color 0.15s; letter-spacing: 0.02em; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-social { display: flex; gap: 14px; align-items: center; }
+    .nav-social a { text-transform: uppercase; color: var(--text2); font-size: 13px; letter-spacing: 0.05em; transition: color 0.15s; }
+    .nav-social a:hover { color: var(--gold); }
+    .nav-logo-img { height: 36px; opacity: 0.85; transition: opacity 0.15s; }
+    .nav-logo-img:hover { opacity: 1; }
+    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .burger span { display: block; width: 22px; height: 1.5px; background: var(--text); transition: all 0.25s; }
+    .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--font-head); font-size: 28px; font-weight: 500; color: var(--text); letter-spacing: 0.04em; transition: color 0.15s; }
+    .mobile-menu a:hover { color: var(--gold); }
+    .mobile-menu .mobile-social { display: flex; gap: 24px; margin-top: 16px; }
+    .mobile-menu .mobile-social a { font-size: 14px; color: var(--text2); font-family: var(--font-body); }
+    .mobile-close { position: absolute; top: 20px; right: 24px; font-size: 28px; color: var(--text2); cursor: pointer; background: none; border: none; }
+
+    /* --- Лента --- */
+    .page-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 56px; align-items: start; padding: 44px 0 70px; }
+    .feed-head h1 { font-family: var(--font-head); font-size: 46px; font-weight: 500; line-height: 1.1; margin-bottom: 10px; }
+    .feed-head h1 span { color: var(--gold); }
+    .feed-sub { font-size: 16px; color: var(--text3); margin-bottom: 30px; max-width: 560px; }
+    .filters { display: none; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
+    .filters.show { display: flex; }
+    .filters button { background: none; border: 0.5px solid var(--border2); color: var(--text3); font-family: var(--font-body); font-size: 13px; padding: 7px 16px; cursor: pointer; border-radius: 20px; transition: all 0.15s; letter-spacing: 0.02em; }
+    .filters button:hover { border-color: var(--gold); color: var(--gold); }
+    .filters button.active { border-color: var(--gold); color: var(--gold); background: rgba(212,168,67,0.08); }
+    .feed { display: flex; flex-direction: column; gap: 14px; }
+    .feed-card { background: var(--bg2); border: 0.5px solid var(--border2); border-left: 2px solid var(--gold); border-radius: 12px; padding: 20px 24px; display: block; transition: border-color 0.15s, background 0.15s; }
+    .feed-card:hover { border-color: var(--gold); background: var(--bg3); }
+    .feed-card-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+    .feed-rubric { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); }
+    .feed-industry { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); border: 0.5px solid var(--border2); border-radius: 20px; padding: 1px 10px; }
+    .feed-date { font-size: 12px; color: var(--text3); }
+    .feed-read { font-size: 12px; color: var(--text3); }
+    .feed-title { font-family: var(--font-head); font-size: 23px; font-weight: 500; color: var(--text); line-height: 1.25; margin-bottom: 6px; display: block; }
+    .feed-desc { font-size: 14px; color: var(--text3); line-height: 1.55; display: block; }
+    .feed-empty { color: var(--text3); font-size: 15px; padding: 30px 0; }
+    .load-more { margin-top: 26px; text-align: center; display: none; }
+    .load-more button { background: none; border: 0.5px solid var(--gold); color: var(--gold); font-family: var(--font-body); font-size: 14px; padding: 11px 28px; cursor: pointer; border-radius: 6px; transition: background 0.15s, color 0.15s; }
+    .load-more button:hover { background: var(--gold); color: var(--bg); }
+    .feed-count { font-size: 12px; color: var(--text3); margin-top: 12px; text-align: center; }
+
+    /* --- Сайдбар (из шаблона страницы разбора) --- */
+    .sidebar { position: sticky; top: 90px; display: flex; flex-direction: column; gap: 16px; }
+    .sb-card { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 12px; padding: 20px 22px; }
+    .sb-author { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+    .sb-photo { width: 56px; height: 56px; border-radius: 50%; border: 0.5px solid var(--border); overflow: hidden; flex-shrink: 0; background: var(--bg3); }
+    .sb-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .sb-name { font-family: var(--font-head); font-size: 20px; font-weight: 500; color: var(--text); line-height: 1.2; }
+    .sb-badge { font-size: 11px; color: var(--gold); line-height: 1.5; }
+    .sb-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text3); margin-bottom: 12px; }
+    .sb-link { display: block; border-top: 2px solid var(--gold); background: var(--bg3); border-radius: 8px; padding: 12px 16px; margin-bottom: 10px; transition: background 0.15s; }
+    .sb-link:last-of-type { margin-bottom: 0; }
+    .sb-link:hover { background: var(--bg); }
+    .sb-link-title { font-family: var(--font-head); font-size: 18px; font-weight: 500; color: var(--text); display: block; }
+    .sb-link-desc { font-size: 12px; color: var(--text3); line-height: 1.5; }
+    .sb-btn { display: block; text-align: center; border: 0.5px solid var(--gold); color: var(--gold); padding: 9px 14px; border-radius: 6px; font-size: 12.5px; transition: background 0.15s, color 0.15s; margin-bottom: 10px; }
+    .sb-btn:last-child { margin-bottom: 0; }
+    .sb-btn:hover { background: var(--gold); color: var(--bg); }
+    .sb-brief { margin: 14px 0 6px; }
+    .sb-brief-note { display: block; text-align: center; font-size: 11.5px; color: var(--text3); }
+    .sb-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .sb-stat { text-align: center; background: var(--bg3); border-radius: 8px; padding: 12px 6px; }
+    .sb-stat-num { font-family: var(--font-head); font-size: 21px; font-weight: 500; color: var(--gold); display: block; }
+    .sb-stat-desc { font-size: 10.5px; color: var(--text3); line-height: 1.35; display: block; }
+
+    footer { padding: 48px 0; text-align: center; border-top: 0.5px solid var(--border2); }
+    .footer-contacts { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-contacts a { font-size: 15px; color: var(--text2); transition: color 0.15s; }
+    .footer-contacts a:hover { color: var(--gold); }
+    .footer-copy { font-size: 12px; color: var(--text3); }
+    @media (max-width: 900px) {
+      .page-layout { grid-template-columns: 1fr; gap: 40px; }
+      .sidebar { position: static; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none !important; } .nav-social { display: none !important; } .nav-logo-img { display: none; }
+      .burger { display: flex; }
+      .feed-head h1 { font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo">Askar <span>Bapen</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="/insights/">Bapen Insights</a>
+        <a href="/cases.html">Кейсы</a>
+        <a href="/about.html">Обо мне</a>
+      </div>
+      <div class="nav-social">
+        <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://t.me/bapeninsights" target="_blank" rel="noopener" data-ga="telegram_channel" data-ga-label="nav">Telegram</a>
+      </div>
+      <button class="burger" id="burger-btn" onclick="toggleBurger()" aria-label="Меню"><span></span><span></span><span></span></button>
+      <img src="../logo_light.png" alt="KAIZEN-TRIZ PARTNERS" class="nav-logo-img">
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" onclick="closeBurger()" aria-label="Закрыть">&#10005;</button>
+  <a href="/insights/">Bapen Insights</a>
+  <a href="/consulting.html">Бизнес-решения</a>
+  <a href="/training.html">Бизнес-обучение</a>
+  <a href="/cases.html">Кейсы</a>
+  <a href="/about.html">Обо мне</a>
+  <div class="mobile-social">
+    <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://t.me/bapeninsights" target="_blank" rel="noopener" data-ga="telegram_channel" data-ga-label="mobile_menu">Telegram-канал</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="page-layout">
+
+    <main>
+      <div class="feed-head">
+        <h1>Bapen <span>Insights</span></h1>
+        <p class="feed-sub">Что событие значит для бизнеса и какие ходы оно открывает.</p>
+      </div>
+
+      <div class="filters" id="filters"></div>
+
+      <div class="feed" id="feed"><p class="feed-empty">Загрузка...</p></div>
+      <div class="load-more" id="load-more"><button onclick="showMore()">Показать еще</button></div>
+      <p class="feed-count" id="feed-count"></p>
+    </main>
+
+    <aside class="sidebar">
+      <div class="sb-card">
+        <div class="sb-author">
+          <div class="sb-photo"><img src="../photo.jpg" alt="Askar Bapen" onerror="this.style.display='none'"></div>
+          <div>
+            <div class="sb-name">Аскар Бапен</div>
+            <div class="sb-badge">Мастер Бизнес-ТРИЗ и Kaizen/Lean Практик</div>
+          </div>
+        </div>
+        <a class="sb-btn" href="/about.html">Обо мне</a>
+      </div>
+      <div class="sb-card">
+        <div class="sb-label">Что вам нужно?</div>
+        <a class="sb-link" href="/consulting.html">
+          <span class="sb-link-title">Бизнес-решения</span>
+          <span class="sb-link-desc">Работаем вместе над конкретной задачей. Результат под ключ.</span>
+        </a>
+        <a class="sb-link" href="/training.html">
+          <span class="sb-link-title">Бизнес-обучение</span>
+          <span class="sb-link-desc">Обучаем руководителей и команды. Инструменты остаются в компании.</span>
+        </a>
+        <a class="sb-btn sb-brief" href="https://forms.gle/mB3xKTRfqB1r9zkj8" target="_blank" rel="noopener" data-ga="problem_brief" data-ga-label="sidebar">Описать бизнес-проблему</a>
+        <span class="sb-brief-note">5 вопросов о вашей ситуации</span>
+      </div>
+      <div class="sb-card">
+        <div class="sb-label">Бесплатная диагностика</div>
+        <a class="sb-btn" href="https://forms.gle/Da1oPj64JiYycLMu5" target="_blank" rel="noopener" data-ga="diagnostic" data-ga-label="operational_maturity">Оценить операционную зрелость</a>
+        <a class="sb-btn" href="https://forms.gle/398yD5mPpji3MrAh9" target="_blank" rel="noopener" data-ga="diagnostic" data-ga-label="s_curve">Оценить стадию развития</a>
+      </div>
+      <div class="sb-card">
+        <div class="sb-label">Результаты клиентов</div>
+        <div class="sb-stats">
+          <div class="sb-stat"><span class="sb-stat-num">17 млн ₸</span><span class="sb-stat-desc">эффект одного проекта</span></div>
+          <div class="sb-stat"><span class="sb-stat-num">x5</span><span class="sb-stat-desc">ускорение процессов</span></div>
+          <div class="sb-stat"><span class="sb-stat-num">-75%</span><span class="sb-stat-desc">складских потерь</span></div>
+          <div class="sb-stat"><span class="sb-stat-num">10+</span><span class="sb-stat-desc">отраслей</span></div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-contacts">
+      <a href="tel:+77017717840">+7 (701) 771 78 40</a>
+      <a href="mailto:office@askarbapen.com">office@askarbapen.com</a>
+      <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="/insights/">Bapen Insights</a>
+      <a href="https://t.me/bapeninsights" target="_blank" rel="noopener" data-ga="telegram_channel" data-ga-label="footer">Telegram-канал</a>
+    </div>
+    <p class="footer-copy">&#169; 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS</p>
+  </div>
+</footer>
+
+<script>
+  function toggleBurger() {
+    document.getElementById('burger-btn').classList.toggle('open');
+    document.getElementById('mobile-menu').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
+  }
+  function closeBurger() {
+    document.getElementById('burger-btn').classList.remove('open');
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Лента: карточки грузятся из insights.json (его обновляет publish-insight.py).
+  const RUBRICS = { news: 'Разбор новостей', polemic: 'Полемика', opportunity: 'Возможности', forecast: 'Прогнозы развития', tool: 'Приемы и инструменты' };
+  const MONTHS = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+  const PAGE = 20;
+  let feed = [];
+  let shown = PAGE;
+  let filter = 'all';
+
+  function esc(s) { const d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
+  function fmtDate(iso) {
+    if (!iso) return '';
+    const p = String(iso).slice(0, 10).split('-');
+    return parseInt(p[2]) + ' ' + MONTHS[parseInt(p[1]) - 1] + ' ' + p[0];
+  }
+
+  function render() {
+    const list = filter === 'all' ? feed : feed.filter(x => x.rubric === filter);
+    const slice = list.slice(0, shown);
+    const box = document.getElementById('feed');
+    if (!slice.length) {
+      box.innerHTML = '<p class="feed-empty">Разборы скоро появятся. Пока можно подписаться на <a href="https://t.me/bapeninsights" target="_blank" rel="noopener" style="color: var(--gold);" data-ga="telegram_channel" data-ga-label="feed_empty">Telegram-канал</a>.</p>';
+      document.getElementById('load-more').style.display = 'none';
+      document.getElementById('feed-count').textContent = '';
+      return;
+    }
+    box.innerHTML = slice.map(x =>
+      '<a class="feed-card" href="' + esc(x.url) + '">' +
+      '<span class="feed-card-meta"><span class="feed-rubric">' + esc(RUBRICS[x.rubric] || x.rubric) + '</span>' +
+      (x.industry ? '<span class="feed-industry">' + esc(x.industry) + '</span>' : '') +
+      '<span class="feed-date">' + fmtDate(x.date) + '</span>' +
+      (x.read_min ? '<span class="feed-read">' + esc(x.read_min) + ' мин</span>' : '') +
+      '</span>' +
+      '<span class="feed-title">' + esc(x.title) + '</span>' +
+      '<span class="feed-desc">' + esc(x.description) + '</span></a>'
+    ).join('');
+    document.getElementById('load-more').style.display = list.length > shown ? 'block' : 'none';
+    document.getElementById('feed-count').textContent = list.length > PAGE ? 'Показано ' + Math.min(shown, list.length) + ' из ' + list.length : '';
+  }
+  function showMore() { shown += PAGE; render(); }
+
+  function buildFilters() {
+    const present = [...new Set(feed.map(x => x.rubric))];
+    if (present.length < 2) return;
+    const box = document.getElementById('filters');
+    box.innerHTML = '<button data-f="all" class="active">Все</button>' +
+      Object.keys(RUBRICS).filter(r => present.includes(r)).map(r =>
+        '<button data-f="' + r + '">' + RUBRICS[r] + '</button>').join('');
+    box.classList.add('show');
+    box.addEventListener('click', e => {
+      if (e.target.tagName !== 'BUTTON') return;
+      box.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      filter = e.target.dataset.f;
+      shown = PAGE;
+      render();
+    });
+  }
+
+  fetch('insights.json', { cache: 'no-cache' })
+    .then(r => r.ok ? r.json() : [])
+    .then(data => { feed = Array.isArray(data) ? data : []; buildFilters(); render(); })
+    .catch(() => { feed = []; render(); });
+
+  // События GA: любой элемент с data-ga шлет событие при клике.
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-ga]');
+    if (!el || typeof gtag !== 'function') return;
+    gtag('event', el.getAttribute('data-ga'), {
+      label: el.getAttribute('data-ga-label') || '',
+      page_path: location.pathname
+    });
+  });
+</script>
+<script data-goatcounter="https://askarbapen.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
