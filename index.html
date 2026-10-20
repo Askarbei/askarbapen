@@ -78,9 +78,11 @@
     .feed { display: flex; flex-direction: column; gap: 12px; }
     .feed-card { background: var(--bg2); border: 0.5px solid var(--border2); border-left: 2px solid var(--gold); border-radius: 12px; padding: 16px 20px; display: block; transition: border-color 0.15s, background 0.15s; }
     .feed-card:hover { border-color: var(--gold); background: var(--bg3); }
-    .feed-card-meta { display: flex; gap: 10px; margin-bottom: 6px; }
+    .feed-card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .feed-read-chip { margin-left: auto; font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold); border: 0.5px solid var(--gold); border-radius: 20px; padding: 1px 10px; white-space: nowrap; }
     .feed-rubric { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); }
     .feed-date { font-size: 11px; color: var(--text3); }
+    .feed-views { font-size: 11px; color: var(--text3); }
     .feed-title { font-family: var(--font-head); font-size: 19px; font-weight: 500; color: var(--text); line-height: 1.28; margin-bottom: 4px; display: block; }
     .feed-desc { font-size: 12.5px; color: var(--text3); line-height: 1.5; display: block; }
     .feed-all { display: block; text-align: center; margin-top: 16px; font-size: 13px; color: var(--gold); border: 0.5px solid var(--gold); border-radius: 6px; padding: 10px; transition: background 0.15s, color 0.15s; }
@@ -453,11 +455,19 @@
     box.innerHTML = feedItems.slice(0, 5).map(x =>
       '<a class="feed-card" href="' + escFeed(x.url) + '">' +
       '<span class="feed-card-meta"><span class="feed-rubric">' + escFeed(FEED_RUBRICS[x.rubric] || x.rubric) + '</span>' +
-      '<span class="feed-date">' + feedDate(x.date) + '</span></span>' +
+      '<span class="feed-date">' + feedDate(x.date) + '</span>' +
+      '<span class="feed-views" data-path="' + escFeed(x.url) + '"></span>' +
+      '<span class="feed-read-chip">Читать' + (x.read_min ? ' ' + escFeed(x.read_min) + ' мин' : '') + '</span></span>' +
       '<span class="feed-title">' + escFeed(x.title) + '</span>' +
       '<span class="feed-desc">' + escFeed(x.description) + '</span></a>'
     ).join('');
     updateFeedVisibility();
+    box.querySelectorAll('.feed-views').forEach(function (el) {
+      fetch('https://askarbapen.goatcounter.com/counter/' + encodeURIComponent(el.dataset.path) + '.json')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) { if (d && d.count) el.textContent = d.count + ' просмотров'; })
+        .catch(function () {});
+    });
   }
   fetch('insights/insights.json', { cache: 'no-cache' })
     .then(r => r.ok ? r.json() : [])
@@ -560,5 +570,6 @@
     document.body.style.overflow = '';
   }
 </script>
+<script data-goatcounter="https://askarbapen.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
