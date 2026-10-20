@@ -70,7 +70,7 @@
       -webkit-font-smoothing: antialiased;
     }
     a { color: inherit; text-decoration: none; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    .container { max-width: 1500px; margin: 0 auto; padding: 0 32px; }
     nav {
       position: sticky; top: 0; z-index: 100;
       background: var(--bg);
@@ -87,6 +87,34 @@
     .nav-social { display: flex; gap: 14px; }
     .nav-social a { font-size: 13px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.15s; }
     .nav-social a:hover { color: var(--gold); }
+
+    /* --- Две колонки: лента разборов слева, страница справа --- */
+    .home-layout { display: grid; grid-template-columns: 700px minmax(0, 1fr); gap: 52px; align-items: start; padding: 44px 0 70px; }
+    .home-layout.no-feed { grid-template-columns: 1fr; }
+    .home-layout.no-feed .insights-col { display: none; }
+    .insights-col { position: sticky; top: 90px; }
+    .insights-head { font-family: var(--font-head); font-size: 30px; font-weight: 500; margin-bottom: 4px; }
+    .insights-head span { color: var(--gold); }
+    .insights-sub { font-size: 13px; color: var(--text3); margin-bottom: 20px; }
+    .feed { display: flex; flex-direction: column; gap: 12px; }
+    .feed-card { background: var(--bg2); border: 0.5px solid var(--border2); border-left: 2px solid var(--gold); border-radius: 12px; padding: 16px 20px; display: block; transition: border-color 0.15s, background 0.15s; }
+    .feed-card:hover { border-color: var(--gold); background: var(--bg3); }
+    .feed-card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .feed-rubric { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); }
+    .feed-date { font-size: 11px; color: var(--text3); }
+    .feed-views { font-size: 11px; color: var(--text3); }
+    .feed-read-chip { margin-left: auto; font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold); border: 0.5px solid var(--gold); border-radius: 20px; padding: 1px 10px; white-space: nowrap; }
+    .feed-title { font-family: var(--font-head); font-size: 19px; font-weight: 500; color: var(--text); line-height: 1.28; margin-bottom: 4px; display: block; }
+    .feed-desc { font-size: 12.5px; color: var(--text3); line-height: 1.5; display: block; }
+    .feed-all { display: block; text-align: center; margin-top: 16px; font-size: 13px; color: var(--gold); border: 0.5px solid var(--gold); border-radius: 6px; padding: 10px; transition: background 0.15s, color 0.15s; }
+    .feed-all:hover { background: var(--gold); color: var(--bg); }
+    .site-col { min-width: 0; }
+    .footer-note { max-width: 860px; margin: 0 auto 18px; font-size: 12px; color: var(--text3); line-height: 1.6; }
+    @media (max-width: 900px) {
+      .home-layout { grid-template-columns: 1fr; gap: 44px; padding: 32px 0 50px; }
+      .insights-col { position: static; }
+      .feed-card:nth-child(n+4) { display: none; }
+    }
     .lang-switcher { display: flex; gap: 4px; }
     .lang-switcher button { background: none; border: 0.5px solid var(--border2); color: var(--text3); font-family: var(--font-body); font-size: 11px; padding: 4px 8px; cursor: pointer; border-radius: 3px; transition: all 0.15s; letter-spacing: 0.05em; }
     .lang-switcher button:hover, .lang-switcher button.active { border-color: var(--gold); color: var(--gold); }
@@ -170,12 +198,13 @@
       <a href="/" class="nav-logo">Askar <span>Bapen</span></a>
       <div class="nav-right">
         <div class="nav-links">
+          <a href="/insights/">Bapen Insights</a>
           <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
           <a href="about.html" data-i18n="nav_about">Обо мне</a>
         </div>
         <div class="nav-social">
           <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://t.me/bapeninsights" target="_blank" rel="noopener">Bapen Insights</a>
+          <a href="https://t.me/bapeninsights" target="_blank" rel="noopener">Telegram</a>
         </div>
         <div class="lang-switcher">
           <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
@@ -191,13 +220,14 @@
 
   <div class="mobile-menu" id="mobile-menu">
     <button class="mobile-close" onclick="closeBurger()">&#10005;</button>
+    <a href="/insights/">Bapen Insights</a>
     <a href="consulting.html" data-i18n="nav_consulting">Бизнес-решения</a>
     <a href="training.html" data-i18n="nav_training">Бизнес-обучение</a>
     <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
     <a href="about.html" data-i18n="nav_about">Обо мне</a>
     <div class="mobile-social">
       <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://t.me/bapeninsights" target="_blank" rel="noopener">Bapen Insights</a>
+      <a href="https://t.me/bapeninsights" target="_blank" rel="noopener">Telegram-канал</a>
     </div>
     <div class="mobile-lang">
       <button onclick="setLanguage('ru');closeBurger()">RU</button>
@@ -208,6 +238,17 @@
   </div>
 
   <div class="container">
+    <div class="home-layout no-feed" id="home-layout">
+
+    <!-- Лента Bapen Insights: только на RU -->
+    <aside class="insights-col">
+      <div class="insights-head">Bapen <span>Insights</span></div>
+      <p class="insights-sub">Разборы бизнес-событий через ТРИЗ, Lean/Kaizen и Scenario Planning</p>
+      <div class="feed" id="home-feed"></div>
+      <a class="feed-all" href="/insights/">Все материалы &rarr;</a>
+    </aside>
+
+    <main class="site-col">
 
     <header class="page-header reveal">
       <h1 data-i18n="consulting_title">Бизнес-решения</h1>
@@ -368,16 +409,22 @@
       </ul>
     </div>
 
+    </main>
+
+    </div>
   </div>
 
   <footer>
     <div class="container">
       <div class="footer-contacts">
         <a href="tel:+77017717840">+7 (701) 771 78 40</a>
-        <a href="mailto:k.partners2030@gmail.com">k.partners2030@gmail.com</a>
+        <a href="mailto:office@askarbapen.com">office@askarbapen.com</a>
         <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://t.me/bapeninsights" target="_blank" rel="noopener">Bapen Insights</a>
+        <a href="/insights/">Bapen Insights</a>
+        <a href="https://t.me/bapeninsights" target="_blank" rel="noopener">Telegram-канал</a>
+        <a href="/insights/how.html">Как делаются разборы</a>
       </div>
+      <p class="footer-note" id="legal-note"><strong>Оговорка:</strong> Материал является авторским экспертно-аналитическим мнением, основанным на сведениях из открытых источников и подготовленным с использованием инструментов Бизнес-ТРИЗ, Lean/Kaizen и Scenario Planning. Данные актуальны на дату публикации, перечень источников приводится в конце каждого разбора. Предлагаемые решения носят рекомендательный характер и не учитывают специфику конкретной компании. Материал подготовлен в информационных целях и не направлен на дискредитацию компании или ее продукта, причинение вреда деловой репутации и коммерческим интересам. Материал не заменяет индивидуальную финансовую, налоговую или юридическую консультацию и не является инвестиционной рекомендацией.</p>
       <p class="footer-copy" data-i18n="footer_copy">&#169; 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS</p>
     </div>
   </footer>
@@ -449,7 +496,53 @@
       document.documentElement.dir = 'ltr';
       applyTranslations(lang);
     }
+    updateFeedVisibility();
   }
+
+  // Лента разборов: 5 свежих из insights/insights.json; видна только на RU
+  const FEED_RUBRICS = { news: 'Разбор новостей', polemic: 'Полемика', opportunity: 'Возможности', forecast: 'Прогнозы развития', tool: 'Приемы и инструменты' };
+  const FEED_MONTHS = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+  let feedItems = [];
+  function escFeed(v) { const d = document.createElement('div'); d.textContent = v == null ? '' : String(v); return d.innerHTML; }
+  function feedDate(iso) {
+    if (!iso) return '';
+    const p = String(iso).slice(0, 10).split('-');
+    return parseInt(p[2]) + ' ' + FEED_MONTHS[parseInt(p[1]) - 1];
+  }
+  function updateFeedVisibility() {
+    const layout = document.getElementById('home-layout');
+    if (!layout) return;
+    let lang = 'ru';
+    try { lang = localStorage.getItem('lang') || 'ru'; } catch (e) {}
+    if (feedItems.length && lang === 'ru') layout.classList.remove('no-feed');
+    else layout.classList.add('no-feed');
+    const note = document.getElementById('legal-note');
+    if (note) note.style.display = (lang === 'ru') ? '' : 'none';
+  }
+  function renderHomeFeed() {
+    const box = document.getElementById('home-feed');
+    if (!box) return;
+    box.innerHTML = feedItems.slice(0, 5).map(x =>
+      '<a class="feed-card" href="' + escFeed(x.url) + '">' +
+      '<span class="feed-card-meta"><span class="feed-rubric">' + escFeed(FEED_RUBRICS[x.rubric] || x.rubric) + '</span>' +
+      '<span class="feed-date">' + feedDate(x.date) + '</span>' +
+      '<span class="feed-views" data-path="' + escFeed(x.url) + '"></span>' +
+      '<span class="feed-read-chip">Читать' + (x.read_min ? ' ' + escFeed(x.read_min) + ' мин' : '') + '</span></span>' +
+      '<span class="feed-title">' + escFeed(x.title) + '</span>' +
+      '<span class="feed-desc">' + escFeed(x.description) + '</span></a>'
+    ).join('');
+    updateFeedVisibility();
+    box.querySelectorAll('.feed-views').forEach(function (el) {
+      fetch('https://askarbapen.goatcounter.com/counter/' + encodeURIComponent(el.dataset.path) + '.json')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) { if (d && d.count) el.textContent = d.count + ' просмотров'; })
+        .catch(function () {});
+    });
+  }
+  fetch('insights/insights.json', { cache: 'no-cache' })
+    .then(r => r.ok ? r.json() : [])
+    .then(data => { feedItems = Array.isArray(data) ? data : []; renderHomeFeed(); })
+    .catch(() => {});
 
   function applyTranslations(lang) {
     const t = consultingTranslations[lang] || consultingTranslations['ru'];
@@ -576,5 +669,6 @@
     document.body.style.overflow = '';
   }
 </script>
+<script data-goatcounter="https://askarbapen.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
