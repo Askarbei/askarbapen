@@ -49,7 +49,7 @@
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
     nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 0.5px solid var(--border2); padding: 18px 0; }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .nav-logo { text-transform: uppercase; font-family: var(--font-head); font-size: 20px; font-weight: 500; letter-spacing: 0.04em; color: var(--text); white-space: nowrap; }
@@ -66,49 +66,74 @@
     .lang-switcher button:hover, .lang-switcher button.active { border-color: var(--gold); color: var(--gold); }
     .nav-logo-img { height: 36px; opacity: 0.85; transition: opacity 0.15s; }
     .nav-logo-img:hover { opacity: 1; }
-    .hero { padding: 80px 0 60px; display: flex; align-items: center; justify-content: space-between; gap: 40px; border-bottom: 0.5px solid var(--border2); }
+
+    /* --- Главная: две колонки, лента разборов (макет glavnaya-preview) --- */
+    .home-layout { display: grid; grid-template-columns: 400px minmax(0, 1fr); gap: 52px; align-items: start; padding: 44px 0 70px; }
+    .home-layout.no-feed { grid-template-columns: 1fr; }
+    .home-layout.no-feed .insights-col { display: none; }
+    .insights-col { position: sticky; top: 90px; }
+    .insights-head { font-family: var(--font-head); font-size: 30px; font-weight: 500; margin-bottom: 4px; }
+    .insights-head span { color: var(--gold); }
+    .insights-sub { font-size: 13px; color: var(--text3); margin-bottom: 20px; }
+    .feed { display: flex; flex-direction: column; gap: 12px; }
+    .feed-card { background: var(--bg2); border: 0.5px solid var(--border2); border-left: 2px solid var(--gold); border-radius: 12px; padding: 16px 20px; display: block; transition: border-color 0.15s, background 0.15s; }
+    .feed-card:hover { border-color: var(--gold); background: var(--bg3); }
+    .feed-card-meta { display: flex; gap: 10px; margin-bottom: 6px; }
+    .feed-rubric { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); }
+    .feed-date { font-size: 11px; color: var(--text3); }
+    .feed-title { font-family: var(--font-head); font-size: 19px; font-weight: 500; color: var(--text); line-height: 1.28; margin-bottom: 4px; display: block; }
+    .feed-desc { font-size: 12.5px; color: var(--text3); line-height: 1.5; display: block; }
+    .feed-all { display: block; text-align: center; margin-top: 16px; font-size: 13px; color: var(--gold); border: 0.5px solid var(--gold); border-radius: 6px; padding: 10px; transition: background 0.15s, color 0.15s; }
+    .feed-all:hover { background: var(--gold); color: var(--bg); }
+    .site-col { min-width: 0; }
+    @media (max-width: 900px) {
+      .home-layout { grid-template-columns: 1fr; gap: 44px; padding: 32px 0 50px; }
+      .insights-col { position: static; }
+      .feed-card:nth-child(n+4) { display: none; } /* на телефоне 3 карточки из 5 */
+    }
+    .hero { padding: 8px 0 44px; display: flex; align-items: center; justify-content: space-between; gap: 28px; border-bottom: 0.5px solid var(--border2); }
     .hero-text { max-width: 580px; }
     .badge { display: inline-block; background: rgba(201,168,76,0.15); border: 0.5px solid var(--gold); color: var(--gold); font-size: 12px; padding: 5px 14px; border-radius: 20px; letter-spacing: 0.03em; margin-bottom: 24px; }
-    .hero h1 { font-family: var(--font-head); font-size: 58px; font-weight: 500; line-height: 1.1; color: var(--text); margin-bottom: 24px; }
-    .hero-sub { font-size: 18px; color: var(--text); line-height: 1.75; }
-    .hero-photo { flex-shrink: 0; width: 160px; height: 160px; border-radius: 50%; border: 0.5px solid var(--border); overflow: hidden; position: relative; background: var(--bg3); display: flex; align-items: center; justify-content: center; }
+    .hero h1 { font-family: var(--font-head); font-size: 44px; font-weight: 500; line-height: 1.1; color: var(--text); margin-bottom: 16px; }
+    .hero-sub { font-size: 17px; color: var(--text); line-height: 1.75; }
+    .hero-photo { flex-shrink: 0; width: 130px; height: 130px; border-radius: 50%; border: 0.5px solid var(--border); overflow: hidden; position: relative; background: var(--bg3); display: flex; align-items: center; justify-content: center; }
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
     .hero-photo-placeholder { font-family: var(--font-head); font-size: 42px; color: var(--gold); font-weight: 400; display: none; }
     .section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text3); margin-bottom: 28px; }
-    .fork { padding: 70px 0; border-bottom: 0.5px solid var(--border2); }
-    .fork-question { font-family: var(--font-head); font-size: 26px; color: var(--text2); text-align: center; margin-bottom: 36px; letter-spacing: 0.08em; text-transform: uppercase; }
-    .fork-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .fork-card { background: var(--bg2); border: 0.5px solid var(--border2); border-top: 2px solid var(--gold); border-radius: 12px; padding: 28px; cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+    .fork { padding: 44px 0; border-bottom: 0.5px solid var(--border2); }
+    .fork-question { font-family: var(--font-head); font-size: 22px; color: var(--text2); text-align: center; margin-bottom: 26px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .fork-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .fork-card { background: var(--bg2); border: 0.5px solid var(--border2); border-top: 2px solid var(--gold); border-radius: 12px; padding: 22px; cursor: pointer; transition: border-color 0.15s, background 0.15s; }
     .fork-card:hover { border-color: var(--gold); border-top-color: var(--gold-light); background: var(--bg3); }
-    .fork-card h3 { font-family: var(--font-head); font-size: 26px; font-weight: 500; color: var(--text); margin-bottom: 12px; }
-    .fork-card-desc { font-size: 15px; color: var(--text); margin-bottom: 20px; line-height: 1.65; }
+    .fork-card h3 { font-family: var(--font-head); font-size: 23px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+    .fork-card-desc { font-size: 14px; color: var(--text); line-height: 1.6; }
 
     /* --- Diagnostic block --- */
-    .diagnostic { padding: 70px 0; border-bottom: 0.5px solid var(--border2); }
-    .diagnostic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .diag-card { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 20px; }
+    .diagnostic { padding: 44px 0; border-bottom: 0.5px solid var(--border2); }
+    .diagnostic-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+    .diag-card { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
     .diag-icon { width: 48px; height: 48px; border-radius: 8px; background: rgba(212,168,67,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .diag-title { font-family: var(--font-head); font-size: 22px; font-weight: 500; color: var(--text); letter-spacing: 0.06em; }
-    .diag-btn { display: block; text-align: center; border: 0.5px solid var(--gold); color: var(--gold); padding: 12px 20px; border-radius: 6px; font-size: 14px; font-family: var(--font-body); transition: background 0.15s, color 0.15s; margin-top: auto; }
+    .diag-title { font-family: var(--font-head); font-size: 18px; font-weight: 500; color: var(--text); letter-spacing: 0.06em; }
+    .diag-btn { display: block; text-align: center; border: 0.5px solid var(--gold); color: var(--gold); padding: 10px 14px; margin-top: auto; border-radius: 6px; font-size: 13px; font-family: var(--font-body); transition: background 0.15s, color 0.15s; margin-top: auto; }
     .diag-btn:hover { background: var(--gold); color: var(--bg); }
     @media (max-width: 768px) { .diagnostic-grid { grid-template-columns: 1fr; } }
     /* --- end diagnostic --- */
 
-    .stats { padding: 70px 0; border-bottom: 0.5px solid var(--border2); }
-    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .stat-card { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 8px; padding: 20px; text-align: center; }
-    .stat-num { font-family: var(--font-head); font-size: 32px; font-weight: 500; color: var(--gold); display: block; margin-bottom: 8px; }
-    .stat-desc { font-size: 14px; color: var(--text2); line-height: 1.4; }
-    .credentials { padding: 70px 0; border-bottom: 0.5px solid var(--border2); }
-    .cred-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .cred-card { background: var(--bg2); border: 0.5px solid var(--border2); border-top: 2px solid var(--gold); border-radius: 12px; padding: 22px; }
-    .cred-title { font-size: 17px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+    .stats { padding: 44px 0; border-bottom: 0.5px solid var(--border2); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .stat-card { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 8px; padding: 16px 10px; text-align: center; }
+    .stat-num { font-family: var(--font-head); font-size: 26px; font-weight: 500; color: var(--gold); display: block; margin-bottom: 4px; }
+    .stat-desc { font-size: 12.5px; color: var(--text2); line-height: 1.4; }
+    .credentials { padding: 44px 0; border-bottom: 0.5px solid var(--border2); }
+    .cred-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .cred-card { background: var(--bg2); border: 0.5px solid var(--border2); border-top: 2px solid var(--gold); border-radius: 12px; padding: 18px; }
+    .cred-title { font-size: 14.5px; font-weight: 500; color: var(--text); margin-bottom: 4px; line-height: 1.45; }
     .cred-link { font-size: 13px; color: var(--gold); opacity: 0.9; transition: opacity 0.15s; }
     .cred-link:hover { opacity: 1; }
-    .guarantees { padding: 70px 0; border-bottom: 0.5px solid var(--border2); }
+    .guarantees { padding: 44px 0; border-bottom: 0.5px solid var(--border2); }
     .guarantee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .guarantee-card { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 12px; padding: 28px; }
-    .guarantee-num { font-family: var(--font-head); font-size: 40px; font-weight: 500; color: var(--gold); display: block; margin-bottom: 8px; }
+    .guarantee-card { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 12px; padding: 22px; }
+    .guarantee-num { font-family: var(--font-head); font-size: 32px; font-weight: 500; color: var(--gold); display: block; margin-bottom: 8px; }
     .guarantee-desc { font-size: 15px; color: var(--text); line-height: 1.65; }
     .semantic-block { padding: 28px 0 48px; border-top: 0.5px solid var(--border2); }
     .semantic-block p { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text3); margin-bottom: 16px; }
@@ -118,6 +143,7 @@
     .footer-contacts { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-bottom: 20px; }
     .footer-contacts a { font-size: 15px; color: var(--text2); transition: color 0.15s; }
     .footer-contacts a:hover { color: var(--gold); }
+    .footer-note { max-width: 860px; margin: 0 auto 18px; font-size: 12px; color: var(--text3); line-height: 1.6; }
     .footer-copy { font-size: 12px; color: var(--text3); }
     .ar-message { display: none; text-align: center; padding: 80px 32px 120px; font-size: 28px; color: var(--gold); font-family: serif; direction: rtl; }
     .ar-lang-bar { display: flex; justify-content: center; gap: 8px; margin-bottom: 48px; direction: ltr; }
@@ -162,12 +188,13 @@
       <a href="/" class="nav-logo">Askar <span>Bapen</span></a>
       <div class="nav-right">
         <div class="nav-links">
+          <a href="/insights/">Bapen Insights</a>
           <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
           <a href="about.html" data-i18n="nav_about">Обо мне</a>
         </div>
         <div class="nav-social">
           <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="/insights/">Bapen Insights</a>
+          <a href="https://t.me/bapeninsights" target="_blank" rel="noopener">Telegram</a>
         </div>
         <div class="lang-switcher">
           <button id="btn-ru" onclick="setLanguage('ru')">RU</button>
@@ -183,13 +210,14 @@
 
   <div class="mobile-menu" id="mobile-menu">
     <button class="mobile-close" onclick="closeBurger()">&#10005;</button>
+    <a href="/insights/">Bapen Insights</a>
     <a href="consulting.html" data-i18n="nav_consulting">Бизнес-решения</a>
     <a href="training.html" data-i18n="nav_training">Бизнес-обучение</a>
     <a href="cases.html" data-i18n="nav_cases">Кейсы</a>
     <a href="about.html" data-i18n="nav_about">Обо мне</a>
     <div class="mobile-social">
       <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="/insights/">Bapen Insights</a>
+      <a href="https://t.me/bapeninsights" target="_blank" rel="noopener">Telegram-канал</a>
     </div>
     <div class="mobile-lang">
       <button onclick="setLanguage('ru');closeBurger()">RU</button>
@@ -200,6 +228,17 @@
   </div>
 
   <div class="container">
+    <div class="home-layout no-feed" id="home-layout">
+
+    <!-- Лента Bapen Insights: слева на десктопе, сверху на телефоне; видна только на RU -->
+    <aside class="insights-col">
+      <div class="insights-head">Bapen <span>Insights</span></div>
+      <p class="insights-sub">Разборы бизнес-событий через ТРИЗ и Кайдзен</p>
+      <div class="feed" id="home-feed"></div>
+      <a class="feed-all" href="/insights/">Все материалы &rarr;</a>
+    </aside>
+
+    <main class="site-col">
 
     <header class="hero reveal">
       <div class="hero-text">
@@ -232,28 +271,18 @@
       <div class="diagnostic-grid">
 
         <div class="diag-card">
-          <div class="diag-icon">
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-              <path d="M13 3 L13 23 M3 13 L23 13" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round"/>
-              <circle cx="13" cy="13" r="5" stroke="#D4A843" stroke-width="1.5" fill="none"/>
-              <circle cx="13" cy="13" r="2" fill="#D4A843"/>
-            </svg>
-          </div>
           <div class="diag-title">KAIZEN BRIEF</div>
           <a href="https://forms.gle/Da1oPj64JiYycLMu5" target="_blank" rel="noopener" class="diag-btn" data-i18n="diag_btn_1">Оценить операционную зрелость бизнеса</a>
         </div>
 
         <div class="diag-card">
-          <div class="diag-icon">
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-              <path d="M4 28 C4 28 6 28 9 24 C12 20 14 16 16 13 C18 10 22 5 28 4" stroke="#D4A843" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-              <circle cx="28" cy="4" r="3.5" fill="#D4A843"/>
-              <line x1="4" y1="28" x2="28" y2="28" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-              <line x1="4" y1="4" x2="4" y2="28" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-            </svg>
-          </div>
           <div class="diag-title">S-CURVE DIAGNOSTIC</div>
           <a href="https://forms.gle/398yD5mPpji3MrAh9" target="_blank" rel="noopener" class="diag-btn" data-i18n="diag_btn_2">Оценить стадию развития бизнеса</a>
+        </div>
+
+        <div class="diag-card">
+          <div class="diag-title">BUSINESS PROBLEM BRIEF</div>
+          <a href="https://forms.gle/mB3xKTRfqB1r9zkj8" target="_blank" rel="noopener" class="diag-btn" data-i18n="diag_btn_3">Описать бизнес-проблему</a>
         </div>
 
       </div>
@@ -341,16 +370,22 @@
       </ul>
     </div>
 
+    </main>
+
+    </div>
   </div>
 
   <footer>
     <div class="container">
       <div class="footer-contacts">
         <a href="tel:+77017717840">+7 (701) 771 78 40</a>
-        <a href="mailto:k.partners2030@gmail.com">k.partners2030@gmail.com</a>
+        <a href="mailto:office@askarbapen.com">office@askarbapen.com</a>
         <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
         <a href="/insights/">Bapen Insights</a>
+        <a href="https://t.me/bapeninsights" target="_blank" rel="noopener">Telegram-канал</a>
+        <a href="/insights/how.html">Как делаются разборы</a>
       </div>
+      <p class="footer-note" id="legal-note"><strong>Оговорка:</strong> Материал является авторским экспертно-аналитическим мнением, подготовленным с использованием инструментов Бизнес-ТРИЗ, Lean/Kaizen и Scenario Planning. Данные актуальны на дату публикации и основаны на указанных источниках. Материал не заменяет индивидуальную финансовую, налоговую или юридическую консультацию и не является инвестиционной рекомендацией.</p>
       <p class="footer-copy" data-i18n="footer_copy">&#169; 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS</p>
     </div>
   </footer>
@@ -389,7 +424,45 @@
       document.documentElement.dir = 'ltr';
       applyTranslations(lang);
     }
+    updateFeedVisibility();
   }
+
+  // Лента разборов: 5 свежих из insights/insights.json; на главной видна только на RU
+  const FEED_RUBRICS = { news: 'Разбор новостей', polemic: 'Полемика', opportunity: 'Возможности', forecast: 'Прогнозы развития', tool: 'Приемы и инструменты' };
+  const FEED_MONTHS = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+  let feedItems = [];
+  function escFeed(v) { const d = document.createElement('div'); d.textContent = v == null ? '' : String(v); return d.innerHTML; }
+  function feedDate(iso) {
+    if (!iso) return '';
+    const p = String(iso).slice(0, 10).split('-');
+    return parseInt(p[2]) + ' ' + FEED_MONTHS[parseInt(p[1]) - 1];
+  }
+  function updateFeedVisibility() {
+    const layout = document.getElementById('home-layout');
+    if (!layout) return;
+    let lang = 'ru';
+    try { lang = localStorage.getItem('lang') || 'ru'; } catch (e) {}
+    if (feedItems.length && lang === 'ru') layout.classList.remove('no-feed');
+    else layout.classList.add('no-feed');
+    const note = document.getElementById('legal-note');
+    if (note) note.style.display = (lang === 'ru') ? '' : 'none';
+  }
+  function renderHomeFeed() {
+    const box = document.getElementById('home-feed');
+    if (!box) return;
+    box.innerHTML = feedItems.slice(0, 5).map(x =>
+      '<a class="feed-card" href="' + escFeed(x.url) + '">' +
+      '<span class="feed-card-meta"><span class="feed-rubric">' + escFeed(FEED_RUBRICS[x.rubric] || x.rubric) + '</span>' +
+      '<span class="feed-date">' + feedDate(x.date) + '</span></span>' +
+      '<span class="feed-title">' + escFeed(x.title) + '</span>' +
+      '<span class="feed-desc">' + escFeed(x.description) + '</span></a>'
+    ).join('');
+    updateFeedVisibility();
+  }
+  fetch('insights/insights.json', { cache: 'no-cache' })
+    .then(r => r.ok ? r.json() : [])
+    .then(data => { feedItems = Array.isArray(data) ? data : []; renderHomeFeed(); })
+    .catch(() => {});
 
   function applyTranslations(lang) {
     const t = indexTranslations[lang] || indexTranslations['ru'];
@@ -414,6 +487,7 @@
       diag_label: 'бесплатная диагностика',
       diag_btn_1: 'Оценить операционную зрелость бизнеса',
       diag_btn_2: 'Оценить стадию развития бизнеса',
+      diag_btn_3: 'Описать бизнес-проблему',
       stats_label: 'результаты клиентов',
       stat_1_desc: 'эффект одного проекта', stat_2_desc: 'ускорение процессов',
       stat_3_desc: 'складских потерь', stat_4_desc: 'отраслей',
@@ -435,6 +509,7 @@
       diag_label: 'free diagnostics',
       diag_btn_1: 'Assess business operational maturity',
       diag_btn_2: 'Assess business development stage',
+      diag_btn_3: 'Describe your business problem',
       stats_label: 'client results',
       stat_1_desc: 'impact of a single project', stat_2_desc: 'process acceleration',
       stat_3_desc: 'reduction in warehouse waste', stat_4_desc: 'industries served',
@@ -456,6 +531,7 @@
       diag_label: 'тегін диагностика',
       diag_btn_1: 'Бизнестiң операциондық жетiлуiн бағалау',
       diag_btn_2: 'Бизнестiң даму сатысын бағалау',
+      diag_btn_3: 'Бизнес мәселеңізді сипаттаңыз',
       stats_label: 'клиенттер нәтижелері',
       stat_1_desc: 'бір жобаның әсері', stat_2_desc: 'процестерді жеделдету',
       stat_3_desc: 'қойма шығындарын қысқарту', stat_4_desc: 'сала',
