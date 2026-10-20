@@ -49,7 +49,7 @@
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
-    .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+    .container { max-width: 1500px; margin: 0 auto; padding: 0 32px; }
     nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 0.5px solid var(--border2); padding: 18px 0; }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .nav-logo { text-transform: uppercase; font-family: var(--font-head); font-size: 20px; font-weight: 500; letter-spacing: 0.04em; color: var(--text); white-space: nowrap; }
@@ -68,7 +68,7 @@
     .nav-logo-img:hover { opacity: 1; }
 
     /* --- Главная: две колонки, лента разборов (макет glavnaya-preview) --- */
-    .home-layout { display: grid; grid-template-columns: 400px minmax(0, 1fr); gap: 52px; align-items: start; padding: 44px 0 70px; }
+    .home-layout { display: grid; grid-template-columns: 700px minmax(0, 1fr); gap: 52px; align-items: start; padding: 44px 0 70px; }
     .home-layout.no-feed { grid-template-columns: 1fr; }
     .home-layout.no-feed .insights-col { display: none; }
     .insights-col { position: sticky; top: 90px; }
@@ -235,7 +235,7 @@
     <!-- Лента Bapen Insights: слева на десктопе, сверху на телефоне; видна только на RU -->
     <aside class="insights-col">
       <div class="insights-head">Bapen <span>Insights</span></div>
-      <p class="insights-sub">Разборы бизнес-событий через ТРИЗ и Кайдзен</p>
+      <p class="insights-sub">Разборы бизнес-событий через ТРИЗ, Lean/Kaizen и Scenario Planning</p>
       <div class="feed" id="home-feed"></div>
       <a class="feed-all" href="/insights/">Все материалы &rarr;</a>
     </aside>
