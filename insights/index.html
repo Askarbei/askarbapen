@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bapen Insights | Что событие значит для бизнеса</title>
-  <meta name="description" content="Что событие значит для бизнеса и какие ходы оно открывает. Разборы новостей через Бизнес-ТРИЗ и Lean/Kaizen.">
+  <meta name="description" content="Что событие значит для бизнеса и какие возможности оно открывает. Разборы новостей через Бизнес-ТРИЗ и Lean/Kaizen.">
   <meta name="author" content="Askar Bapen">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -21,13 +21,13 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://askarbapen.com/insights/">
   <meta property="og:title" content="Bapen Insights">
-  <meta property="og:description" content="Что событие значит для бизнеса и какие ходы оно открывает. Разборы новостей через Бизнес-ТРИЗ и Lean/Kaizen.">
+  <meta property="og:description" content="Что событие значит для бизнеса и какие возможности оно открывает. Разборы новостей через Бизнес-ТРИЗ и Lean/Kaizen.">
   <meta property="og:image" content="https://askarbapen.com/photo.jpg">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="Bapen Insights">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Bapen Insights">
-  <meta name="twitter:description" content="Что событие значит для бизнеса и какие ходы оно открывает. Разборы новостей через Бизнес-ТРИЗ и Lean/Kaizen.">
+  <meta name="twitter:description" content="Что событие значит для бизнеса и какие возможности оно открывает. Разборы новостей через Бизнес-ТРИЗ и Lean/Kaizen.">
   <meta name="twitter:image" content="https://askarbapen.com/photo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +44,7 @@
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    .container { max-width: 1500px; margin: 0 auto; padding: 0 32px; }
     nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 0.5px solid var(--border2); padding: 18px 0; }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .nav-logo { text-transform: uppercase; font-family: var(--font-head); font-size: 20px; font-weight: 500; letter-spacing: 0.04em; color: var(--text); white-space: nowrap; }
@@ -72,7 +72,7 @@
     .mobile-close { position: absolute; top: 20px; right: 24px; font-size: 28px; color: var(--text2); cursor: pointer; background: none; border: none; }
 
     /* --- Лента --- */
-    .page-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 56px; align-items: start; padding: 44px 0 70px; }
+    .page-layout { display: grid; grid-template-columns: 700px minmax(0, 1fr); gap: 56px; align-items: start; padding: 44px 0 70px; }
     .feed-head h1 { font-family: var(--font-head); font-size: 46px; font-weight: 500; line-height: 1.1; margin-bottom: 10px; }
     .feed-head h1 span { color: var(--gold); }
     .feed-sub { font-size: 16px; color: var(--text3); margin-bottom: 30px; max-width: 560px; }
@@ -85,10 +85,11 @@
     .feed-card { background: var(--bg2); border: 0.5px solid var(--border2); border-left: 2px solid var(--gold); border-radius: 12px; padding: 20px 24px; display: block; transition: border-color 0.15s, background 0.15s; }
     .feed-card:hover { border-color: var(--gold); background: var(--bg3); }
     .feed-card-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+    .feed-views { font-size: 12px; color: var(--text3); }
     .feed-rubric { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); }
     .feed-industry { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); border: 0.5px solid var(--border2); border-radius: 20px; padding: 1px 10px; }
     .feed-date { font-size: 12px; color: var(--text3); }
-    .feed-read { font-size: 12px; color: var(--text3); }
+    .feed-read { margin-left: auto; font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold); border: 0.5px solid var(--gold); border-radius: 20px; padding: 1px 10px; white-space: nowrap; }
     .feed-title { font-family: var(--font-head); font-size: 23px; font-weight: 500; color: var(--text); line-height: 1.25; margin-bottom: 6px; display: block; }
     .feed-desc { font-size: 14px; color: var(--text3); line-height: 1.55; display: block; }
     .feed-empty { color: var(--text3); font-size: 15px; padding: 30px 0; }
@@ -114,8 +115,8 @@
     .sb-btn { display: block; text-align: center; border: 0.5px solid var(--gold); color: var(--gold); padding: 9px 14px; border-radius: 6px; font-size: 12.5px; transition: background 0.15s, color 0.15s; margin-bottom: 10px; }
     .sb-btn:last-child { margin-bottom: 0; }
     .sb-btn:hover { background: var(--gold); color: var(--bg); }
-    .sb-brief { margin: 14px 0 6px; }
-    .sb-brief-note { display: block; text-align: center; font-size: 11.5px; color: var(--text3); }
+    .sb-brief { margin: 4px 0 6px; }
+    .sb-brief-note { display: block; text-align: center; font-size: 11.5px; color: var(--text3); margin-bottom: 14px; }
     .sb-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     .sb-stat { text-align: center; background: var(--bg3); border-radius: 8px; padding: 12px 6px; }
     .sb-stat-num { font-family: var(--font-head); font-size: 21px; font-weight: 500; color: var(--gold); display: block; }
@@ -125,6 +126,7 @@
     .footer-contacts { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-bottom: 20px; }
     .footer-contacts a { font-size: 15px; color: var(--text2); transition: color 0.15s; }
     .footer-contacts a:hover { color: var(--gold); }
+    .footer-note { max-width: 860px; margin: 0 auto 18px; font-size: 12px; color: var(--text3); line-height: 1.6; }
     .footer-copy { font-size: 12px; color: var(--text3); }
     @media (max-width: 900px) {
       .page-layout { grid-template-columns: 1fr; gap: 40px; }
@@ -177,7 +179,7 @@
     <main>
       <div class="feed-head">
         <h1>Bapen <span>Insights</span></h1>
-        <p class="feed-sub">Что событие значит для бизнеса и какие ходы оно открывает.</p>
+        <p class="feed-sub">Что событие значит для бизнеса и какие возможности оно открывает.</p>
       </div>
 
       <div class="filters" id="filters"></div>
@@ -204,12 +206,12 @@
           <span class="sb-link-title">Бизнес-решения</span>
           <span class="sb-link-desc">Работаем вместе над конкретной задачей. Результат под ключ.</span>
         </a>
+        <a class="sb-btn sb-brief" href="https://forms.gle/mB3xKTRfqB1r9zkj8" target="_blank" rel="noopener" data-ga="problem_brief" data-ga-label="sidebar">Описать бизнес-проблему</a>
+        <span class="sb-brief-note">5 вопросов о вашей ситуации</span>
         <a class="sb-link" href="/training.html">
           <span class="sb-link-title">Бизнес-обучение</span>
           <span class="sb-link-desc">Обучаем руководителей и команды. Инструменты остаются в компании.</span>
         </a>
-        <a class="sb-btn sb-brief" href="https://forms.gle/mB3xKTRfqB1r9zkj8" target="_blank" rel="noopener" data-ga="problem_brief" data-ga-label="sidebar">Описать бизнес-проблему</a>
-        <span class="sb-brief-note">5 вопросов о вашей ситуации</span>
       </div>
       <div class="sb-card">
         <div class="sb-label">Бесплатная диагностика</div>
@@ -238,7 +240,9 @@
       <a href="https://www.linkedin.com/in/askar-bapen" target="_blank" rel="noopener">LinkedIn</a>
       <a href="/insights/">Bapen Insights</a>
       <a href="https://t.me/bapeninsights" target="_blank" rel="noopener" data-ga="telegram_channel" data-ga-label="footer">Telegram-канал</a>
+      <a href="how.html">Как делаются разборы</a>
     </div>
+    <p class="footer-note"><strong>Оговорка:</strong> Материал является авторским экспертно-аналитическим мнением, основанным на сведениях из открытых источников и подготовленным с использованием инструментов Бизнес-ТРИЗ, Lean/Kaizen и Scenario Planning. Данные актуальны на дату публикации, перечень источников приводится в конце каждого разбора. Предлагаемые решения носят рекомендательный характер и не учитывают специфику конкретной компании. Материал подготовлен в информационных целях и не направлен на дискредитацию компании или ее продукта, причинение вреда деловой репутации и коммерческим интересам. Материал не заменяет индивидуальную финансовую, налоговую или юридическую консультацию и не является инвестиционной рекомендацией.</p>
     <p class="footer-copy">&#169; 2026 Askar Bapen. KAIZEN-TRIZ PARTNERS</p>
   </div>
 </footer>
@@ -285,12 +289,19 @@
       '<span class="feed-card-meta"><span class="feed-rubric">' + esc(RUBRICS[x.rubric] || x.rubric) + '</span>' +
       (x.industry ? '<span class="feed-industry">' + esc(x.industry) + '</span>' : '') +
       '<span class="feed-date">' + fmtDate(x.date) + '</span>' +
-      (x.read_min ? '<span class="feed-read">' + esc(x.read_min) + ' мин</span>' : '') +
+      '<span class="feed-views" data-path="' + esc(x.url) + '"></span>' +
+      (x.read_min ? '<span class="feed-read">Читать ' + esc(x.read_min) + ' мин</span>' : '') +
       '</span>' +
       '<span class="feed-title">' + esc(x.title) + '</span>' +
       '<span class="feed-desc">' + esc(x.description) + '</span></a>'
     ).join('');
     document.getElementById('load-more').style.display = list.length > shown ? 'block' : 'none';
+    box.querySelectorAll('.feed-views').forEach(function (el) {
+      fetch('https://askarbapen.goatcounter.com/counter/' + encodeURIComponent(el.dataset.path) + '.json')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) { if (d && d.count) el.textContent = d.count + ' просмотров'; })
+        .catch(function () {});
+    });
     document.getElementById('feed-count').textContent = list.length > PAGE ? 'Показано ' + Math.min(shown, list.length) + ' из ' + list.length : '';
   }
   function showMore() { shown += PAGE; render(); }
